@@ -1,0 +1,636 @@
+body { padding-top: 56px; }
+.left-aligned { margin-left: auto; }
+.bg-dark { background-color: #343a40 !important; }
+.bg-hero { background-color: #E57E7E; }
+
+/* CALLOUT */
+.bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
+.bd-callout h4 { margin-bottom:.25rem }
+.bd-callout p:last-child { margin-bottom:0 }
+.bd-callout code { border-radius:.25rem }
+.bd-callout+.bd-callout { margin-top:-.25rem }
+.bd-callout-info { border-left-color:#5bc0de }
+.bd-callout-warning { border-left-color:#f0ad4e }
+.bd-callout-danger { border-left-color:#d9534f }
+
+/* footer */
+footer a { color: white; font-weight: bold; text-decoration: none; }
+footer a:hover { color: white; text-decoration: underline; }
+
+/*  header */
+.banner{
+    background-image: url('https://static.igem.wiki/teams/4853/wiki/pages-design/pink-modern-quote-motivation-poster.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -7rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner::after {
+    content: "";
+    position: absolute;
+    top: 70%;  /* Start fading from 70% from the top. Adjust as needed. */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, white);  /* Fading to white. Change if body background is different */
+    pointer-events: none;  /* Ensures the pseudo-element doesn't interfere with clicks */
+}
+
+.special-banner {
+  background-color: white; /* Sets the background to pure white */
+  height: 550px; /* Adjust based on your requirement */
+}
+
+
+.special-banner img {
+  position: absolute;
+  top: -50px; /* Move up by 50px, adjust as needed */
+  left: 50%; /* Center horizontally */
+  width: 100%; /* Increase width, adjust as needed */
+  height: auto; /* Keep aspect ratio */
+  transform: translateX(-50%); /* Centering adjustment */
+}
+
+.centered-box {
+  display: block;
+  max-width: 70%; /* Adjusted for larger content, can be tweaked further */
+  padding: 20px; /* Some padding to give space inside the box */
+  margin: 50px auto; /* Center the box */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Enhanced shadow */
+  border: 1px solid #eaeaea; /* Optional: a subtle border to define the box edges */
+  border-radius: 8px; /* Optional: slightly rounded corners for aesthetics */
+  overflow: hidden; /* Ensure everything is contained within the box */
+}
+
+.centered-box h2 {
+  font-size: 50px; /* Adjust as needed */
+  margin-bottom: 15px; /* Some space between title and content */
+}
+
+.centered-box h4 {
+  font-size: 30px; /* As previously defined */
+  line-height: 1.8; /* This value increases the space between the lines. Adjust as desired. */
+}
+
+
+
+
+/* citations */
+  .citation-list {
+    counter-reset: li-counter;
+}
+
+.citation-list li {
+    position: relative;
+    list-style-type: none; /* Hide default numbers */
+}
+
+.citation-list li::before {
+    content: counter(li-counter) ".";
+    counter-increment: li-counter;
+    position: absolute;
+    left: -1.5em;  /* Adjust as per your design */
+    z-index: 5;  /* Appear below the ::after pseudo-element */
+    color: #44a5df;
+    text-decoration: underline;
+}
+
+.citation-list li::after {
+    content: "";
+    position: absolute;
+    left: -1.5em;  /* Match with ::before */
+    width: 1.5em;
+    height: 1.2em;  /* Approximate height for one line of text, adjust as needed */
+    top: 0;  /* Align to the top of the list item */
+    cursor: pointer;
+    z-index: 10;  /* Appear above the ::before pseudo-element */
+    
+}
+a[data-ref]:not([href]):not([class]),
+a[data-ref]:not([href]):not([class]):hover {
+    color: #44a5df !important; 
+    text-decoration: underline !important;
+}
+
+a[data-ref]:hover {
+    cursor: pointer;
+}
+
+a[data-ref]:hover {
+    cursor: pointer;
+    color: #44a5df;  /* This ensures that the color remains blue even on hover */
+}
+
+
+/* table of contents */
+* {
+  box-sizing: border-box;
+}
+body {
+    font-size: 17px;
+    line-height: 1.6;
+    font-family: var(--bs-font-sans-serif);
+  }
+
+.col-sm-3 {
+    position: relative;
+}
+
+.toc {
+  max-width: 100%;
+}
+ 
+.toc {
+    position: sticky;
+    top: 15em; /* Adjusted from 5em to 1em */
+    padding: 1em;
+    /*width: 20em;*/
+    left:1em;
+    line-height: 2;
+    overflow-y: auto; /* show vertical scrollbar if content is taller than container */
+}  
+
+.toc ul ul {
+    padding-left: 1em;
+  }
+  .toc ul ul li a {
+    font-size: 0.9em;  /* Adjust this value as you see fit */
+}
+
+
+.toc li a:hover {
+    cursor: pointer;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+toc > ul > li > a {
+    font-weight: bold;
+}
+
+.toc a {
+    color: inherit; /* Use the color of its parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.toc li a {
+    display: inline-block;
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  }
+  
+.toc li.visible>a {
+    color: #111;
+    transform: translate( 5px,0 );
+  }
+
+.toc-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+  
+.toc-marker path {
+    transition: all 0.3s ease;
+  }
+
+.contents {
+  padding: 1em;
+  max-width: 800px;
+  font-size: 1.2em;
+  font-family: 'Frank Ruhl Libre', sans-serif;
+
+  img {
+    max-width: 100%;
+  }
+  
+  .code-block {
+		white-space: pre;
+		overflow: auto;
+		max-width: 100%;
+
+		code {
+      display: block;
+			background-color: #f9f9f9;
+			padding: 10px;
+		}
+	}
+
+	.code-inline {
+		background-color: #f9f9f9;
+		padding: 4px;
+	}
+  
+  h2,
+  h3 {
+    padding-top: 1em;
+  }
+}
+.toc li a {
+  line-height: 1.2;  /* Adjust this for the spacing between two lines within the same list item */
+}
+.toc li {
+  margin-bottom: 0.5em;  /* Adjust this for the spacing between two different list items */
+}
+
+
+
+.no-left-padding {
+  padding-left: 0 !important;
+  padding-right:0 !important;
+}
+
+
+/*specific value for toc*/
+.experiments-page .toc {
+  top: 5em;
+}
+
+/*container shadow*/
+.body-container {
+  padding-inline: 3rem;
+  margin-bottom: 7rem;
+  padding: 75px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* horizontal offset, vertical offset, blur radius, shadow color */
+  font-family: var(--bs-font-sans-serif);
+  font-size: 15.5px;
+}
+
+/*body text*/
+.body-section p {
+  text-align: justify;
+  word-break: keep-all;
+  
+}
+.right-spacer {
+  flex: 0 0 5%;
+
+}
+.custom-half-col {
+  flex: 0 0 70.8332%; /* 66.6666% + 4.1666% */
+  max-width: 70.8332%;
+}
+
+.body-section h1:after {
+  background-color: #E57E7E;
+  bottom: -0.5rem;
+  height: 0.3rem;
+  width: 20rem;
+  position: relative;
+  content: "";
+  display: block;
+}
+
+.body-section h2:after {
+  background-color: #e57e7eb4;
+  bottom: -0.3rem;
+  height: 0.15rem;
+  width: 15rem;
+  position: relative;
+  content: "";
+  display: block;
+}
+
+
+/*protocol list*/
+.protocol-section ol {
+  list-style-type: decimal; /* 1., 2., 3., ... */
+}
+
+.protocol-section ol ol {
+  list-style-type: lower-alpha; /* a., b., c., ... */
+}
+
+.protocol-section ol ol ol {
+  list-style-type: lower-roman; /* i., ii., iii., ... */
+}
+
+/*image container with captions*/
+.img-caption-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.img-caption-container img {
+  display: block;
+  max-width: 100%; /* Ensures image doesn't exceed its container's width */
+}
+
+.img-caption-container .caption-text {
+  text-align: left;
+  font-size: 0.8em;
+  width: 100%; /* Matches the width of the image */
+}
+
+/*collapsable tabs*/
+.custom-accordion {
+  border-color: #E57E7E !important;
+}
+
+.custom-accordion .accordion-button {
+  border-color: #E57E7E !important;
+}
+
+.custom-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(229, 126, 126, 0.5);
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: #E57E7E;
+  color: white; /* You can adjust this color as needed */
+}
+
+.custom-accordion .accordion-header:not(:last-of-type) .accordion-button::after {
+  background-image: none;
+}
+
+/*section*/
+.section-divider {
+  margin-bottom: 30px; /* spacing between sections */
+}
+
+.section-divider section {
+  padding: 75px; /* inner spacing for content within each section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* shadow effect */
+  background-color: #fff; /* white background for each section */
+  border-radius: 5px; /* optional: round the corners of each section */
+}
+
+.circle-lg {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle-lg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.circle-lg:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.overlay .small-text {
+  font-size: 1rem;
+}
+
+.circle {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.circle:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.circle:hover {
+  transform: scale(1.4);
+}
+
+.overlay span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Style for col classes */
+.col-6 {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-3 {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Add margin to the right of each column */
+.mr-3 {
+  margin-right: 4rem;
+}
+
+/* Style for small-text */
+.small-text {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.circle-lg:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.overlay .small-text {
+  font-size: 1rem;
+}
+
+
+
+.circle {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.circle:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.circle:hover {
+  transform: scale(1.4);
+}
+
+.overlay span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Style for col classes */
+.col-6 {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-3 {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Add margin to the right of each column */
+.mr-3 {
+  margin-right: 4rem;
+}
+
+/* Style for small-text */
+.small-text {
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.mission-box {
+  background-color: white;
+  padding: 50px 100px; /* Large padding for the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow around the box */
+  margin-bottom: 100px;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.mission-box h2 {
+  font-size: 50px; /* Large text as specified */
+  margin-bottom: 20px; /* Space between the heading and the quote */
+}
+
+.mission-box h4 {
+  font-size: 30px; /* Slightly smaller text for the quote, but still large */
+  line-height: 1.5; /* Larger line spacing */
+}
+
+.full-width {
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+

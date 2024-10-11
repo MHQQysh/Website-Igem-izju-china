@@ -1,0 +1,351 @@
+{% extends "layout.html" %}
+
+{% block title %}Notebook{% endblock %}
+
+{% block page_content %}
+
+
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/wet-lab/notebook/notebook.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">February</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="0-0">&bull;&emsp;February 29</div>
+                </div>
+                <div class="t1" tid="1">March</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="1-0">&bull;&emsp;March 10</div>
+                    <div class="t2" tid="1-1">&bull;&emsp;March 27–April 1</div>
+                </div>
+                <div class="t1" tid="2">April</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="2-0">&bull;&emsp;April 9</div>
+                    <div class="t2" tid="2-1">&bull;&emsp;April 12</div>
+                    <div class="t2" tid="2-2">&bull;&emsp;April 24</div>
+                    <div class="t2" tid="2-3">&bull;&emsp;April 28</div>
+                </div>
+                <div class="t1" tid="3">May</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="3-0">&bull;&emsp;May 10–17</div>
+                    <div class="t2" tid="3-1">&bull;&emsp;May 17–31</div>
+                    <div class="t2" tid="3-2">&bull;&emsp;May 31</div>
+                </div>
+                <div class="t1" tid="4">June</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="4-0">&bull;&emsp;June 11</div>
+                    <div class="t2" tid="4-1">&bull;&emsp;June 24</div>
+                </div>
+                <div class="t1" tid="5">July</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="5-0">&bull;&emsp;July 3</div>
+                    <div class="t2" tid="5-1">&bull;&emsp;July 20</div>
+                </div>
+                <div class="t1" tid="6">August</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="6-0">&bull;&emsp;August 5</div>
+                    <div class="t2" tid="6-1">&bull;&emsp;August 13</div>
+                </div>
+                <div class="t1" tid="7">September</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="7-0">&bull;&emsp;September 13</div>
+                </div>
+                <div class="t1" tid="8">October</div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">February</h1>
+                </div>
+                <h2 id="0-0">&bull;&emsp;February 29</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Conducted a brainstorming session based on the specific track.
+                    </p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Wu Di and Kong Kexuan: Focused on biomanufacturing using genetic oscillators to produce ethanol and isobutanol. 
+                    </p>
+                    <p>- Wang Chen, Cao Xiaoran, He Zihang, Xiao Mingyang, Cao Yue, Lv Siyuan, Zhang Xiaohan, Yu Haoyang, and Chen Jinpeng: Explored new therapies for Alzheimer's disease, pancreatic cancer, etc.
+                    </p>
+                    <p>- Prof. Huang’s suggestion: Consulted Prof. Chen Ming and voted for the preferred project.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">March</h1>
+                </div>
+                <h2 id="1-0">&bull;&emsp;March 10</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Selected the project topic: "Production of ethanol and isobutanol based on gene oscillators."</p>
+                    <p>- Brainstormed project details. </p>
+                    <p>- Divided writing tasks for the iGEM project application.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Based on the input from Prof. Chen Ming and team voted, the topic "Production of ethanol and isobutanol based on gene oscillators" was selected.
+                    </p>
+                    <p>Writing task allocation: </p>
+                    <p> - Background: HP group</p>
+                    <p> - Project design: Dry lab</p>
+                    <p> - Theoretical basis: Wet lab</p>
+                </div>
+                <h2 id="1-1">&bull;&emsp;March 27–April 1</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Wet lab, dry lab, and HP groups conducted interviews and recruited new team members.
+                    </p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Each group prepared questions and conducted interviews.
+                    </p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">April</h1>
+                </div>
+                <h2 id="2-0">&bull;&emsp;April 9</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Full team meeting.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- iGEM overview (Wang Chen): 
+                    </p>
+                    <p>  1. Timeline & process for iGEM defense.</p>
+                    <p>  2. Medals, Villages, and individual awards.</p>
+                    <p>  3. Introduction to the offline Grand Jamboree in Paris.</p>
+                    <p>  4. Competition fees.</p>
+                    <p>- Introduction of advisors: </p>
+                    <p>  1. Prof. Huang Wenwen, Prof. Jin Mengdi, and advisor Zheng Ximeng share their experiences.</p>
+                    <p>  2. Prof. Huang emphasized the importance of planning and adhering to deadlines.</p>
+                    <p>  3. Prof. Jin highlighted the availability of lab space.</p>
+                    <p>  4. Advisor Zheng Ximeng shared insights into building a complete project narrative and leveraging domestic and international resources.</p>
+                </div>
+                <h2 id="2-1">&bull;&emsp;April 12</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Consulted teacher Lian regarding the experimental scheme for longevity yeast.
+                    </p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Explored advanced knowledge of ethanol and isobutanol production.
+                    </p>
+                    <p>- Acknowledged the challenges in building the genetic oscillator.</p>
+                    <p>- Considered collaborating with Zhouzou’s lab for yeast strains containing oscillators.</p>
+                </div>
+                <h2 id="2-2">&bull;&emsp;April 24</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Switched to the Fashion & Cosmetics Village.
+                    </p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- The initial idea of ethanol and isobutanol production was derived from an optogenetics paper. However, combining two papers without significant innovation led us to consider alternatives.
+                    </p>
+                </div>
+                <h2 id="2-3">&bull;&emsp;April 28</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Meeting with cosmetic expert Dr. Qiao.
+                    </p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Ethanol and isobutanol were unsuitable for cosmetics. Dr. Qiao suggested exploring glycolipids and preservatives as alternatives.
+                    </p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="3">May</h1>
+                </div>
+                <h2 id="3-0">&bull;&emsp;May 10–17</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Set up the laboratory and conduct access training.</p>
+                    <p>- Began culturing yeast containing the oscillator.</p>
+                </div>
+                <h2 id="3-1">&bull;&emsp;May 17–31</h2>
+                <div class="s2">
+                    <p>- Prepared for exams</p>
+                </div>   
+                <h2 id="3-2">&bull;&emsp;May 31</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting. 
+                    </p>
+                    <p>- Planned summer vacation tasks for the wet lab, dry lab, and HP groups.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="4">June</h1>
+                </div>
+                <h2 id="4-0">&bull;&emsp;June 11</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.</p>
+                    <p>- Reviewed recent work and discuss project issues.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Consulted Prof. Chen for feedback on production choices and project specifics. 
+                    </p>
+                    <p> - Prof. Chen’s suggestions: </p>
+                    <p>  1. If uncertain, write vaguely for now.</p>
+                    <p>  2. Use well-researched products as a base.</p>
+                </div>
+                <h2 id="4-1">&bull;&emsp;June 24</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.
+                    </p>
+                    <p>- Reviewed recent work and discussed project issues.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Defined specific schedules for HP and wet lab groups. 
+                    </p>
+                    <p>- Discussed the hardware design—microfluidic chip.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="5">July</h1>
+                </div>
+                <h2 id="5-0">&bull;&emsp;July 3</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Discussed issues with ceramide AP (sensitive skin) and NP (exfoliation).  
+                    </p>
+                    <p>- Planned visits to Evonik and BASF for product exchanges.</p>
+                    <p>- Outlined QC, safety, and toxicology testing for products. </p>
+                    <p>- Planned a visit to Guanchen Biotech in August.</p>
+                    <p>- Finalized the story logic for the project and cosmetic product development.</p>
+                </div>
+                <h2 id="5-1">&bull;&emsp;July 20</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.
+                    </p>
+                    <p>- Reviewed recent work and discussed project issues.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Finalized details for promotion video shooting and script design. 
+                    </p>
+                    <p>- Discussed microscope use for microfluidic chip observation.</p>
+                    <p>- Wiki group showcased progress.</p>
+                    <p>- Wet lab updated on MrBBS plasmid construction.</p>
+                    <p>- Shifted modeling focused to longevity effects.</p>
+                </div>
+            </div>
+            
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="6">August</h1>
+                </div>
+                <h2 id="6-0">&bull;&emsp;August 5</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.</p>
+                    <p>- Reviewed recent work and discussed project issues.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Discussed French visa requirements.  
+                    </p>
+                    <p>- Prepared for visits to Guanchen Biotech (August 7) and Ashland (August 9).</p>
+                    <p>- Prof. Chen Di’s feedback:  </p>
+                    <p>  1. Emphasized the connection between yeast senescence and production.</p>
+                    <p>  2. Clarified the necessity of the microfluidic system.</p>
+                </div>
+                <h2 id="6-1">&bull;&emsp;August 13</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.
+                    </p>
+                    <p>- Reviewed suggestions from advisors.</p>
+                    <p>- Discussed medal criteria.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="7">September</h1>
+                </div>
+                <h2 id="7-0">&bull;&emsp;September 13</h2>
+                <h3>Agenda</h3>
+                <div class="s2">
+                    <p>- Student leaders' meeting.</p>
+                    <p>- Reviewed recent work and discussed project issues.</p>
+                </div>
+                <h3>Notes</h3>
+                <div class="s2">
+                    <p>- Wiki group presented the final wiki design. 
+                    </p>
+                    <p>- Wet lab encountered difficulties in PCR of the specific region, might require a new oscillator yeast strain.</p>
+                    <p>- Modeling and software updated discussed Fast Fourier Transform and LOWESS fit.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="8">October</h1>
+                </div>
+                <p>- Wiki was frozen.</p>
+            </div>
+
+    </div>
+</div>
+
+{% endblock %}

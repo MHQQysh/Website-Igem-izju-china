@@ -1,0 +1,305 @@
+{% extends "layout.html" %}
+  
+{% block title %}Part{% endblock %}
+{% block lead %}This page contains information about the parts created by the team.{% endblock %}
+
+{% block page_content %}
+
+<style>
+/* parts-table */
+table{
+    width: 100%;
+    height: 80%;
+    margin: 30px auto 10px;
+    border: 5px solid rgb(210,50,120);
+    border-collapse: collapse;
+    /* font-family: AlibabaPuHuiTi; */
+    background: #ccc;
+    margin-left: 2vw;
+}
+th{
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 0 10px 0 10px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #eee;
+    font-weight: normal;
+    font-size: min(1.52vw, 22px);
+    font-weight: 600;
+}
+td{
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 0 10px 0 10px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: min(1.3vw, 18px);
+}
+tr{
+    background: #fff;
+}
+td:hover{
+    background: rgb(195, 204, 224);
+}
+table a{
+    text-decoration: none;
+    color: black;
+}
+table a:hover{
+    text-decoration: underline;
+    color: rgb(100, 164, 184);
+}
+
+
+</style>
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/wet-lab/part/part.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Basic Parts</div>
+                <div class="t1" tid="1">Composite Parts</div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+          <div class="s1">
+            <div class="h1-wrap">
+              <h1 id="0">Basic Parts</h1>
+            </div>
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>Length(bp)</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371000">BBa_K5371000</a></td>
+                  <td>Yeast CYC1 Promoter</td>
+                  <td>500</td>
+                  <td>Regulate expression of downstream genes by HAP4.</td>
+                </tr>
+
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371001">BBa_K5371001</a></td>
+                  <td>TSC10</td>
+                  <td>960</td>
+                  <td>Catalyze the reduction of 3-ketodihydrosphingosine, enhance production of ceramides.</td>
+                </tr>
+
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371002">BBa_K5371002</a></td>
+                  <td>P2A</td>
+                  <td>57</td>
+                  <td>A self-cleaving peptide sequence derived from the porcine teschovirus-1, allowing the generation of multiple independent proteins from a single transcript through ribosomal skipping.</td>
+                </tr>
+
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371003">BBa_K5371003</a></td>
+                  <td>pRS42H</td>
+                  <td>8013</td>
+                  <td>A yeast expression vector commonly used in synthetic biology and genetic engineering, which includes a hygromycin resistance marker for selection in yeast, an ampicillin resistance marker for selection in bacteria, and a 2-micron origin of replication for high-copy maintenance in yeast cells.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371004">BBa_K5371004</a></td>
+                  <td>mCherry</td>
+                  <td>708</td>
+                  <td>A reporter gene in molecular biology, high photostability.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371005">BBa_K5371005</a></td>
+                  <td>SIR2</td>
+                  <td>1689</td>
+                  <td>An NAD-dependent histone and protein deacetylase, which modifies chromatin structure to regulate gene expression.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371006">BBa_K5371006</a></td>
+                  <td>GAL4</td>
+                  <td>2646</td>
+                  <td>A regulatory component in GAL/UAS system.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371007">BBa_K5371007</a></td>
+                  <td>ERG20</td>
+                  <td>1059</td>
+                  <td>Farnesyl pyrophosphate synthetase (FPPS), responsible for the synthesis of farnesyl pyrophosphate (FPP), a critical intermediate for the production of sterols, dolichols, prenylated proteins, and other important biomolecules.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371008">BBa_K5371008</a></td>
+                  <td>GGGS3</td>
+                  <td>36</td>
+                  <td>A short, flexible peptide sequence composed of glycine (G) and serine (S) residues, providing a flexible and hydrophilic connection between two functional units.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371009">BBa_K5371009</a></td>
+                  <td>BFP</td>
+                  <td>719</td>
+                  <td>A reporter protein derived from the green fluorescent protein (GFP) family.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371010">BBa_K5371010</a></td>
+                  <td>pHXT1</td>
+                  <td>800</td>
+                  <td>A regulatory DNA sequence found in the yeast Saccharomyces cerevisiae.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371011">BBa_K5371011</a></td>
+                  <td>MrBBS</td>
+                  <td>1719</td>
+                  <td>(–)-α-bisabolol synthase, converting FPP to (–)-α-bisabolol.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371201">BBa_K5371201</a></td>
+                  <td>pAbAi-GAL4-NH</td>
+                  <td>7887</td>
+                  <td>Report expression of GAL4, while regulating downstream genes through GAL/UAS system.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371202">BBa_K5371202</a></td>
+                  <td>GAL4WTV2</td>
+                  <td>8616</td>
+                  <td>Report expression of GAL4, while regulating downstream genes through GAL/UAS system.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371203">BBa_K5371203</a></td>
+                  <td>pESC-URA-MrBBS-BFP</td>
+                  <td>10192</td>
+                  <td>Enables regulated production of (–)-α-bisabolol in yeast by GAL4, while laying basis for real-time reporting of expression level.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371204">BBa_K5371204</a></td>
+                  <td>prs42b-erg9</td>
+                  <td>7986</td>
+                  <td>Swaps the ERG9 promoter in genome of Saccharomyces cerevisiae with HXT1 promoter through homologous recombination.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371205">BBa_K5371205</a></td>
+                  <td>pRS42H-TSC10-EGFP</td>
+                  <td>8790</td>
+                  <td>Enables regulated and enhanced production of ceramides in yeast by HAP4, while laying basis for real-time reporting of expression level.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+
+
+          <div class="s1">
+            <div class="h1-wrap">
+              <h1 id="1">Composite Parts</h1>
+            </div>
+
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>Length(bp)</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371101">BBa_K5371101</a></td>
+                  <td>ERG20-(GGGS)3-MRBBS</td>
+                  <td>2828</td>
+                  <td>A composite part for the effective production of α-biasobolol in Saccharomyces cerevisiae.</td>
+                </tr>
+
+                <tr>
+                  <td><a href="http://parts.igem.org/Part:BBa_K5371102">BBa_K5371102</a></td>
+                  <td>SIR2-mCherry</td>
+                  <td>2397</td>
+                  <td> A fusion protein in which mcherry, a red fluorescent protein, is attached to the C-terminus of Sir2, which is critical to aging of Saccharomyces cerevisiae, report the aging status and level.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+</div>
+
+<script>
+  var TopDistance = 120;
+  let elements = [document.getElementById('one'),
+  document.getElementById('two')];
+  window.goTo = function(el){
+    document.documentElement.scrollTop += el.getBoundingClientRect().top - TopDistance;
+  }
+  function Highlight(el, subtitle){
+    if (el.getBoundingClientRect().top < TopDistance + 1 && el.getBoundingClientRect().bottom > TopDistance){
+        subtitle.style.color = "#18E9EE";
+    }
+    else{
+        subtitle.style.color = "#F8F0E8";
+    }
+  }
+  function HighlightCheck(){
+    Highlight(elements[0], document.getElementById('subtitle1'));
+    Highlight(elements[1], document.getElementById('subtitle2'));
+  }
+  window.addEventListener("scroll", HighlightCheck);
+</script>
+
+
+{% endblock %}

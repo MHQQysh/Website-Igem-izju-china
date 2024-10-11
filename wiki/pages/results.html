@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block page_content %}
+
+
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/wet-lab/result/results.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Production of Ceramides and &alpha;-Bisabolol</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="0-0">&bull;&emsp;Ceramide production</div>
+                    <div class="t2" tid="0-1">&bull;&emsp;&alpha;-bisabolol production</div>
+                </div>
+                <div class="t1" tid="1">Introduction of Ceramide-Bisabolol Oscillator</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="1-0">&bull;&emsp;Connecting longevity oscillator with production</div>
+                    <div class="t2" tid="1-1">&bull;&emsp;Measuring ceramide-bisabolol oscillation</div>
+                </div>
+                <div class="t1" tid="2">Oscillation Increases Production and Fibroblast Growth</div>
+                <div class="t1" tid="3">Biosafety</div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">Production of Ceramides and &alpha;-Bisabolol</h1>
+                </div>
+                <h2 id="0-0">&bull;&emsp;Ceramide production</h2>
+                
+                    <p>Previous research [1] indicated that the tsc10 gene (<a href="https://parts.igem.org/Part:BBa_K5371001">BBa_K5371001</a>) acts as a key enzyme in the synthesis of ceramides. Therefore, overexpressing the tsc10 gene can activate the production of dihydrosphingosine, ultimately increasing ceramide production (Fig. 1A). The pRS42H-TSC10-EGFP plasmid (<a href="https://parts.igem.org/Part:BBa_K5371205">BBa_K5371205</a>, Fig. 1B) was transfected into yeast cells. To visualize the expression of TSC10, EGFP was linked to TSC10 using a P2A sequence (<a href="https://parts.igem.org/Part:BBa_K5371002">BBa_K5371002</a>). Green fluorescence was observed, indicating successful expression (Fig. 1C).
+                    </p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/wet-lab/result/1.png">
+                        </div>
+                        <div class="disc">Figure 1 Ceramide production. (A) The mechanism of TSC10 enhancing ceramide production. (B) Structure of pRS42H-TSC10-EGFP plasmid. (C) Green fluorescence of EGFP showing successful expression of tsc10, shot under Nikon CWU-1 Spinning Disk Microscope.</div>
+                    </div>
+                
+                <h2 id="0-1">&bull;&emsp;α-bisabolol production</h2>
+                
+                    <p>To produce α-bisabolol in yeast, it is necessary to increase the transformation from farnesyl pyrophosphate and decrease squalene production (Fig. 2B). We designed two plasmids for this purpose: pESC-URA-MrBBS-BFP (<a href="https://parts.igem.org/Part:BBa_K5371203">BBa_K5371203</a>) for producing the fused protein ERG20-MrBBS (<a href="https://parts.igem.org/Part:BBa_K5371101">BBa_K5371101</a>), and pRS42B-erg9 (<a href="https://parts.igem.org/Part:BBa_K5371204">BBa_K5371204</a>) to switch the original strong promoter of ERG9 to a weak promoter, pHXT1 (<a href="https://parts.igem.org/Part:BBa_K5371010">BBa_K5371010</a>, Fig. 2C). ERG20 (<a href="https://parts.igem.org/Part:BBa_K5371007">BBa_K5371007</a>) and MrBBS (<a href="https://parts.igem.org/Part:BBa_K5371011">BBa_K5371011</a>) are both key enzymes involved in α-bisabolol synthesis. By fusing them, substrate diffusion effects can be reduced and upregulate α-bisabolol production [2]. BFP (<a href="https://parts.igem.org/Part:BBa_K5371009">BBa_K5371009</a>) was connected to ERG20-MrBBS via a P2A sequence in this plasmid. After transfection, blue fluorescence emitted by BFP confirmed the expression of ERG20-MrBBS in yeast (Fig. 2D).
+                    </p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/wet-lab/result/2.png">
+                        </div>
+                        <div class="disc">Figure 2 α-bisabolol production. (A) The mechanism of ERG20-MrBBS enhancing and ERG9 competing with α-bisabolol production. (B) The structure of pESC-URA-MrBBS-BFP. (C) The structure of pRS42B-erg9. (D) The blue florescence of BFP showing successful expression of ERG20-MrBBS, shot under Nikon CWU-1 Spinning Disk Microscope.</div>
+                    </div>
+                
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">Introduction of Ceramide-Bisabolol Oscillator</h1>
+                </div>
+                <p>Zhou et al. [3] designed a yeast longevity oscillator involving the genes sir2 and hap4 by inserting a hap4-sensitive CYC promoter onto sir2 and relocating the hap4 gene to the 35S rDNA region controlled by sir2. As sir2 expression increases, SIR2 protein lowers hap4 expression by inhibiting transcription of the 35S rDNA region. When hap4 is inhibited, its ability to activate the CYC promoter of sir2 decreases, affecting SIR2 expression. This creates a periodic expression pattern for SIR2 and HAP4, which was shown to increase yeast replicative lifespan by 82%. This long-live yeast strain was named NH1574, derived from BY4741, and the oscillation can be measured with mCherry (Fig. 4A ).
+                </p>
+                <p>After overexpressing tsc10, ERG20-MrBBS, and downregulating ERG9, we successfully constructed production yeast strains, BY4741 transfected with pRS42H-TSC10-EGFP, pESC-URA-MrBBS-BFP, GAL4 (<a href="https://parts.igem.org/Part:BBa_K5371202">BBa_K5371202</a>), and pRS42B-erg9 plasmids (Fig. 3B). However, these production yeasts experienced significant metabolic stress. Excess ceramides can induce apoptosis [4], and α-bisabolol is toxic to yeast cells [2]. Therefore, using these production yeasts to produce ceramides and α-bisabolol is inefficient. We hypothesize that yeast strains with oscillators can alleviate metabolic and apoptotic stress, thereby enhancing production.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/result/3.png">
+                    </div>
+                    <div class="disc">Figure 3 Three strains of yeasts used. (A) WT strain. (B) BY4741 transfected with pRS42H-TSC10-EGFP, pESC-URA-MrBBS-BFP, GAL4, and pRS42B-erg9 plasmids. (C) NH1574 transfected with pRS42H-TSC10-EGFP, pESC-URA-MrBBS-BFP, pAbAi-GAL4-NH, and pRS42B-erg9 plasmids</div>
+                </div>
+                <h2 id="1-0">&bull;&emsp;Connecting longevity oscillator with production</h2>
+                
+                    <p>To mitigate the negative effects of excess ceramides and α-bisabolol, we connected the production systems with the longevity oscillator to regulate production. We used the CYC1 promoter (<a href="https://parts.igem.org/Part:BBa_K5371000">BBa_K5371000</a>) to allow hap4 to control tsc10 expression. Additionally, we inserted the gal4 gene (<a href="https://parts.igem.org/Part:BBa_K5371006">BBa_K5371006</a>) downstream of sir2 (<a href="https://parts.igem.org/Part:BBa_K5371005">BBa_K5371005</a>) via homologous recombination (Fig. 4B) and selected the gal10 promoter for ERG20-MrBBS, synchronizing its expression with sir2. This alignment ensures that the expression of tsc10 and ERG20-MrBBS, and consequently the production of ceramides and α-bisabolol, follows the expression patterns of hap4 and sir2. We then constructed production & oscillation yeast strains, NH1574 transfected with pRS42H-TSC10-EGFP, pESC-URA-MrBBS-BFP, pAbAi-GAL4-NH (<a href="https://parts.igem.org/Part:BBa_K5371201">BBa_K5371201</a>), and pRS42B-erg9 plasmids (Fig. 3C).
+                    </p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/wet-lab/result/4.png">
+                        </div>
+                        <div class="disc">Figure 4 Connecting longevity oscillator with production. (A) Longevity oscillator can result in the oscillation of mCherry (<a href="https://parts.igem.org/Part:BBa_K5371004">BBa_K5371004</a>, inserted downstream of sir2) expression and red fluorescence. (B) By transfecting pAbAi-GAL4-NH into yeasts, we connected GAL4 with SIR2.</div>
+                    </div>
+                
+                <h2 id="1-1">&bull;&emsp;Measuring ceramide-bisabolol oscillation</h2>
+                
+                    <p>It is important to isolate individual cells to measure the oscillation of tsc10 and ERG20-MrBBS, as different cells may be in different phases of the oscillation cycle. If fluorescence is measured in populations, the different phases can cancel each other out, making oscillations unobservable. Microfluidic chips allow us to independently observe up to seven single cells simultaneously in a single field of view for more than 20 hours, while providing necessary nutrients to the yeast cells (Fig. 5A). Therefore, we used EGFP connected to tsc10 as a marker and recorded the relative fluorescence intensity of each single cell in the microfluidic chip for 22 hours using a Nikon CWU-1 Spinning Disk Microscope.
+                    </p>
+                    <p>In production & oscillation yeasts, the oscillation of EGFP was evident (Fig. 5B) compared to production yeasts (Fig. 5C). The power spectrum of an individual time trace was calculated as P(period)=|FFT(D(t)) |2/N. Based on the fluorescence curve, the period less than 1h or magnitude less than 100 (arbitrary unit) was not considered. The measured oscillating period is almost the same in mCherry, BFP, and GFP, indicating that the ceramide-bisabolol oscillation shown by BFP and GFP is synchronized with the original longevity oscillation shown by mCherry (Fig. 5D), as we expected. Based on the level of magnitude, we estimated that the peak of oscillation period should be within the range of 263-788 minutes. Higher sampling frequency will be applied to further narrow the period range.
+                    </p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/wet-lab/result/pic5-2.png">
+                        </div>
+                        <div class="disc">Figure 5 Measuring ceramide-bisabolol oscillation. (A) Observing single yeast in microfluidic chip under Nikon CWU-1 Spinning Disk Microscope. (B) Three representative cells show the oscillation of TSC10/EGFP in Production & Oscillation cells. (C) Three representative cells show no oscillation of TSC10/EGFP in Production cells. (D) The Boxplots show the period-dependent distributions of power spectrum of mCherry, BFP, and GFP. The bottom and top of the box are first and third quartiles, respectively. The band inside is the median. The x axis stands for the oscillation period (minute) while the y axis stands for the magnitude (arbitrary unit).</div>
+                    </div> 
+                
+            </div>
+                    
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">Oscillation Increases Production and Fibroblast Growth</h1>
+                </div>
+                <p>Having tested the stability of the oscillation, we focused on how the ceramide-bisabolol oscillator can enhance the efficacy of our product. Compared with production yeasts, production & oscillation yeasts showed significantly higher cell numbers at the stationary phase and relatively higher growth rates in growth curves (Fig. 6A). Additionally, ELISA showed that production & oscillation yeasts had significantly higher ceramide levels compared with both WT and production yeasts (Fig. 6B). These results indicate that the oscillator can mitigate the negative effects of producing ceramide and α-bisabolol. The oscillator endows yeasts with stronger resistance to adverse conditions. Therefore, production & oscillation yeasts can withstand harsh environments, such as toxic products or crowded conditions, resulting in higher production per unit time in a real production environment due to their advantage in cell number.
+                </p>
+                <p>To validate whether our product can promote fibroblast growth, 1.25%, 2.5%, 5%, and 10% yeast lysate was added into cell culture medium and tested cell viability after 12 hours. Except at 5%, the other groups of production & oscillation cells all showed higher cell viability than the control group, indicating that our product can be beneficial to fibroblasts. Production & oscillation cells demonstrated much better effects in promoting fibroblast growth compared to production yeasts at 2.5% (Fig. 6C). The results above indicate that production & oscillation yeasts are not only more effective in ceramide and bisabolol production but also have the potential to be competitive cosmetic products in the future.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/result/6.png">
+                    </div>
+                    <div class="disc">Figure 6 Oscillation Increases Production and Fibroblast Growth. n.s. (not significant): The p-value is greater than 0.05. * (single asterisk): p-value less than 0.05. ** (double asterisk): p-value less than 0.01. *** (triple asterisk): p-value less than 0.001. **** (quadruple asterisk): p-value less than 0.0001. (A) The growth curve of the three strains, showing original dots and fitted Logistic curves. n=3. (B) Ceramide level is measured using ELISA, n=3. (C) 1.25%, 2.5%, 5%, and 10% yeast lysate was added into cell culture medium and tested cell viability after 12 hours, n=7, control = 5.</div>
+                </div> 
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="3">Biosafety</h1>
+                </div>
+                <p>1.	<strong>Non-pathogenic strains</strong>: We use two strains of yeast (Saccharomyces cerevisiae) that are generally recognized as safe (GRAS) for genetic modifications: BY4741 and NH1574 (derived from BY4741).
+                </p>
+                <p>2.	<strong>Gene containment</strong>: To prevent the accidental release of genetically modified organisms (GMOs), all strains used do not have functional met gene, ensuring they cannot survive outside the laboratory environment without specific supplements (Fig. 3).
+                </p>
+                <p>3.	<strong>Horizontal gene transfer</strong>: We have minimized the risk of horizontal gene transfer by using plasmids that are not easily transferable to other organisms.
+                </p>
+                <p>4.	<strong>Cell toxicity test</strong>: We added lysate of our strains into fibroblast culture medium (Fig. 5C). Most groups demonstrated positive effects in fibroblast growth. 
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="4">References</h1>
+                </div>
+                <p style="text-align: left;">1.	Morimoto Y, Tani M. Synthesis of mannosylinositol phosphorylceramides is involved in maintenance of cell integrity of yeast Saccharomyces cerevisiae. Mol Microbiol. 2015 Feb;95(4):706–22. 
+                </p>
+                <p>2.	Jiang Y, Xia L, Gao S, Li N, Yu S, Zhou J. Engineering Saccharomyces cerevisiae for enhanced (–)-α-bisabolol production. Synthetic and Systems Biotechnology. 2023 Jun 1;8(2):187–95. 
+                </p>
+                <p>3.	Zhou Z, Liu Y, Feng Y, Klepin S, Tsimring LS, Pillus L, et al. Engineering longevity-design of a synthetic gene oscillator to slow cellular aging. Science. 2023 Apr 28;380(6643):376–81. 
+                </p>
+                <p>4.	Kim SK, Noh YH, Koo JR, Yun HS. Effect of expression of genes in the sphingolipid synthesis pathway on the biosynthesis of ceramide in Saccharomyces cerevisiae. J Microbiol Biotechnol. 2010 Feb;20(2):356–62.
+                </p>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

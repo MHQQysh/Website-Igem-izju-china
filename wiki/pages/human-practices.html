@@ -1,0 +1,1393 @@
+{% extends "layout.html" %}
+
+{% block title %}Intergrated Human Practice{% endblock %}
+
+{% block page_content %}
+
+<!-- page head wave 页头波浪和图片 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh"></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/integratedhp.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<link href="{{ url_for('static', filename = 'ihp.css')}}" rel="stylesheet">
+<!-- 文档内容 -->
+<div class="main">
+  <div class="menubg">
+      <div data-scroll-watcher=""></div>
+      <div id="menu" class="">
+          <div id="scrollbar1">
+              <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                  <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+              </div>
+              <div id="overlay">
+                  <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+              </div>
+          </div>
+          <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+              <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+          </div>
+          <div class="menucontent">
+              <div class="t1" tid="0">Introduction</div>
+              <div class="t1" tid="1">The AREA framework for Fashion and Cosmetics village</div>
+              <div class="t1" tid="2">Stakeholders</div>
+              <div class="t1" tid="3">Non-stakeholders</div>
+              <div class="t1" tid="4">Timeline</div>
+              <div class="h2-sec">
+                  <div class="t2" tid="4-0">&bull;&emsp;Anticipate - looking for design ideas</div>
+                  <div class="t2" tid="4-1">&bull;&emsp;Reflect - understanding the current state of the industry</div>
+                  <div class="t2" tid="4-2">&bull;&emsp;Engage - sharing the project and receiving feedback</div>
+                  <!-- <div class="t2" tid="4-3">Surveys</div> -->
+                  <!-- <div class="t2" tid="4-4">A focus group interview on skincare product</div> -->
+                  <div class="t2" tid="4-3">&bull;&emsp;Act - close the loop</div>
+              </div>
+              <div class="t1" tid="5">Conclusion</div>
+          </div>
+      </div>
+  </div>
+
+  <div id="content">
+          <div class="s1">
+              <div class="h1-wrap">
+                  <h1 id="0">Introduction</h1>
+              </div>
+              <p>Human practice represents a <strong>two-way interaction</strong> between scientific research and society, integrated into every step of the iGEM cycle. As a product of societal beauty trends, cosmetics are closely connected to society in their design, formulation, and marketing processes. Aiming to produce cosmetics raw materials or skincare products through synthetic biology, it is significant for 24iZJU-China to strictly carry out integrated human practice in each step of our project to ensure our product is <strong>effective, valuable, and accepted by the public</strong>.</p>
+              <p>In this section, we highlight the journey we've finished starting from <strong>having no prior knowledge</strong> in this field to <strong>gaining further understanding</strong> of the beauty industry and smooth communication with key stakeholders. By actively incorporating meaningful feedback from society, we have worked to ensure that our product is not only <strong>feasible</strong> and <strong>well-received</strong> but also <strong>environmentally sustainable</strong> and <strong>safe</strong>. We are deeply thankful for the support and guidance we've received, and we hope that our efforts in promoting scientific understanding and fostering sustainable development will positively impact the world.</p>
+              <p>What you will see may not be a perfectly seamless integrated Human Practice throughout the project timeline. This is because some feedback was critical, some suggestions were voted down, and sometimes we had to set aside certain efforts to refine the project. However, we believe that these challenges helped us strengthen our critical thinking and improve our ability to incorporate feedback thoughtfully and effectively.</p>
+          </div>
+          <div class="s1">
+              <div class="h1-wrap">
+                  <h1 id="1">The AREA Framework for Fashion and Cosmetics Village</h1>
+              </div>
+              <p>The AREA framework (Anticipate, Reflect, Engage, Act), that first implemented by the <strong>2017 Exeter team</strong>, is a well-established approach for Responsible Research and Innovation (RRI) [1]. Over the years, it has been widely used by various teams participating in the iGEM competition. Some teams have performed several iterations of the original model to make it a better tool for the competition. This year, iZJU-China chose the <strong>fashion</strong> and <strong>cosmetics village</strong> and planned to continue to use the AREA framework as a direction. However, given the strong ties to fashion and social dynamics of this village, it is necessary to <strong>update the version of the AREA framework</strong> specifically for the village.</p>
+              <p>To align with the beauty industry, it is crucial to integrate the relevant <strong>ethical, cultural, and aesthetic nuances considerations</strong> at each stage of the framework. For example, under <strong>"Anticipate,"</strong> we could target the social hot spots to design our product and forecast the potential social, environmental, and health impacts that may occur during product development. In <strong>"Reflect,"</strong> we could consider more information on the current state of the beauty industry as well as beauty standards influenced by the current society or social network. During the <strong>"Engage"</strong> phase, deeper interactions may be required with stakeholders that cannot be limited to those familiar with Synbio technology but include fashion influencers, customers, sales, quality controllers, and alike. While in the <strong>"Act"</strong> stage, we would focus not only on products, but on ethical issues, impact on society, and our outlook for the future.</p>
+              <p>The goal is to create a version of the AREA framework that is not only applicable today <strong>can be applied to other teams</strong> engaging in the fashion and cosmetics village. We also hope teams in the following years to contribute to the refinement of this methodology, ensuring its relevance with the constantly changing fashion and cosmetics industry.</p>
+              <p>Here is a plot to show the details of our modified AREA framework:</p>
+              <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/areaframe1.png" alt="arealoop">
+                  </div>
+              </div>
+          </div>
+          <div class="s1">
+              <div class="h1-wrap">
+                  <h1 id="2">Stakeholders</h1>
+              </div>
+              <p>To comprehensively understand and assess the stakeholders associated with our project, we engaged in <strong>brainstorming</strong> sessions to thoroughly <strong>discuss</strong> and <strong>gather information</strong>. </p>
+              <p>In accordance with the guidelines provided on the iGEM official website, we engage in group discussions to complete a <strong>stakeholder value matrix</strong> and systematically classify and evaluate our stakeholders. Initially, we consulted a beauty industry report [2] and identified potential stakeholders from the list curated by Business for Social Responsibility (BSR) at bsr.org. Subsequently, we categorized these stakeholders using <strong>distinct color</strong> codes to create an intuitive <strong>stakeholder map</strong>.</p>
+              <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/stakemap.png" alt="stakeholdermap">
+                  </div>
+                  <div class="disc">
+                      R&D of GMO: Research and Development of Genetically Modified Organisms
+                      <br>KOL: Key Opinion Leader
+                  </div>
+              </div>
+              <p>We then assessed various factors related to each stakeholder, including their influence on the project, benefits derived from it, control over resources, exposure to risks, information requirements, and willingness to collaborate. Based on these considerations, we constructed a <strong>stakeholder value matrix</strong>.</p> 
+              <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/stake1.png" alt="stakeholdermatrix">
+                  </div>
+              </div>
+              <p>Ultimately, after thorough discussion and analysis of all materials collected, we developed a <strong>power-interest grid</strong>. The resulting chart indicates that <strong>consumers</strong> and <strong>cosmetics developers</strong> are of significant interest to us, and they became our primary groups for engaging in the build-up of the project.</p>
+              <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/pigrid.png" alt="powerinterestgrid">
+                  </div>
+              </div>
+          </div>
+          <div class="s1">
+              <div class="h1-wrap">
+                  <h1 id="3">Non-stakeholders</h1>
+              </div>
+              <p>During the analysis of our <a href="#4-2-1">surveys</a>, we identified a group of individuals who do not have a direct interest relationship with or even repel to the project but may <strong>indirectly influence the decision of our stakeholders. And we call this group of individuals</strong> "non-stakeholders". This group of people is apparent in the <strong>highly subjective</strong> beauty industry and their attitude can easily influence customers. For example, if someone values fashion or cosmetics, but their parent or partner strongly disapproves, their perception of the industry might be affected. In this way, the attitudes or misconceptions of non-stakeholders can influence the purchasing decisions of skincare consumers. In our surveys, we found that <a href="https://2024.igem.wiki/izju-china/inclusivity#3">gender</a> is a key factor in distinguishing stakeholders from non-stakeholders. </p>
+          </div>
+          <div class="s1">
+              <div class="h1-wrap">
+                  <h1 id="4">Timeline</h1>
+              </div>
+              <p>We divided our timeline into four steps according to the AREA framework. In each activity or interview, we firmly observe the steps of aim, process, reflection, and action to ensure the efficacy of our communication with society and to precisely solve the problems of our project.</p>  
+              <div class="img-wrap">
+                <div class="border">
+                  <img src=https://static.igem.wiki/teams/5371/human-practice/ihp/hpnew1.png alt="tline">
+                </div>
+                <div class="disc">Figure. A summary timeline showing changes in the e-commerce model and reasons behind the changes. Throughout this timeline, the most significant evolution of our project is the transition of our aim from simply transforming the oscillating system, to producing a type of cosmetics ingredients, and to temporarily abandoning ingredients but producing a finished skincare product. B to B: business-to-business, B to C: business-to-customer.</div>
+              </div>
+              <h2 id="4-0">&bull;&emsp;Anticipate - looking for design ideas</h2>
+              <p>At the beginning of our journey to the competition, we decided to apply a newly published oscillating system and transform it into something meaningful and innovative. Traditional industrial production merely utilizes model organisms, such as yeast, to produce products. However, these model organisms themselves are not utilized further, which becomes a limitation to production efficiency. We attempted to be able to utilize <strong>not only the substances produced by the oscillating system</strong> added to the yeast <strong>but also the yeast itself as part of the product</strong>. However, we didn't settle on a clear direction for a long time.</p>
+              <p>On April 23<sup>rd</sup>, 2024, we had a group meeting to study the introduction of some newly emerged villages this year and discuss our village choice. During a break in the meeting, one of our group members <strong>complained about her contact dermatitis after using a low-quality facial cream</strong> the previous day. This issue resonated with many of our teammates, leading us to pay attention to the beauty industry and to focus on "yeast lysate". Then, the idea of trying the fashion and cosmetics village popped out. And we wanted to gather more information to see if our project would fit.</p>
+              <p>In this section, we mainly communicated with <strong>cosmetics research experts, professors, and our advisors</strong>, who offered advice on our project design based on the current situation of the <strong>beauty industry</strong> and the feasibility of <strong>experimental design</strong>. Eventually, we were more confident to enter the newly established fashion and cosmetics village. </p>
+                                 
+              <div class="cd-container">
+          
+                  <div class="cd-timeline-line"></div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/drqj.jpg" alt="Dr. Jian QIAO" style="object-position: top; transform: scale(1.5);">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.04.28-05.01<br>
+                                <b>Dr. Jian QIAO</b><br>
+                                1<sup>st</sup> communication with cosmetics experts for candidate products                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupa0">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupa0" class="popup">
+                    <div class="PopUpTitle">24.04.28-05.01<br>Dr. Jian QIAO<br>1<sup>st</sup> communication with cosmetics experts for candidate products
+                    </div>
+                    <div class="PopUpContent">
+                        <p>Dr. Jian QIAO was a researcher of raw ingredients in L'ORÉAL Paris, and now he is the founder of the Guan Chen Biotechnology Co., LTD</p>
+                        <h4>&bull;&emsp;Aims:</h4>
+                        <p>
+                          1.&emsp;To know whether our oscillating system is suitable for producing cosmetic products.<br>
+                          2.&emsp;To determine which product deserves to be produced through Synbio according to the current direction of the beauty industry.
+                        </p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>We successfully established contact with Dr. Jian QIAO, who is not only a cosmetics research expert but also a prominent TikTok influencer with over 60 million followers. On April 28th, we held an online meeting with Dr. Jian QIAO and his colleague to finalize our project design. The experts were enthusiastic about our ideas for the industrial application of the oscillating system. They suggested that to better align with the <i>fashion and cosmetics</i> village of iGEM, we could try to focus on producing <strong>cosmetics raw ingredients</strong> like <strong>surfactants</strong>. Surfactants are widely used in cosmetics as essential excipients with emulsifying, cleansing, foaming, and solubilizing properties, found in daily cleansers, emollients, skin creams, and so on. Additionally, they recommended producing cosmetic <strong>preservatives</strong> at the same time, which are crucial for extending the shelf life of cosmetics by inhibiting microbial growth. Thus, they suggested leveraging the oscillating system to produce key skincare ingredients such as <strong>ergothioneine or rhamnolipid</strong>, along with <strong>alcohol</strong> for its preservative properties.</p>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>We could modify yeast to make it <strong>produce raw materials</strong> for cosmetics. To achieve this, we need to further explore yeast's metabolism pathways, including lipids, carbohydrates, amino acids, vitamins, and so on. After two candidate products (surfactants and cosmetic preservatives) have been determined, we should focus on reading the established metabolic pathways of them.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>
+                          1.&emsp;We studied more than 80 pathways of yeast metabolism in the KEGG database<br>
+                          2.&emsp;We looked for examples of products with yeast-originated cosmetic ingredients that can be achieved by gene editing.
+                        </p>
+                    </div>
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupa0">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/gcmeeting61.jpg" alt="gcmeeting">
+                              </div>
+                              <p class="parraf">
+                                  24.06.01-02<br>
+                                  <b>Dr. Jian QIAO and his colleagues</b><br>
+                                  2<sup>nd</sup> communication with cosmetic experts for candidate products<br>
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupa1">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupa1" class="popup">
+                    <div class="PopUpTitle">24.06.01-02<br>Dr. Jian QIAO and his colleagues<br>2<sup>nd</sup> Communication with cosmetic experts
+                    </div>
+                    <div class="PopUpContent">
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>Although we <strong>had explored all the pathways of yeast metabolism</strong>, we still felt a bit lost and were eager to know the current <strong>market pain point</strong> of original ingredients for cosmetics.</p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>Before our communication with the experts, we conducted thorough research on the products developed by Guanchen Biotech. During our investigation, we discovered that the company produces <strong>glycosylated ceramides</strong>, a type of <strong>glycolipid</strong> known for its beneficial properties in skincare. This discovery led us to formulate a specific question: Could one of our products potentially be a type of glycolipid?</p>
+                        <p>When we posed this question to the experts, they not only affirmed our hypothesis but also provided us with valuable insights. They highlighted two types of glycolipids that are gaining significant attention in the skincare industry: <strong>rhamnolipids and sophorolipids</strong>. These "rising stars" are becoming increasingly popular due to their promising applications in skincare formulations. Furthermore, the experts pointed out that many companies are now focusing on producing these glycolipids through the innovative techniques of synthetic biology. This trend reflects the growing importance of sustainable and efficient methods in producing advanced skin care ingredients, marking a significant shift in the industry toward more scientifically driven approaches.</p>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>We thought the current topic had been determined. We would achieve oscillatory production of <strong>glycolipids and polyols</strong> using longevity yeast based on gene oscillations to slow down aging, thus generating a certain proportion of glycolipids and preservatives as <strong>raw materials for the cosmetics industry</strong>. One of the products, glycolipids, is a novel surfactant that few manufacturers can make. At present, the main two prevalent categories of glycolipids are <strong>rhamnolipids and sophorolipids</strong>, which are specifically produced by just two companies - Evonik and BASF.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>
+                          1.&emsp;We started searching for information on these two glycolipids, including marketing and R&D.<br>
+                          2.&emsp;However, we <strong>encountered significant challenges</strong> while attempting to implement this project, primarily due to the lack of references on yeast and the highly complex metabolic pathways involved in producing rhamnolipid and sophorolipid.<br>
+                          3.&emsp;Additionally, we <strong>struggled to identify other cosmetic ingredients</strong> compatible with our oscillating system. We have considered cosmetic preservatives like butylene glycol, and sorbitol, but it is difficult for yeast to produce. We are <strong>on the edge of giving up</strong> previous efforts in the fashion and cosmetics village and returning to our initial design concept.
+                        </p>
+                        
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupa1">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/hpgroupdiscuss.jpg" alt="group discussion">
+                              </div>
+                                
+                              <p class="parraf">
+                                  24.06.17-6.19<br>
+                                  <b>Group discussion</b><br>
+                                  Officially determine our products and the iGEM village choice
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupa2">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupa2" class="popup">
+                    <div class="PopUpTitle">24.06.17-6.19<br>Group discussion<br>Officially determine our products and the iGEM village choice
+                    </div>
+                    <div class="PopUpContent">
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>We decided to communicate with our team members and advisors to finalize the selection of our product and village choice.</p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <h5>Step 1: brainstorm</h5>
+                        <p>Our team members and advisors met and <strong>thought about other possible cosmetics raw materials</strong>. Two of the most sought-after ingredients in skincare for their restorative properties are <strong>ceramides and &alpha;-bisabolol</strong>. We intended to use our oscillating system to achieve an optimal ratio of the two ingredients to achieve maximum effect and reduce their toxicity to yeasts. The yeast would then be cracked to obtain the yeast extract, which, after purification and the addition of antioxidants, would form the basis of our low-cost, effective cosmetic product.</p>
+                        <h5>Step 2: ask cosmetic experts online</h5>
+                        <p>The cosmetic experts agreed with our design and mentioned that our product could be benchmarked against the <strong>PITERA™ in SK-II</strong> products, whose main product is a type of yeast extract. They reminded us that because of regulatory restrictions, these detailed ingredients cannot appear in the ingredient list but can be exposed on the product details page. They also suggested that the final product effect and positioning could be <strong>toward people with sensitive skin</strong> so that the positioning of the product was clearer.</p>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>We decided to continue our exploration of producing raw ingredients in cosmetics. And we recognized that the ingredients we produce would have the advantage of being able to be used on sensitive skin.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>
+                          1.&emsp;Began to look for information about the application of <strong>ceramides and &alpha;-bisabolol</strong> in the cosmetics industry, as well as the definition of sensitive skin.<br>
+                          2.&emsp;Designing experiments and arranging experimental programs for wet lab groups.
+                        </p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupa2">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/profh.jpg" alt="profWenwenHuang" style="object-position: top;">
+                              </div>
+                                
+                              <p class="parraf">
+                                  24.06.21 & 24.06.24<br>
+                                  <b>Professor Wenwen Huang and Professor Jiazhang Lian</b><br>
+                                  Communication about the design of plasmids
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupa3">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupa3" class="popup">
+                    <div class="PopUpTitle">24.06.21 & 24.06.24<br>Professor Wenwen Huang and Professor Jiazhang Lian<br>Communication about the design of plasmids
+                      
+                    </div>
+                    <div class="PopUpContent">
+                        <p>Professor Wenwen Huang and Professor Jiazhang Lian are our instructors, who are both experts in genetic engineering.</p>
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>Considering the difficulty of the experimental manipulation, we had switched our experimental plan from directly inserting tsc10 and MrBBS genes into yeast genome to introducing pRS42H-TSC10 and pESC-MrBBS plasmids and would like to seek feedback from our instructors on the <strong>feasibility and safety of the new experimental design</strong>.</p>
+                        <h4>&bull;&emsp;Process: </h4>
+                        <p>We presented our new experimental plan to the instructors, detailing each step. This included the purpose of the experiment, the plasmid design, the expected experimental procedure, the measurement of population lifespan using high-content microscopy, and the flow cytometry to confirm the relationship between SIR2-mCherry expression and cell lifespan, and other experimental designs, respectively. The instructors gave their approval of the new plan. Additionally, Professor Lian suggested incorporating the GAL system to link oscillation and production, which could improve the experimental outcomes.</p>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/expplan.png" alt="exp-plan">
+                          </div>
+                        </div>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>The original insertion genome program did have feasibility issues. Changing the design to plasmids is safer and more feasible.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>We began to design the plasmid in detail and apply the GAL system.</p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupa3">X</button>
+                    </div>
+                  </div>
+
+                  
+              </div>
+
+              <h2 id="4-1">&bull;&emsp;Reflect - understanding the current state of the industry</h2>
+              <p>Before engaging with stakeholders and refining our project, we first sought to understand the current <strong>societal context and ethical responsibilities</strong> of the skincare industry. This reflection outlines the influence of social trends, the specific stakeholders involved, and the ethical considerations we must address, including the growing demand for environmentally friendly and sustainable practices. Additionally, we recognize the importance of making high-quality skincare products accessible to a broader audience by addressing concerns about affordability. This understanding is crucial to ensure that our product development aligns with both industry standards and consumer demands for green, affordable, and ethical skincare solutions.</p>
+              <h3>The Impact of Social Media and Beauty Trends on Consumer Choices</h3>
+              <div class="s2">
+                <p>In today's highly connected world, social media platforms such as Facebook, Instagram, TikTok, and Twitter are key drivers of consumer choices in skincare. Influencers, beauty gurus, and viral trends significantly shape what products consumers deem essential. For example, the growing trend of <strong>“clean beauty” emphasizes products made with natural, soothing ingredients, which are both effective and safe for the skin</strong>. Studies have shown that consumers increasingly prefer beauty products perceived as <strong>healthier and more sustainable</strong> [3]. The clean beauty movement has also led to a surge in demand for transparency in product labeling and formulation, with consumers being more conscious of harmful chemicals [4]. However, while social media has increased awareness about the importance of skincare, the high cost of premium skincare products remains a barrier for many consumers. The <strong>price gap makes it difficult for some individuals to afford high-quality skincare options</strong> [5].</p>
+              </div>
+              <h3>Evaluation of our product based on consumer demands</h3>
+              <div class="s2">
+                <p>In response to these trends, we have chosen ceramides, &alpha;-bisabolol, and yeast extract as the primary ingredients for our skincare product. Ceramides help to restore the skin barrier. It was initially derived from animal sources and later extracted from plants, both of which posed environmental challenges due to resource consumption and habitat disruption. Recent advancements in biotechnology now allow for synthetic ceramide production, offering a more sustainable and ethical solution [6]. Bisabolol, known for its anti-inflammatory and soothing properties, is an excellent choice to meet the growing demand for gentle yet effective skincare [7]. Traditionally, bisabolol is extracted from chamomile, a process that can strain natural resources. By using synthetic biology to produce bisabolol, we can reduce the need for plant harvesting, thus promoting a more sustainable and environmentally friendly approach [8]. Additionally, yeast extract, another key ingredient in our formulation, is known for its beneficial properties in skincare. It contains vitamins, amino acids, and antioxidants that help promote skin regeneration, improve hydration, and enhance overall skin health [9].</p>
+                <p>By aligning our product with these consumer trends, we ensure that it appeals to the health-conscious, beauty-savvy audience that is under the influence of social media and beauty trends.</p>
+              </div>                        
+              <h3>Ethical, Social, and Environmental Responsibilities of the Skincare Industry</h3>
+              <div class="s2">
+                <p>Throughout our research, we identified several key stakeholders: consumers, regulatory bodies, suppliers of raw materials, and environmental organizations. Each group of stakeholders has its own expectations and concerns that companies in the skincare industry must address.</p>
+                <p>
+                  - <strong>Consumers</strong> are increasingly demanding transparency in the ingredients and production methods used by companies. They seek products that are ethically sourced, sustainable, and free of harmful chemicals. According to Moore [10], 67% of beauty consumers actively look for products with clear ingredient lists and ethical sourcing.<br>
+                  - <strong>Regulatory bodies</strong> enforce safety standards for cosmetics, and compliance with these regulations is crucial to maintain trust and avoid harm to consumers. Organizations such as the U.S. Food and Drug Administration (FDA) and the European Chemicals Agency (ECHA) are key in regulating cosmetic products to ensure they meet safety standards.<br>
+                  - <strong>Suppliers</strong> play a key role in ensuring that raw materials like ceramides and bisabolol are sustainably sourced and do not contribute to unethical practices, such as the exploitation of labor or environmental degradation. Research emphasizes the importance of ethical supply chains in maintaining product integrity and reducing environmental harm [11,12].<br>
+                  - <strong>Environmental organizations</strong> emphasize the need for eco-friendly production processes, packaging, and ingredient sourcing to minimize the carbon footprint and reduce the use of non-recyclable materials. Companies are under increasing pressure to shift towards sustainable packaging solutions, with many consumers favoring brands that minimize their environmental impact [13].
+                </p>
+                <p>
+                  In addition to these stakeholders, we must acknowledge some of the <strong>ethical challenges</strong> within the skincare industry. These mainly include misleading marketing, non-transparent ingredient sourcing, and environmental concerns related to production waste. We realized that we should commit to ethical sourcing of our ingredients, particularly ensuring that the <strong>ceramides and bisabolol</strong> used are both <strong>sustainably produced and environmentally friendly</strong>. Moreover, we must focus on providing clear, transparent communication about our product’s efficacy and ingredients to avoid misleading consumers. This commitment to transparency and sustainability can not only address current ethical issues in the industry but also build trust with our stakeholders.
+                </p>
+              </div>
+              <h3>Conclusion</h3>
+              <div class="s2">
+                <p>
+                  By reflecting on the state of the skincare industry, we have gained a clearer understanding of the responsibilities we must uphold and the expectations of our stakeholders for our product. This knowledge enables us to communicate with stakeholders with greater clarity and purpose. It also ensures that our product development aligns with ethical standards, social trends, and consumer demands, ultimately leading to a product that is both responsible and practical.
+                </p>
+              </div>
+
+
+              <h2 id="4-2">&bull;&emsp;Engage - sharing the project and receiving feedback</h2>
+              <p>In this part, we refined our project by actively communicating with relevant parties and collecting feedback. We interviewed stakeholders like R&D personnel in cosmetics companies, dermatologists, professors, regulators, etc, and reflected on what we needed to do to improve our project according to their feedback. Two company visits <strong>(Guanchen Biotech and Ashland)</strong>, which are our main focus, also gave us further insights into the beauty industry. The surveys of individuals and customers are presented separately because we collect their suggestions throughout the project, but not at a fixed point in time.</p>
+              <div class="cd-container">                    
+                  <div class="cd-timeline-line"></div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/proyard.jpg" alt="round images">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.06.30<br>
+                                <b>Proya's R&D personnel</b><br>
+                                The beginning of our project refinement
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe0">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe0" class="popup">
+                    <div class="PopUpTitle">24.06.30<br>Proya's R&D personnel<br>The beginning of our project refinement
+                      
+                    </div>
+
+                    <div class="PopUpContent">
+                        <p>Proya is a cosmetic brand that started in China and has its sights on the world, with international cutting-edge scientific and technological skincare concepts.</p>
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>
+                          1.&emsp;To make sure <strong>whether a cosmetic raw material that is not a single component can be accepted by the market</strong>.<br>
+                          2.&emsp;To explore the <strong>benefits and application</strong> of our planned ingredients (ceramides, bisabolol, and yeast extracts).<br>
+                          3.&emsp;A quick look at the <strong>current state of the skincare industry</strong> in China. And to identify key areas for focus in our research, ensuring that we target the most relevant and impactful aspects of cosmetic ingredient development.
+                        </p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>During our discussions, the R&D personnel mentioned that although most companies prefer to use pure raw materials, <strong>some companies produce raw ingredients with more than one component</strong>. For example, the <strong>SymRelief ®</strong> produced by <strong>Symrise</strong> is a mixture of bisabolol and Ginger Root Extract. It is an anti-irritant and is used for soothing, healing, calming, sensitive skin, skincare, and redness reduction. Thus, our product could aim at those products.</p>
+                        <p>we uncovered several critical insights into the current state of skincare product development. It became clear that while <strong>ceramides</strong> are highly valued for their skin barrier benefits, their formulation presents challenges due to their <strong>high melting points and stability issues</strong>. This led us to realize that further research is needed to explore the latest advancements in encapsulation technologies that can <strong>enhance the stability of ceramides in skincare formulations</strong>.</p>
+                        <p>We also learned that <strong>bisabolol</strong> is commonly used for its soothing properties but <strong>must be carefully dosed to avoid irritation</strong>, especially in sensitive skin formulations. This highlighted a gap in our knowledge regarding optimal concentration ranges for bisabolol in various product types, prompting us to prioritize this area in our future research.</p>
+                        <p>Regarding yeast extracts, the R&D personnel emphasized their growing popularity due to their multifunctional benefits, such as moisturizing and anti-aging properties. However, the diverse types of yeast extracts used across different brands, like <strong>PITERA™ in SK-II products</strong>, suggest that we need to <strong>investigate the specific strains and fermentation</strong> processes that yield the most effective results. Additionally, <strong>understanding consumer perceptions of these bio-synthetically produced ingredients</strong> is crucial, as there may be lingering concerns about their safety and efficacy.</p>
+                        <p>Through these conversations, we also identified a significant trend towards sustainability and ethical production in the cosmetics industry. The R&D personnel noted that synthetic biology offers a promising pathway to meet these demands, yet there is a need for more comprehensive data on the <strong>environmental impacts</strong> of these processes compared to traditional methods.</p>
+                        <p>In summary, while our discussions provided valuable insights, they also highlighted areas where <strong>our understanding is still incomplete</strong>. Moving forward, we plan to delve deeper into encapsulation technologies, bisabolol concentration standards, yeast fermentation processes, and the environmental benefits of synthetic biology to address these gaps.</p>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>Based on our findings, we identified several actions to enhance both the product formulation and the marketing strategy. During this visit, we realized our limited understanding of the skincare product development field, so we conducted further literature research.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>
+                          1.&emsp;Our design of producing a cosmetic raw ingredient with a mixture of components is possible. And we can learn more about those products with a mixture of components from famous brands like <strong>SymRelief® from Symrise and PITERA™ in SK-II products</strong>.<br>
+                          2.&emsp;Integrating information about our three products according to the interview and internet research.
+                        </p>
+                        <p>Our research revealed that <strong>ceramides</strong>, despite their crucial role in maintaining skin barrier integrity, <strong>are challenging to work with due to their tendency to crystallize at lower temperatures</strong>. This characteristic necessitates advanced formulation techniques, such as the incorporation of ceramides into lipid-based delivery systems that ensure their stability and efficacy in skincare products.</p>
+                        <p><strong>Bisabolol</strong>, a soothing agent <strong>derived from chamomile</strong>, is valued not only for its <strong>anti-inflammatory properties</strong> but also for its ability to <strong>enhance the penetration of other active ingredients</strong>. However, the <strong>dosage</strong> of bisabolol must be carefully calibrated; too little may not provide the desired soothing effect, while too much can lead to skin irritation, especially in sensitive skin types. This makes bisabolol a critical component that requires precise formulation and thorough testing to optimize its benefits while minimizing potential drawbacks.</p>
+                        <p><strong>Yeast extracts</strong>, particularly those rich in beta-glucans, have gained popularity for their ability to <strong>stimulate the skin's natural defense mechanisms and promote cell regeneration</strong>. These extracts are produced through controlled fermentation processes, which can be fine-tuned to yield specific bioactive compounds. For example, certain strains of yeast are specifically cultivated to produce high levels of antioxidants and other skin-beneficial nutrients. Understanding the intricacies of these fermentation processes has allowed us to better appreciate the potential of yeast extracts in innovative skincare solutions.</p>
+                        <p>
+                          3.&emsp;Integrating some of the rules and regulations to look out for in the cosmetics market.
+                        </p>
+                        <p><strong>Controlling production variables</strong> is essential to ensure product stability and efficacy. For instance, ensuring that ceramides are properly encapsulated and bisabolol is used within safe limits can greatly enhance product performance and safety. Moreover, <strong>stability tests</strong> under various conditions, such as high temperature and humidity, are necessary to evaluate the long-term performance of these ingredients in formulations.</p>
+                        <p><strong>On the marketing front</strong>, we plan to highlight the <strong>sustainability and ethical production methods</strong> used in creating these ingredients. By showcasing the reduced environmental impact and ethical advantages of using non-animal-derived ingredients, we can appeal to a broader consumer base, particularly those who prioritize eco-friendly and cruelty-free products.</p>
+                        <p>Additionally, <strong>consumer education</strong> will be a key component of our strategy. We intend to create content that informs and reassures consumers about the safety and benefits of bio-synthetically produced ingredients, thereby building trust and transparency around our products.</p>
+                        <p>By integrating these elements into our overall strategy, we aim to capture a significant share of the growing market for sustainable cosmetics, ensuring that our products are not only effective but also aligned with current consumer values.</p>
+                        <p>4.&emsp;We sent the yeast for testing and confirmed that the yield of bisabolol was reasonable.</p>
+                    </div>
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe0">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/anonymous-female.svg" alt="round images" style="transform: scale(3)">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.07.01<br>
+                                <b>Dr. Aili GAO</b><br>
+                                Increasing our focus on skincare safety and science popularization                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe1">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe1" class="popup">
+                    <div class="PopUpTitle">24.07.01<br>Dr. Aili GAO<br>Increasing our focus on skincare safety and science popularization                                
+                    </div>
+                    <div class="PopUpContent">                                  
+                        <div class="img-wrap">
+                          <div class="border">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/gaoal.png" alt="DrAiliGao">
+                          </div>
+                        </div>
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>
+                          1.&emsp;To consult common skin problems people may meet in their daily life.<br>
+                          2.&emsp;To determine whether our products have side-effects.
+                        </p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>In our recent interview with a dermatologist, we explored various aspects of skin health, the effects of skincare products, and specific ingredients consumers should be mindful of.</p>
+                        <p class="quote"><strong>Q1: </strong>When consumers purchase skincare products, which ingredients should they pay attention to on the ingredient list?</p>
+                        <p>Consumers need to be cautious when choosing skincare products, especially when reviewing the ingredient list. The dermatologist identified several common ingredients that could potentially cause skin reactions. These include ethanol/alcohol, fragrances, carbomer, phenoxyethanol, methylparaben, hydroquinone, propylene glycol, triethanolamine, imidazolidinyl urea, liquid paraffin, and mica. Each of these ingredients can have varying effects on different skin types, and consumers should be aware of their skin's sensitivity to these components before making a purchase.</p>
+                        <p class="quote"><strong>Q2: </strong>Have you encountered patients who developed skin problems due to skincare products? Are skin problems easily overlooked?</p>
+                        <p>The dermatologist highlighted a common issue with the misuse of corticosteroids, which can lead to skin dependency. While corticosteroids may initially improve the skin's appearance, stopping their use can cause significant problems to emerge, often worsening quickly. These issues can manifest as redness, skin thinning, dryness, tightness, and in some cases, steroid-induced acne-like lesions. The underlying point is that minor skin issues can easily be overlooked or dismissed, but with the wrong products or misuse of treatments, these small concerns can escalate into more serious conditions.</p>
+                        <p class="quote"><strong>Q3: </strong>Are there any precautions for using ceramide and bisabolol, either separately or together? Why is it rare to see them combined in products?</p>
+                        <p>Ceramide, a type of lipid, has limited known side effects due to the lack of comprehensive clinical studies. On the other hand, bisabolol is recognized for its anti-inflammatory and anti-irritant properties, which help alleviate discomfort like dryness and redness. While some institutions are researching the potential for a synergistic effect when combining ceramide and bisabolol, the clinical data is still insufficient. This is one reason why these two ingredients are not commonly found together in skincare products. It remains an area of ongoing research, with more studies needed to fully understand their combined impact.</p>
+                        <p class="quote"><strong>Q4: </strong>Which skin types should avoid using yeast extract (such as in SK-II)?</p>
+                        <p>The dermatologist advised that individuals with a thin stratum corneum and sensitive skin should avoid products containing yeast extract. Yeast extract can aggravate sensitive skin, leading to irritation and potentially worsening existing conditions.</p>
+                        <p class="quote"><strong>Q5: </strong>Do you think the explanations of cosmetic ingredients found online (such as on platforms like the Red Book) are reliable? How can the public learn about scientific skincare knowledge?</p>
+                        <p>The dermatologist emphasized the need for caution when relying on online explanations of cosmetic ingredients, particularly on platforms like the Red Book. While these sources may provide some helpful insights, they are not always accurate or based on sound scientific evidence. It is crucial for users to carefully scrutinize this information before making decisions about their skincare routines.</p>
+                        <p>For those seeking reliable sources of skincare knowledge, following the official WeChat accounts of dermatology hospitals was recommended.</p>
+                        <p class="quote"><strong>Q6: </strong>If we want to create a skincare science popularization for the public, what content do you think is most important?</p>
+                        <p><strong>Moisturizing</strong> helps to maintain the skin's hydration and barrier function, while cleansing removes impurities without damaging the skin. <strong>Sun protection</strong> is vital to prevent long-term damage from UV exposure, which can lead to premature aging and increase the risk of skin cancer. These core aspects of skin care are essential for maintaining healthy skin and should be the focus of any educational content aimed at the public.</p>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>Consumers are encouraged to pay attention to ingredient lists and consult with a dermatologist when unsure, especially if they have sensitive skin or are prone to skin issues. The ongoing research into ingredient combinations like ceramide and bisabolol suggests that skincare science is continually evolving, offering hope for safer and more effective products in the future. And hopefully, our project can contribute to research in this field. It also stressed the importance of verifying online skincare information and seeking out credible sources.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>1.&emsp;Look for more information and instances of whether people with thin stratum corneum and sensitive skin should avoid using yeast extract.</p>
+                        <h5>Summary of data search:</h5>
+                        <p>Many people assume that yeast extract may harm the stratum corneum, making it unsuitable for sensitive skin. This belief often stems from reports of allergic reactions to certain skincare products, particularly those containing bifida ferment lysate. However, this assumption overlooks the fact that different types of yeast extracts have distinct properties. Our product uses Saccharomyces cerevisiae (budding yeast) lysate, which has been shown to be much gentler and well-tolerated by a wide range of skin types, including sensitive skin. Unlike bifida ferment lysate, Saccharomyces cerevisiae is less likely to cause irritation and allergic reactions. Additionally, extensive research has not found any credible evidence suggesting that Saccharomyces cerevisiae lysate harms the skin's protective barrier. In fact, it has been proven to strengthen the skin's natural defenses, making it a safe and effective ingredient for sensitive skin [14].</p>
+                        <p>Saccharomyces cerevisiae lysate is widely used in skincare products due to its multiple benefits, particularly for sensitive skin. Research has shown that it not only helps enhance the absorption of other active ingredients but also provides essential nutrients that support skin health. Its fermentation components soothe the skin, strengthen the barrier function, and reduce inflammation. The presence of β-glucan in Saccharomyces cerevisiae contributes to its antioxidant and anti-inflammatory properties, helping to alleviate redness and irritation commonly experienced by sensitive skin. Additionally, the extract provides a strong moisturizing effect, locking in hydration and improving the skin’s overall water balance, which can help reduce the appearance of fine lines and wrinkles. By optimizing cellular oxygen consumption and detoxification processes, Saccharomyces cerevisiae lysate ensures that skincare products are both safe and effective for sensitive skin, making it a reliable choice for those seeking to improve their skin condition.</p>
+                        <p>2.&emsp;Our product can serve as an auxiliary object to release dermatology, like the skin dryness and redness caused by suddenly stopping using corticosteroids.</p>
+                        <p>3.&emsp;We began to seek some necessary topics in the popularization of cosmetics.</p>
+                    </div>                    
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe1">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/profh.jpg" alt="profWenwenHuang" style="object-position: top;">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.06.28 & 24.07.13<br>
+                                <b>Professor Wenwen Huang and Professor Jiazhang Lian</b><br>
+                                Solving problems about plasmid design<br>                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe2">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe2" class="popup">
+                    <div class="PopUpTitle">24.06.28 & 24.07.13<br>Professor Wenwen Huang and Professor Jiazhang Lian<br>Solving problems about plasmid design
+                      </div>
+                    <div class="PopUpContent">
+                      <h4>&bull;&emsp;Aim:</h4>
+                      <p>
+                        1.&emsp;Confirmation of various issues during plasmid design.<br>
+                        2.&emsp;Request necessary plasmids from the instructor.<br>
+                      </p>
+                      <h4>&bull;&emsp;Process:</h4>
+                      <p>We presented our revised system design to the professors and wanted to request some materials to proceed with the experiments. Professor Huang expressed concern about the large scale of the proposed work and suggested that it would be more efficient to have certain plasmids synthesized by a commercial company. This would save both our time and effort. On the other hand, Professor Lian proposed to abandon CRISPR and provided us with pRS42H & pRS42B plasmids.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/expds1.png" alt="exp-design-1">
+                        </div>
+                      </div>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/expds2.png" alt="exp-design-2">
+                        </div>
+                      </div>
+                      <h4>&bull;&emsp;Reflection:</h4>
+                      <p>We learned that our initial experimental plan was overly ambitious, and next time, we need to refine our schedule and objectives to ensure they are realistic and manageable.</p>
+                      <h4>&bull;&emsp;Action:</h4>
+                      <p>We began to construct the necessary plasmids and order other plasmids from commercial companies.</p>
+                    </div>                    
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe2">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/sync-icon.jpg" alt="round images">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.07.04-05<br>
+                                <b>The SynBio+ 2024 Synthetic Biology Conference</b><br>
+                                The turning point of our business model (B to B -> B to C)                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe3">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe3" class="popup">
+                    <div class="PopUpTitle">
+                      24.07.04-05<br>
+                      The SynBio+ 2024 Synthetic Biology Conference<br>
+                      The turning point of our business model (B to B -> B to C)                                
+                    </div>
+                    <div class="PopUpContent">
+                      <h4>&bull;&emsp;Aim:</h4>
+                      <p>
+                        1.&emsp;Learn more about <strong>cutting-edge applications</strong> of synthetic biology in the beauty industry.<br>
+                        2.&emsp;Have communications with other skincare <strong>companies</strong>.<br>                                  
+                      </p>
+                      <h4>&bull;&emsp;Process:</h4>
+                      <p>From July 4th to 5th, iZJU-China participated in the SynBio+ 2024 Synthetic Biology Conference held in Hangzhou, with a particular focus on the Cosmetics Forum. During the event, we gained insights into the prevalent trends of biomanufacturing and the growing popularity of synthetic biology in the current era. We were also <strong>enlightened about cutting-edge technologies in cosmetics</strong>, including explant callus technology, recombinant collagen, the benefits of fermentation lysate products, ECM's repair mechanism, 3D Raman spectroscopy for tracking the transdermal effects of ceramides, and a comprehensive approach to cosmetic efficacy validation that encompasses in vitro cellular and histological tests, animal models, human efficacy evaluations, and transcriptome/metabolome verifications.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/sync1.jpg" alt="syncmeeting1">
+                        </div>
+                      </div>
+                      <p>Moreover, engaging interactions with numerous companies specializing in cosmetic technology development have <strong>solidified our approach to refining our research topics</strong>. We were now committed to exploring larger-scale models for cosmetic assessment.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/sync2.jpg" alt="syncmeeting2">
+                        </div>
+                      </div>
+                      <h4>&bull;&emsp;Reflection & Action:</h4>
+                      <p>1.&emsp;Two companies named INTERFERON and Biocatsyn Biology attracted our attention through the fantastic introduction of their research and the highly relative research field. And we <strong>gained further contact with the two companies about our project after the meeting</strong>.</p>
+                      <p>2.&emsp;We planned to <strong>visit companies in person</strong> to practically learn about their experimental platforms and their professional insight into market trends.</p>
+                      <p>3.&emsp;<strong>Change our design from producing raw materials to completed skincare products</strong>.</p>
+                      <p>Inspired by this conference, we wanted to pursue further on our design of this project, aiming <strong>to create our own brand and product</strong>. Thus, we analyzed the pros and cons of producing raw materials. We realized that while we have products like SymRelief® as a reference, we hadn't yet established our brand effect and credibility, and influence. First, we needed to produce a product to ensure our core ingredients performed well. Additionally, if we provide raw materials to other companies, they might not be satisfied with the current composition and could request specific percentages of the ingredients. This could lead us to create personalized products, which presents challenges, especially in the engineering of yeast. However, <strong>if we focus on producing a product, we don't need to worry about it being a mixture and needing to be further purified</strong>. In fact, the oscillating system becomes an advantage, as it can be more efficient and energy-saving to produce yeast extract, ceramide, and &alpha;-bisabolol simultaneously.</p>
+                      <p>Our advisor also supported this direction, saying: 'I think this forms a logical and well-rounded approach. The next step is to gather data on this particular skin issue, such as how common it is. Then, <strong>investigate the market presence</strong> of the two related products, looking at their market dominance and actual effectiveness. Since many people experience skin problems, you can explore this both socially and within your own circles. It might even be helpful to find someone dealing with this specific issue. Or, consider how you originally approached understanding this skin problem and the molecules involved in addressing it.'</p>
+                    </div>                    
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe3">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ccic-icon.jpg" alt="round images" style="object-position: left;">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.07.12-13<br>
+                                <b>CCiC</b><br>
+                                Further improvement after project presentation and communication<br>                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe4">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe4" class="popup">
+                    <div class="PopUpTitle">24.07.12-13<br>CCiC<br>Further improvement after project presentation and communication
+                      
+                    </div>
+                    <div class="PopUpContent">
+                        <h4>&bull;&emsp;Aims:</h4>
+                        <p>
+                          1.&emsp;To <strong>exchange the latest research results</strong> with teams from different universities and research institutions to fuel the future research directions of our team, especially for the human practice part<br>
+                          2.&emsp;Establish professional <strong>contacts</strong> with other contestants, experts and potential partners
+                        </p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>We attended the 2024 iGEMer China Regional Exchange Conference hosted by Xi 'an Jiaotong-Liverpool University from July 12-14, 2024. Our team not only presented our projects but also gained valuable feedback and inspiration through in-depth exchanges with other teams and experts. From one of the lectures on the work of HP, we are clear about HP's position and where to go from here. At the professor's suggestion, we re-studied HP-related materials on iGEM's official website and read papers to learn social science knowledge. From the feedback of Professor Xu: ‘The project is interesting, but it needs to be further considered for industrial applications. It can be referred to as the synthesis of artemisinin in 2006, and only artemisinic acid is synthesized because the chemical synthesis of artemisinic acid is cheaper and simpler. This project involves many steps, both components are cytotoxic, and conversion costs are considered.’ Thus, we started to think about the cost of our product.</p>
+                        <p>During the conference, we actively participated in various activities, including keynote lectures, project presentations, poster exhibitions and discussions, and evening parties, which not only broadened our horizons but also allowed us to learn about the latest technologies and trends in synthetic biology. In addition, we also met many peers from all over the country, established professional contacts, and laid the foundation for future cooperation.</p>
+                        <h4>&bull;&emsp;Reflection & Action:</h4>
+                        <p>
+                          1.&emsp;our team realized the cost problems of our project. Based on this, we conducted a <strong>comparative study with the cost of biological semi-synthesis and finally determined that our method was better</strong> (click <a href="https://2024.igem.wiki/izju-china/entrepreneurship#4">here</a> for more information).<br>
+                          2.&emsp;We recognized the <strong>shortcomings of our human practice part</strong>, including the lack of a systematic integration framework and the lack of professionalism in interviewing stakeholders. Thus, through re-studying HP-related materials on iGEM's official website, we decided to <strong>establish and refine the AREA framework and improve our professionalism by conducting interviews and surveys</strong>.
+                          3.&emsp;we maintained <strong>contact</strong> with Jilin University, Zhejiang University of Technology, and other teams.
+                          </p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe4">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ano.png" alt="round images">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.07.22<br>
+                                <b>Interferon and Biocatsyn Biotechnology Co., LTD</b><br>
+                                Questioning the cosmetics scoring model                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe5">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe5" class="popup">
+                    <div class="PopUpTitle">24.07.22<br>Interferon and Biocatsyn Biotechnology Co., LTD<br>Questioning the cosmetics scoring model</div>
+                    <div class="PopUpContent">
+                        <p>Biocatsyn is oriented towards the application fields of medicine, food, cosmetics (produce the products &alpha;-bisabolol), agriculture, bio-based chemicals, etc., committed to the research and development and application of green biofiltration technology for related products. Interferon has a complete range of biologically effective protein raw materials with yeast (fibulin, collagen, elastin, etc.). It has established a full set of active functional protein raw materials, a skincare efficacy evaluation system, and a skin repair mechanism research system.</p>
+                        <h4>&bull;&emsp;Aim:</h4>    
+                        <p>To study the feasibility analysis and suggestions of two professional cosmetics companies on our topics and products, specifically the skincare efficacy evaluation system.</p>        
+                        <h4>&bull;&emsp;Process:</h4>    
+                        <p>During the online discussion, we introduced our project, listened to their product layout, and discussed the improvement of our project.</p>
+                        <p>Initially, the intention was to create a cosmetic scoring model that would evaluate the reasonableness of formulations based on cosmetic ingredients. They suggested that the model itself was meaningful, but still could not realistically replace the work of a manual formulator. This is because there is no model that can be called upon, nor is there a standard that can be used to evaluate cosmetics uniformly. And, this workload is impossible for us to complete by ourselves. They suggested that we could make more models that are more relevant to our topic itself, such as how our oscillation system decays.</p>                
+                        <h4>&bull;&emsp;Action & reflection:</h4>    
+                        <p>
+                          1.&emsp;We still thought that the scoring model was an innovative and feasible model candidate. And we aimed to <strong>evaluate the reasonableness of our cosmetics scoring model by communicating with other professional stakeholders</strong>.<br>
+                          2.&emsp;We evaluated the feasibility of switching to the model studying oscillating systems and systematically modeling the relationship between yeast metabolism and lifespan.
+                        </p> 
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe5">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/profl.jpg" alt="profJiazhangLian" style="object-position: top;">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.07.23<br>
+                                <b>Professor Jiazhang Lian</b><br>
+                                Solving problems we met on PCR                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe6">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe6" class="popup">
+                    <div class="PopUpTitle">24.07.23<br>Professor Jiazhang Lian<br>Solving problems we met on PCR 
+                    </div>
+                    <div class="PopUpContent">
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>We are not doing well with our PCR experiments and would like to seek help from the instructors.</p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>After times of failure in PCR experiments of some key genome fragments, we thought that there might be problems in the template of the yeasts’ genome and various processes of PCR. Prof Lian suggested that we can do a few positive control experiments first.</p>
+                        <p>Firstly, we can use a plasmid as a template to ensure that the PCR system is functioning properly. This would help us confirm whether the reagents and conditions of the PCR were sound. Afterward, we need to use the yeast genome as a template to amplify the ADH1 gene, a commonly used reference, to verify the integrity of the yeast genome itself.</p>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/profl1.png" alt="onlinemeetwithprofL">
+                          </div>
+                        </div>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>Through this experience, we recognized the importance of efficiently identifying and solving issues with PCR. We will implement this approach when encountering similar challenges in the future.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>We found out that all positive control experiments failed, indicating that the issue was likely in the PCR procedure rather than the genome or plasmid. After adopting the new extraction template method, we successfully resolved the problem of PCR.</p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe6">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/gcbio.jpg" alt="gcBio">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.08.07<br>
+                                <b>Guanchen Biotech</b><br>
+                                Further improvement after company visits and communication                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe7">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe7" class="popup">
+                    <div class="PopUpTitle">24.08.07<br>Guanchen Biotech<br>Further improvement after company visits and communication
+                    </div>
+                    <div class="PopUpContent">
+                        <p>Guanchen Biotech was founded in 2021. It focuses on the research, development, and production of efficient and pure cosmetic raw materials, and is committed to providing high-quality raw material solutions for domestic and foreign cosmetics brands. The company adheres to the concept of "science and technology to create beauty". Through technological innovation and strict quality control, it undergoes quick development in the beauty industry.</p>
+                        <h4>&bull;&emsp;Aims:</h4>
+                        <p>
+                          1.&emsp;To get some advice for our project to better improve the product<br>
+                          2.&emsp;To further understand about <strong>cosmetic innovations and business models</strong><br>
+                          3.&emsp;To acquire knowledge about the <strong>laws and regulations</strong> on cosmetics
+                        </p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>Our team talked with the people in charge of the Guanchen Biotech, who are also experts in cosmetics research and development. In the meeting, the founder of the company introduced the basic information about the company as well as the situation and current progress of our project. Based on our introduction of the project, experts asked some questions about the raw material production, the innovation of our product and our cosmetic essence evaluation model.</p>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/gcmeet1.jpg" alt="gcmeet1">
+                          </div>
+                        </div>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/gcmeet2.jpg" alt="gcmeet1">
+                          </div>
+                        </div>
+                        <p>For the raw material production, as the two major functional substances we decided to use in our product are ceramide and bisabolol which are cytotoxic, both are produced intracellularly, and when they accumulate to a certain amount, the cell will not produce ceramide and bisabolol any more or will even die. Because of that, the feasibility of the project was questioned.</p>
+                        <p>For the innovation of our product, experts gave some suggestions about our human practice. To confirm that our designed product is useful as a skincare product, research about the common formulation of cosmetic products is necessary. Compared to normal cosmetic production, we just produce the materials with the biosynthesis method which is the most creative point.</p>
+                        <p>For the cosmetic essence evaluation model, the company founder suggested that we could pay more attention to producing the main and featured components of the skin care product and <strong>it is also not necessary to develop the model</strong>. Many aspects need to be considered while evaluating cosmetics and scoring a kind of cosmetics is difficult to achieve with our remained time. As the core of our project is our product, it would be better if we focused on raw material production.</p>
+                        <p>What's more, we asked about the laws and regulations on cosmetics in our country. In order to further strengthen the management of cosmetic raw materials and to guide the licensing and daily supervision of cosmetics, <strong>the General Administration of Food and Drug Administration (GAFDA) organized the Inventory of Existing Cosmetic Ingredients in China (IECIC)</strong>. During the production of our cosmetics, we need to pay attention to IECIC and make sure that it meets the requirements of the country.</p>
+                        <p>In the business promotion section, experts advised that since our production is based on the biosynthetic way, plant protection is a main feature of our product. Also, we can combine our longevity yeast with anti-aging of the skin and use this as an advocacy point. Meanwhile, we inquired about the business models of normal cosmetic innovations to better develop our brand.</p>
+                        <p>In the communication, we mentioned the public's <strong>misunderstanding of “natural origin”</strong>. Nowadays, most people have blind faith in cosmetics with the label “natural origin” and think that synthetic things are unsafe although the final ingredients used are the same. As a result, it is important to popularize the subject to the public and let them know the mechanism behind the natural and synthetic products.</p>
+                        <p>After the meeting, we were given a tour of the company's laboratory by the company's founder to learn about the experimental environment in which they developed their cosmetic products. To satisfy the hygienic requirements of cosmetic production, there are several kinds of laboratories with professional instruments in the company.</p>
+                        <p>Through this visit, we got several useful and important suggestions which point the way to improvements for our project.</p>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/gcflag.jpg" alt="gcflag">
+                          </div>
+                        </div>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>While culturing the yeast, we need to be concerned about the intracellular concentration of ceramide and bisabolol and observe the state of the yeast clearly. <strong>We may pay more attention to extracting the yeast product than developing the integrated model in the rest of the months, as the product is the core of our project, and the model may be difficult to realize</strong>. What's more, the purity and confirmation of yeast extract are also important in the production. After getting the yeast extract, we will test and check it to make sure it meets the requirements. Meanwhile, several kinds of related human practices, including research about the current cosmetics market, popularization of natural and synthetic products for the general public, and so on, will also be held to enrich and improve our project. For the model, we decide to focus on the oscillating system investigation.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>1.&emsp;Further research about the common formulation of cosmetic products</p>
+                        <p>2.&emsp;Give up the cosmetic essence evaluation model</p>
+                        <p>3.&emsp;Popularization of natural and synthetic products</p>
+                        <p>4.&emsp;About productive rate, our <strong>modeling + literature checking + wet experiments</strong> so far show that<br>
+                          &emsp;&emsp;a)&emsp;we should <strong>keep bisabolol and ceramides within the yeast</strong><br>
+                          &emsp;&emsp;b)&emsp;our oscillator allows yeast to produce bisabolol and ceramide at a slower rate than overexpression<br>
+                          &emsp;&emsp;c)&emsp;yeast is able to randomly switch on the expression of some genes through transposon migration mediated by spt proteins, and thus acquire resistance<br>
+                          &emsp;&emsp;d)&emsp;slower production allows yeast to have longer to develop resistance, and thus our yeast is more tolerant to bisabolol and ceramide<br>
+                          &emsp;&emsp;e)&emsp;more tolerance = more products can accumulate in the cell = higher yield compared to overexpression
+                        </p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe7">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/beauty-town-24-08-07.png" alt="beauty-town">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.08.07<br>
+                                <b>Chinese beauty town</b><br>
+                                Beauty museum visit and preliminary market research                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe8">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe8" class="popup">
+                    <div class="PopUpTitle">24.08.07<br>Chinese beauty town<br>Beauty museum visit and preliminary market research  
+                    </div>
+                    <div class="PopUpContent">
+                        <p>The Chinese beauty town is a cosmetic specialty town that integrates culture, tourism, and community</p>
+                        <h4>&bull;&emsp;Aim:</h4>
+                        <p>
+                          1.&emsp;To acquire knowledge of the beauty industry and its development<br>
+                          2.&emsp;Preliminary market research, especially of products with Yeast Extract
+                        </p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>we visited the Chinese beauty town located at Daixi town, Huzhou city, Zhejiang province thanks to the invitation of Guanchen Biotech. China Beauty Town is a cosmetic specialty town that integrates culture, tourism, and community. We first visited the museum on the theme of beauty and makeup. The special exhibits of relative products produced by China Beauty Town according to the timeline displayed the effort of development of the town from the settlement of PROYA R&D Base only to the present day, which covers an area of 3,000 acres and has successfully introduced 31 projects. The detailed exhibition of makeup in different areas also informed us about the history of beauty and immersed us in the unique charm of beauty culture.</p>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/beautown1.jpg" alt="beatown1">
+                          </div>
+                        </div>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/beautown2.jpg" alt="beatown2">
+                          </div>
+                        </div>
+                        <p>Then, we visited a nearby makeup market for products produced in the Chinese beauty town, as well as famous international brands. We found many products with Yeast Extract on the first place of the ingredient list like the facial cleanser of SK-II, the eye cream of LA MER, the repair masque of MaskQueen, and so on. Then, we intentionally asked about the product with Yeast Extract. The response of shop assistants made us feel as if they were not familiar with products with Yeast Extract and its specific functions, even though there are many related products available nearby that contain Yeast Extract. It seems like few shop assistants, not to mention customers, really understand or care about Yeast Extract but pay more attention to purely the brands and effects of products.</p>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/prod1.jpg" alt="beatown2">
+                          </div>
+                        </div>
+                        <div class="img-wrap">
+                          <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/prod2.jpg" alt="beatown2">
+                          </div>
+                        </div>                                  
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>We have decided to focus more on introducing yeast extracts and their application in sensitive skin in the education section in the future, with reference to what we have learned about at the Beauty Museum. In addition, we will also place more emphasis on branding and evaluating the effectiveness of our products.</p>
+                        <h4>&bull;&emsp;Action:</h4>
+                        <p>
+                          1.&emsp;We compare and contrast different products with yeast extract, ceramide, or &alpha;-bisabolol. (click <a href="https://2024.igem.wiki/izju-china/entrepreneurship#5">here</a> for more information)<br>
+                          2.&emsp;We further fulfilled the background of our project.
+                        </p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe8">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ashland1.jpg" alt="ashland1">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.08.09<br>
+                                <b>Ashland</b><br>
+                                Further improvement after company visits and communication                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe9">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe9" class="popup">
+                    <div class="PopUpTitle">24.08.09<br>Ashland<br>Further improvement after company visits and communication
+                    </div>
+                    <div class="PopUpContent">
+                      <p>Ashland is a supplier of additives and specialty products for the personal consumer and industrial markets, covering construction coatings, automotive, energy, food and other sectors.</p>
+                      <h4>&bull;&emsp;Aim:</h4>
+                      <p>
+                        1.&emsp;To acquire knowledge from a leading supplier of cosmetic raw materials.<br>
+                        2.&emsp;Conduct market research to understand <strong>mainstream market demands</strong> and the differences <strong>between domestic and international markets</strong>.
+                      </p>
+                      <h4>&bull;&emsp;Process:</h4>
+                      <p>As a global leader in additives and specialty products, Ashland is committed to sustainable development and serves both the personal consumer goods and industrial sectors. In pursuit of deeper insights from a pioneer in the cosmetics industry, we visited Ashland's Shanghai office.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ashlandgate.jpg" alt="ashlandgate">
+                        </div>
+                      </div>
+                      <p>Initially, we were taken to their laboratory, equipped with advanced instruments such as ELISA, PMA plates, and a fluorescence microscope. Notably, their "Sensory Evaluation Laboratory" consists of five isolated rooms with open windows, designed for professional evaluators to assess the skin conditions of volunteers, thereby significantly reducing human error.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ashlandview1.jpg" alt="ashlandgate">
+                        </div>
+                      </div>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ashlandview2.jpg" alt="ashlandgate">
+                        </div>
+                      </div>
+                      <p>Following a concise introduction to Ashland, they showcased their innovative products, including the Antaron series, Lubrajel preservative-free hydrogel, and GP4GTMCN plankton extract. Each product exemplifies Ashland's creativity and their dedication to environmental care.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ashlandmeet1.jpg" alt="ashlandgate">
+                        </div>
+                      </div>
+                      <p>During the conference, we posed several questions regarding our products, such as potential safety concerns about biological fermentation and how to tailor ingredients for different ethnicities. Ashland provided detailed explanations and practical advice in response to these inquiries. They also noted that the global market, particularly in Europe and the USA, increasingly favors products with natural ingredients, which is a positive sign for the acceptance of biological fermentation. This insight suggests that we can promote our bio-synthetic techniques as a competitive marketing strategy.</p>
+                      <div class="img-wrap">
+                        <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ashlandmeet2.jpg" alt="ashlandgate">
+                        </div>
+                      </div>
+                      <p>However, after understanding our business model, Ashland's technical consultant raised concerns about our approach. For a company whose core strength lies in technology, focusing on ingredient supply, as Ashland does, might be a more viable option than directly manufacturing beauty products.</p>
+                      <p>Yet, our director offered a distinctive perspective, stating, "We aspire to establish a beauty industry chain centered around yeast fermentation. We aim to reduce the cost of yeast production, making skincare accessible to a broader audience and breaking the monopoly of luxury brands in this domain."</p>
+                      <h4>&bull;&emsp;Reflection:</h4>
+                      <p>Ashland's professional <strong>skin assessment methods</strong> have provided us with valuable insights. For the evaluation of our products, we should aim to <strong>control variables and eliminate irrelevant factors</strong> such as subjective biases during assessments and the selection of volunteers to ensure the accuracy and reliability of the results.</p>
+                      <p>Specifically, we will conduct a thorough product evaluation with a diverse group of volunteers, spanning different genders, races, ages, and skin types. Each participant's initial skin condition will be meticulously documented. After product application, an unbiased professional will objectively assess the skin in a controlled environment. Volunteers will then self-rate their experience using a questionnaire, capturing their subjective feedback. The immediate product effect will be recorded using ultra-HD technology, providing clear visual evidence of the skin's response. Long-term effects will be evaluated in a subsequent study, offering comprehensive insights into the product's sustained benefits. This systematic approach ensures a fair and detailed examination of the product's performance across various skin profiles.</p>
+                      <p>Once, we believed that consumers only recognized the value of plant extracts and thought that <strong>yeast extracts might be a significant disadvantage</strong> for our products. <strong>However</strong>, our visit to Ashland has shown us that <strong>we can emphasize that "yeast extracts are also natural."</strong> In the future, we will focus on three main areas to expand our brand's influence: <strong>education, promotion, and innovation</strong>.</p>
+                      <p>Firstly, we will initiate educational campaigns to inform consumers that yeast extracts are naturally derived and highlight their unique benefits, such as promoting skin cell renewal and enhancing skin immunity. Additionally, we will provide scientific research and clinical trial results to demonstrate the efficacy and safety of yeast extracts, thereby increasing consumer trust.</p>
+                      <p>Secondly, we will leverage social media platforms and Key Opinion Leaders (KOLs) to promote the advantages of yeast extracts and broaden our brand's reach.</p>
+                      <p>Thirdly, we will continuously develop new yeast extract products to maintain our competitive edge in the market and meet consumers' curiosity and demand for innovative products. By implementing these strategies, we aim to enhance the market acceptance of yeast extracts and strengthen our brand's position.</p>
+                      <p>Moreover, despite receiving endorsements from professionals for yeast fermentation, further field research and market surveys are necessary to gauge consumer apprehensions about this process. Finally, Ashland's skepticism towards our business model has spurred us to refine our approach further. Moving forward, we plan to consult with business experts to gain more professional and targeted advice, enhancing our strategy for success in the beauty industry.</p>
+                      <h4>&bull;&emsp;Action:</h4>
+                      <p>
+                        1.&emsp;<strong>Set up business groups to discuss business models</strong> and communicate with professionals.<br>
+                        2.&emsp;<strong>Publicize the benefits of yeast extract</strong> on the skin through social media such as the Red Book and WeChat public accounts. (click <a href="https://2024.igem.wiki/izju-china/education#2-0">here</a> for more information)
+                      </p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe9">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/lp.jpg" alt="Miss Pi LIN">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.08.13<br>
+                                <b>Miss Pi LIN</b><br>
+                                Giving ideas on the popularization of science<br>                                          
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe10">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe10" class="popup">
+                    <div class="PopUpTitle">24.08.13<br>Miss Pi LIN<br>Giving ideas on the popularization of science<br> 
+                    </div>
+                    <div class="PopUpContent">
+                      <p>Miss Pi LIN is a professional beautician offering services in the skincare and beauty industry.</p>
+                      <h4>&bull;&emsp;Aim:</h4>
+                      <p>
+                        1.&emsp;Understand the needs and <strong>consumer preferences</strong> of the skincare market from the practical experience of beauticians<br>
+                        2.&emsp;How to effectively promote and design products to ensure that their scientifically developed skin care products can be accepted by the market
+                      </p>
+                      <h4>&bull;&emsp;Process:</h4>
+                      <h5>1.&emsp;Consumer situation of sensitive skin</h5>
+                      <p>
+                        - Whether you often encounter sensitive skin customers:<br>
+                        The proportion of customers with sensitive skin is larger, which is mainly caused by damage to the stratum corneum. Causes include <strong>excessive cleaning, the use of poor-quality skin care products, and inadequate UV exposure and sunscreen</strong>. This means that skin care products should be designed with special attention to the needs of sensitive skin consumers, especially the efficacy of repairing cuticles and protective barriers.
+                      </p>
+                      <h5>2.&emsp;The popularity of natural plant extracts</h5>
+                      <p>
+                        - Consumer preferences:<br>
+                        <strong>Natural plant extract products are favored</strong> by consumers, especially those that are pollution-free and have the effects of repairing skin barriers, moisturizing, and whitening. Such products not only promote better but also attract more attention, especially under the trend of emphasizing natural and healthy skin care.<br>
+                        - Other promotional directions to impress consumers:<br>
+                        In addition to "natural plant extraction", if the propaganda can <strong>highlight the concept of "no addition", "mild formula", "repair effect", and "antioxidant", it can also effectively attract consumers</strong>. In addition, the support of scientific research, such as clinical trial data and validation of effectiveness, can also enhance consumer trust.
+                      </p>
+                      <h5>3.&emsp;Yeast extract and consumer safety concerns</h5>  
+                      <p>  
+                        - Safety concerns about yeast extract:<br>
+                        Consumers <strong>who are unfamiliar with yeast extracts may have safety concerns</strong>, especially if they feel that microbial-derived ingredients may present unknown risks when used in skin care. Therefore, when promoting products containing yeast extract, special attention needs to be paid to the promotion of safety.
+                      </p>
+                      <h5>4.&emsp;Consumers' awareness of yeast extract</h5>
+                      <p>
+                        - Consumer cognition status:<br>
+                        Yeast extracts are not well known to the average consumer. Therefore, the salesperson or skincare brand needs to increase the trust of the consumer by explaining its specific efficacy and safety. Sales communications can emphasize the moisturizing, repairing, anti-aging and other properties of yeast extract, while combining scientific evidence to help consumers dispel doubts.
+                      </p>
+                      <h5>5.&emsp;The impact of unique packaging design on the brand</h5>
+                      <p>
+                        - Impressive packaging design:
+                        <strong>Unique and brand-image bottle designs</strong> can leave a deep impression on consumers. For example, conveying the high-end, professional, or environmental concept of the product through the packaging design can strengthen consumers' desire to buy. Innovative bottle shapes, high-quality materials, and environmentally sustainable design are all key elements that attract attention.                                  
+                      </p>
+                      <h4>&bull;&emsp;Reflection:</h4>
+                      <p>Consumers generally <strong>show a preference for natural plant extracts</strong>, but awareness of yeast extracts is more <strong>limited</strong>. Therefore, future product promotion should pay attention to professional interpretation and publicity, strengthen the scientific proof of safety and effect, but also pay attention to the innovation of packaging design and brand image.</p>
+                      <h5>Suggestions we summarized:</h5>
+                      <p>
+                        - Launch a line of restorative, mild ingredients for sensitive skin.<br>
+                        - Emphasize keywords such as "natural," "no additions," and "antioxidant" in the promotion.<br>
+                        - For yeast extract ingredients, focus on promoting their specific efficacy and scientific support to reassure consumers.<br>
+                        - Highlight brand characteristics and environmental protection concepts in packaging design to increase visual appeal.<br>
+                        - Natural plant extracts can also contain impurities that are harmful to the skin and chemical synthetic ingredients can sometimes be purer and need to be viewed critically
+                      </p>
+                      <h4>&bull;&emsp;Action:</h4>
+                      <p>
+                        1.&emsp;Design product <strong>packaging</strong>.<br>
+                        2.&emsp;Highlight the concept of "no addition", "mild formula", "repair effect", and "antioxidant" when we are advertising our product in the future.<br>
+                        3.&emsp;<strong>Self-made a short animation</strong> to show the public themed “Natural plant extract products and biosynthetic products”.
+                      </p>
+                    </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe10">X</button>
+                    </div>
+                  </div>
+
+                  <div class="cd-timeline-block">
+                      <div class="cd-timeline-redcircle">
+                      </div>
+                      <div class="cd-timeline-content">
+                          <div class='c1'>
+                              <div class="round-image">
+                                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/ano.png" alt="">
+                              </div>
+                                
+                              <p class="parraf">
+                                24.09.14<br>
+                                <b>Mary Kay's Quality Department Staff (QA)</b><br>
+                                Considering laws during marketing process
+                              </p>
+                          </div>
+                          <br></br>
+                          <a href="#0" class="cd-read-more1" data-popup-id="popupe11">
+                              <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/readmore.svg" >
+                          </a>
+                      </div> 
+                  </div>
+                  <div id="popupe11" class="popup">
+                    <div class="PopUpTitle">24.09.14<br>Mary Kay's Quality Department Staff (QA)<br>Considering laws during marketing process
+                    </div>
+                    <div class="PopUpContent">
+                        <p>Mary Kay is a globally well-known beauty brand dedicated to the development and marketing of skincare and color cosmetics.</p>
+                        <h4>&bull;&emsp;Aims:</h4>
+                        <p>Our aim is to gain a comprehensive understanding of the <strong>regulatory framework governing the cosmetics industry in China</strong>. By interviewing Mary Kay's Quality Department staff, we seek to clarify the legal requirements for cosmetics production, operation, and supervision, ensuring our project's alignment with industry standards.</p>
+                        <h4>&bull;&emsp;Process:</h4>
+                        <p>We engaged in a detailed discussion with Mary Kay's Quality Department staff to understand the regulatory landscape of the cosmetics industry in China. The interview highlighted the importance of adhering to the legal framework for product safety and compliance.</p>
+                        <h4>&bull;&emsp;Reflection:</h4>
+                        <p>The interview revealed that a thorough understanding of Chinese cosmetics regulations is essential for ensuring product safety and compliance. It became evident that further study is required to deepen our knowledge of these regulations and enhance our project's adherence to legal standards.</p>
+                        <h4>&bull;&emsp;Act:</h4>
+                        <p>We looked for important cosmetic regulations applied in China on the advice of QA, researched each one, and organized them into specific categories for the team and more people to study:</p>
+                        <h5>1.&emsp;Overall Regulations:</h5>
+                        <p><strong>Cosmetics Supervision and Administration Regulations</strong>: The fundamental law that sets the basic principles and requirements for cosmetics production, operation, and supervision.</p>
+                        <h5>2.&emsp;Raw Material and Product Regulations:</h5>
+                        <p>
+                          <strong>Cosmetics Registration and Filing Management Methods</strong>: Outlines the procedures, requirements, and management systems for cosmetics registration and filing.
+                          <strong>Cosmetics Classification Rules and Classification Directory</strong>: Provides classification guidelines for cosmetics based on risk assessment.
+                        </p>
+                        <h5>3.&emsp;Production Regulations:</h5>
+                        <p>
+                          <strong>Cosmetics Production and Operation Supervision and Management Methods</strong>: Details specific management methods for cosmetics production and operation, including production permits and quality management standards.
+                        </p>
+                        <h5>4.&emsp;Operation Regulations:</h5>
+                        <p><strong>Cosmetics Labeling Management Methods</strong>: Specifies the content, form, and requirements of cosmetics labels, including ingredient identification and usage instructions.</p>
+                        <h5>5.&emsp;Supervision and Management Regulations:</h5>
+                        <p>
+                          <strong>Cosmetics Safety Assessment Technical Guidelines</strong>: Offers technical guidance for the safety assessment of cosmetics ingredients and finished products.<br>
+                          <strong>Cosmetics Production Quality Management Standards</strong>: Sets standards for quality management systems and operational norms during the cosmetics production process.
+                        </p>
+                        <h5>6.&emsp;Special Regulations:</h5>
+                        <p>
+                          <strong>Cosmetics New Raw Materials Registration and Filing Data Management Regulations</strong>: Specifies the data and assessment requirements for the registration and filing of new cosmetics ingredients.<br>
+                          <strong>Cosmetics Efficacy Claim Evaluation Standards</strong>: Requires that efficacy claims for cosmetics must be scientifically supported and outlines the methods and requirements for efficacy evaluation.
+                        </p>
+                        <p>
+                          By gaining a comprehensive understanding of these regulations, we aim to strengthen our project's foundation in legal compliance and industry best practices. This will ensure the safety and efficacy of our products and prepare us for potential regulatory challenges in the future.
+                        </p>
+                      </div>
+          
+                    <div>
+                      <button class="boton-ocultar" data-popup-id="popupe11">X</button>
+                    </div>
+                  </div>
+
+                  
+              </div>
+
+              <h3 id="4-2-1">Surveys</h3>
+              <div class="s2">
+                  <p><strong>&bull;&emsp;Introduction</strong></p>
+                  <p>Initially, we looked for online surveys on skincare products and synthetic biology, but most of the information was market-focused and didn't investigate people's concerns about how cosmetics are produced, especially the biosynthetic method. Additionally, many surveys were conducted by profit-driven organizations like large companies, and we were unsure of the credibility of the data. Therefore, we decided to create our own survey and publish an analysis of the results online for others to reference.</p>
+                  <p>We first carried out a small-scale <strong>offline</strong> survey <strong>targeting stakeholders with a background in biology</strong>. This focused survey allowed us to gather higher-quality responses and additional feedback beyond the answers. This feedback was instrumental in refining our online questionnaire for the general consumer audience. Based on the insights from the first survey, we redesigned another <strong>online</strong> questionnaire tailored to the <strong>general public</strong>. The questionnaire incorporated a <strong>branching logic that directed respondents to more targeted questions based on their language, age, educational background, and other factors</strong>. We distributed the questionnaire across multiple platforms, including WeChat and Xiaohongshu, and received 556 responses from 10 countries across various continents, including China, Greece, Singapore, the United States, and so on.</p>
+                  <p><strong>&bull;&emsp;GDPR principles</strong></p>
+                  <p>
+                    In this survey, we strictly adhere to the seven core principles of the <strong>General Data Protection Regulation (GDPR)</strong> to ensure that participants' personal data is fully protected. <br>
+                    Specifically:<br>
+                    GDPR compliance is built on the following seven key principles for data processing:
+                  </p>
+                  <p><strong>Lawfulness, Fairness, and Transparency</strong>: Personal data must be processed in a lawful and fair manner, with full transparency and consent from the data subject (e.g., survey participants). All individuals should be aware of what data is being collected, the reasons for collection, and how the data will be used.</p>
+                  <p><strong>Purpose Limitation</strong>: Data should only be collected for specific, legitimate purposes and should not be used for any purpose that is incompatible with those original purposes.</p>
+                  <p><strong>Data Minimization</strong>: Only the data that is relevant and necessary for the project should be collected, avoiding the collection of excessive data to minimize privacy risks.</p>
+                  <p><strong>Accuracy</strong>: Data must be kept accurate and up to date. If any inaccuracies are discovered, they should be corrected or deleted promptly.</p>
+                  <p><strong>Storage Limitation</strong>: Personal data should only be retained for as long as necessary. For projects, it's recommended to keep data for no more than six months after the Jamboree, after which it must be securely deleted.</p>
+                  <p><strong>Integrity and Confidentiality</strong>: All personal data must be securely protected from unauthorized access, loss, or damage. This includes storing data on password-protected devices and using backups to prevent accidental data loss.</p>
+                  <p><strong>Accountability</strong>: Teams are responsible for how they process personal data and must be able to demonstrate compliance with GDPR principles. This includes obtaining signed informed consent from participants and ensuring proper data management throughout the project.</p>
+                  <p>At every stage of the survey, we ensure that participants voluntarily participate with informed consent and can withdraw their consent at any time. Here is the informed consent we wrote which was shown on the top of our questionnaire.</p>
+                  <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/survey1.png" alt="surveyphoto">
+                    </div>
+                  </div>
+                  <p><strong>&bull;&emsp;Results of the first survey</strong></p>
+                  <p>This survey revealed the level of consumer understanding of synthetic biology, iGEM competition, skin types, and cosmetic product ingredients, as well as their knowledge of biofabricated cosmetics and specific skincare ingredients. The survey results also point to potential needs for increased public education, product information transparency, and consumer protection.</p>
+                  <p>(Click <a href="https://static.igem.wiki/teams/5371/human-practice/ihp/results-of-the-first-survey.pdf">here</a> to see details of the questionnaire and the results)</p>
+                  <p>Here are some main points of the results:<br>
+                    1.&emsp;The results revealed varying levels of knowledge among participants about synthetic biology and skincare products.<br>
+                    2.&emsp;Consumer attention to cosmetic ingredients is gradually increasing, along with a growing demand for transparency and safety.<br>
+                    3.&emsp;Public awareness of biofabricated cosmetics remains relatively low, especially regarding differences in ingredients and their benefits. This indicates the need for further education and information dissemination to enhance public understanding and acceptance of these innovative products.<br>
+                    4.&emsp;The brand effect greatly impacts customers, such as this survey result: more people dared to use yeast extract when they learned that SK2's main ingredient is also yeast extract.
+                  </p>
+                  <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/fig1.jpg" alt="surveyres">
+                    </div>
+                  </div>
+                  <p>After distributing the questionnaire, we luckily received <strong>several insights and suggestions</strong> for improvement due to the <strong>advantage of face-to-face communication after distributing the paper questionnaire</strong>:</p>
+                  <p>
+                    1.&emsp;<strong>General Disinterest in Skincare</strong>: A significant number of respondents mentioned that they do not regularly use skincare products. This suggests that the questionnaire might not resonate with a broad audience.<br>
+                    2.&emsp;<strong>Male Respondents' Reactions:</strong> Some male participants expressed that they were not the right target audience for a questionnaire about cosmetics and skincare. Many stated <strong>they are not interested in such topics at all</strong>, with comments like "It's a bit difficult for me since I don't use skincare products" or "Most men don’t use these products, we prefer simplicity."<br>
+                    3.&emsp;<strong>Confusion Among Female Respondents</strong>: There was also a portion of female respondents who did not understand the purpose of the questions. Some felt that skincare is <strong>subjective and difficult to assess</strong> ("Skincare is too much of a personal preference," "It's too troublesome to follow any routine."). Others stated that they found some questions <strong>challenging and ended up guessing their answers</strong>.<br>
+                    4.&emsp;<strong>Positive Curiosity</strong>: A few participants expressed strong curiosity about the project and were excited to see the outcomes, commenting things like “Wow, you're developing skincare-related products?” and "Looking forward to the final product!"<br>
+                    5.&emsp;<strong>Interest in Improvement</strong>: Some respondents showed interest in skincare and provided constructive feedback. One suggestion was to make Question 14 <strong>more specific</strong>, such as asking respondents to provide a monthly skincare budget.
+                    </p>
+                    <p><strong>&bull;&emsp;Results of the second survey</strong></p>
+                    <p>This online questionnaire targeted stakeholders with diverse backgrounds and was distributed across multiple platforms (such as WeChat and Xiaohongshu), covering a broader audience. We collected 556 responses mainly from various provinces in China, but also from other 9 countries.</p>
+                    <div class="img-wrap">
+                      <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/survey3.jpg" alt="survyres">
+                      </div>
+                    </div>
+                    <p>The design of the online questionnaire incorporated <strong>branching logic, dynamically adjusting questions based on respondents' language, age, educational background, and other factors</strong>. This approach not only improved the relevance of the questionnaire but also enhanced the accuracy and representativeness of the data. In designing the online questionnaire, we paid special attention to GDPR requirements, ensuring that all participants clearly understood the purpose of data usage before starting the questionnaire.</p>
+                    <div class="img-wrap">
+                      <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/survey4.png" alt="qstr">
+                      </div>
+                      <div class="disc">Figure. Mind map of questionnaire structure.</div>
+                    </div>
+                    <p>Here are some main points of the results:</p>
+                    <p>
+                      <strong>Background of participants:</strong> <br>
+                      - Gender Distribution: Female respondents significantly outnumbered male respondents, suggesting females have a relatively higher interest in the survey's topic.<br>
+                      - ge Group: The 19-25 age group takes up around half of the participants, indicating that the survey’s theme or communication channels resonated more with this demographic.<br>
+                      - Academic/Professional Background: Around 60% of participants lacked a background in biology or chemistry, reflecting a diverse audience from various fields.<br>
+                      - Genetic Engineering Awareness: Many non-biology respondents had heard of genetic engineering, but a significant portion lacked understanding, highlighting the need for public education.<br>
+                      - Skin Type Awareness: Combination skin was the most common according to self-description, but around 14% of respondents were uncertain about their skin type, suggesting the need for better skin type education.
+                    </p>
+                    <div class="img-wrap">
+                      <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/survey5.jpg" alt="skintype">
+                      </div>
+                      <div class="disc">Figure. The percentage of different types of skin.</div>
+                    </div>
+                    <p><strong>Knowledge of ingredients of our product:</strong></p>
+                    <p>
+                      - Biologically Manufactured Cosmetics: Public understanding of biologically manufactured cosmetics was low, indicating a need for more outreach and education.<br>
+                      - Yeast Extract in Skincare: Consumers were open to skincare products containing yeast extract but expressed concerns about product effectiveness and trusted brand credibility as influencing factors.<br>
+                      - The function of ceramide and &alpha;-bisabolol: only around half of the participants know the right function of ceramide and &alpha;-bisabolol, suggesting further popularization of these two ingredients.
+                    </p>
+                    <p><strong>About product selection:</strong></p>
+                    <p>
+                      - Criteria: Respondents tended to prioritize product effectiveness and personal experience over brand reputation when choosing skincare products.<br>
+                      - Budget: The majority of respondents had a monthly skincare budget of 50-200 yuan, indicating a focus on practicality and cost-effectiveness.<br>
+                      - Ingredient Awareness: Interest in skincare product ingredients varied, but awareness is growing as consumer education improves.<br>
+                      - Trust in Skincare Products: Most participants believed skincare products were effective in improving skin conditions, reflecting high trust in the industry, while some participants have <strong>negative attitudes</strong> like 'Don't know much about it, but if there are good skincare products that are cost-effective, I would consider getting them’, ‘too lazy to take care of my skin’, ‘Spend time’, ‘No need at all’, ‘It is much more difficult than it seems’.<br>
+                      - Preference for Natural Ingredients: Respondents showed a <strong>preference for natural plant extracts</strong> over chemically synthesized or genetically engineered products. It reflects a shift toward organic and natural options. However, They may still be unfamiliar with or resistant to biomanufactured skincare products.
+                    </p>
+                    
+                    <div class="img-wrap">
+                      <div class="border">
+                          <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/survey6.jpg" alt="cusprefer">
+                      </div>
+                      <div class="disc">Figure. Consumer preferences for different types of cosmetics.</div>
+                    </div>
+
+                    <p>(Click <a href="https://static.igem.wiki/teams/5371/human-practice/ihp/results-of-the-second-survey.pdf">here</a> to see details of the questionnaire and the results)</p>
+
+
+
+
+              </div>
+              
+              <h3>A Focus Group Interview On Skincare Product Selection</h3>
+              <div class="s2">
+                <p>A focus group interview is a method used to gain in-depth insights into consumer preferences and behaviors by engaging participants of different ages and genders. Our previous public survey targets a wide range of participants, including consumers and <strong>non-stakeholders</strong>. This session's theme was to further explore how <strong>consumers</strong> choose skincare products, their packaging preferences, and their views on product efficacy, aiming to gather valuable feedback that can inform targeted product development and marketing strategies.</p>
+                <p><strong>&bull;&emsp;Aim:</strong></p>
+                <p>
+                  1.    To explore consumer decision-making processes in skincare product selection, focusing on the influences of product efficacy, packaging, and ingredient production methods on purchasing behavior.<br>
+                  2.    To identify key factors that shape consumer preferences for natural versus synthetic ingredients, and their openness to innovative formulations such as yeast lysate, highlighting how scientific knowledge and product transparency can impact trust and acceptance.<br>
+                  3.    To understand consumer expectations and pain points related to skincare products, including past experiences with product efficacy, packaging, and the reliability of marketing claims.<br>
+                  4.    To examine the role of external recommendations, such as influencers, friends, and professional endorsements, in shaping consumer choices, especially in the context of evolving market trends and product innovations.<br>
+                  5.    To assess the level of risk consumers are willing to take with new skincare ingredients, including their concerns about ingredient transparency, safety, and the depth of information available to them.
+                </p>
+                <p><strong>&bull;&emsp;Process I:</strong></p>
+                <p>In the focus group discussion, we invited participants of different ages and genders: Qianqian, a female in the 50-60 age range; Tingting, a female in the 30-40 age range; Huahua, a female aged 20-30; Wang Chen, a male aged 20-30; Mengmeng, a female aged 20-30; and Situ, a female aged 20-30. Each participant shared their insights on various aspects of skincare product selection, packaging preferences, and product efficacy. Below are the details of each question along with their corresponding answers:</p>
+                <div class="img-wrap">
+                  <div class="border">
+                    <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/focusgroupposter.jpg" alt="focusGroupInvitePost">
+                  </div>
+                  <div class="disc">Figure. A Poster for the focus group interviews (left) and organizational records of the WeChat group chats (right).</div>
+                </div>
+                <p class="quote">Q: How do you usually choose skincare products?</p>
+                <p>
+                  •	Mengmeng: I use a facial cleanser, and moisturizing is essential because I have dry skin. For example, I use Proya 630.<br>
+                  •	Situ: My primary needs are to reduce acne scars and brighten my skin, following a doctor's advice to use Vitamin A cream. Moisturizing is also a priority, so I frequently purchase hydrating products.<br>
+                  •	Wang Chen: There are fewer options for male cosmetics, yet the market demand for men's skincare products is significant.<br>
+                  •	Huahua: For my sensitive skin, I use La Roche-Posay products, creams to reduce closed comedones, pro-version masks, and products to lessen redness.
+                </p>
+                <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/focus1.png" alt="focus1">
+                  </div>
+                </div>
+                <p class="quote">Q: Do you consider product packaging when choosing products?</p>
+                <p>
+                  •	MYX: Yes, packaging reflects product quality and the company's attention to detail.<br>
+                  •	Tingting: I dislike excessive packaging, especially when packaging outweighs the actual product, such as when a 200g container only holds 30g of product. I prefer simple yet elegant designs, but not overly plain.<br>
+                  •	Wang Chen: I don't care much about packaging; my focus is primarily on function, followed by price. However, luxury brands with simple and high-end packaging may attract me.<br>
+                  •	Tingting: Products developed by hospitals or laboratories, despite their simple packaging, are reliable due to the emphasis on research and development. I believe the cost is invested in research rather than packaging, which I find acceptable.<br>
+                  •	Qianqian: I trust products developed by universities or hospitals and do not prioritize packaging. Chinese brands appeal to me due to cultural affinity, and I tend to support local products over international ones.<br>
+                  •	Mengmeng: I don't care about packaging; efficacy is my priority. Attractive packaging alone won't influence my decision.<br>
+                  •	Situ: Improved packaging might attract consumers, but efficacy is still more important.
+                </p>
+                <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/focus2.png" alt="focus2">
+                  </div>
+                </div>
+                <p class="quote">Q: Have you ever had a disappointing experience with skincare products?</p>
+                <p>
+                  •	Situ: I've had skin issues without consistent effects; the product seemed to ignore the time needed to prove efficacy and exaggerated its benefits.<br>
+                  •	Tingting: Using certain mud masks made my dry skin worse, leading to dehydration and peeling. These products downplayed side effects and overlooked my skin type, which was disappointing.<br>
+                  •	Huahua: I haven't had major disappointments, but I noticed when product claims didn't match the actual results, such as a Lancome product promising brightening effects that I didn't experience. It also failed to warn against using it on sensitive skin, despite containing alcohol, which is not suitable for sensitive types.
+                </p>
+                <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/focus3.png" alt="focus3">
+                  </div>
+                </div>
+                <p class="quote">Q: Does the production method of skincare ingredients affect your purchasing decisions? Are you open to using yeast lysate, or do you prefer plant extracts over synthetic ones?</p>
+                <p>
+                  •	Tingting: I've used SK-II's Facial Treatment Essence, which contains yeast extract, though I wasn't initially familiar with its benefits. It did make my skin brighter than other products, but the brand's markup is too high. I like bio-extracts and would look for more affordable alternatives.<br>
+                  •	Qianqian: I prefer natural plant extracts but prioritize effectiveness. If yeast lysate or synthetic ingredients prove more effective, I would consider them.<br>
+                  •	Wang Chen: Men's skincare products, such as masks, often include yeast extracts. For me, value for money is key; effectiveness is more important than the brand, and I choose products based on ingredients.
+                </p>
+                
+                <p class="quote">Q: How do you usually select skincare products? Through recommendations from family and friends or influencer reviews?</p>
+                <p>
+                  •	Mengmeng: I trust friends more because influencer content often includes advertisements. A blogger wouldn't recommend a product without some incentive, so I prefer advice from people whose skin type I know.<br>
+                  •	Tingting: I might trust influencers more because my friends' skin types often differ from mine, leading to varying product experiences. However, influencer credibility varies, so I compare multiple sources before buying.<br>
+                  •	Wang Chen: Different skin types influence my decisions, so I lean toward influencer advice because they usually offer information on a variety of skin types. I also conduct my own research before making a choice.<br>
+                  •	Huahua: Recommendations from friends are noted but less likely to influence me due to differing skin types. I primarily rely on online research and real user reviews, avoiding products with negative feedback.
+                </p>
+                
+                <p class="quote">Q: Do you have concerns about skincare ingredients? Would you try a new cosmetic ingredient, or are you cautious?</p>
+                <p>
+                  •	Wang Chen: I would try new ingredients, trusting the rigorous safety tests that products undergo. Natural extracts like snow lotus appeal to me, and I’m willing to experiment with such options.<br>
+                  •	Tingting: I am hesitant to try entirely new ingredients, especially those not found in reputable products. As women age, skin sensitivity increases, so I avoid unfamiliar ingredients unless they are used in high-end brands I trust.<br>
+                  •	Qianqian: I'm open to trying new ingredients if there is scientific support for their efficacy and safety. I rely on educational content and evidence to build trust in new components.<br>
+                  •	Huahua: I rarely jump on trends involving novel ingredients unless there’s strong, credible endorsement. Frequent promotions on social media make me skeptical of the motivations behind such endorsements.
+                  •	Mengmeng: I'm cautious with hyped products and prefer to see user feedback before trying. I investigate negative reviews to ensure compatibility with my skin type.
+                </p>
+                
+                <p><strong>&bull;&emsp;Process II:</strong></p>
+                <p>Due to the <strong>limited number of participants aged 40-60</strong>, we conducted additional interviews with two individuals (one male and one female) in this age range to gather more insights on their skincare preferences.</p>
+                <p><strong>How They Choose Skincare Products:</strong></p>
+                <p>
+                  Price: Price is a key factor influencing their decision-making process.<br>
+                  Effectiveness: The effectiveness of the product is a top priority.<br>
+                  Marketing and Recommendations: Their choices are influenced by promotional strategies, including advertisements, endorsements from influencers, or simply seeing the product used by people around them.<br>
+                  Participants in this age group typically do not pay much attention to the production methods or detailed ingredients of the products. Even when ingredients are discussed, technical terms often sound confusing and do not significantly impact their buying decisions. Sales conversations usually emphasize the brand, origin, efficacy, and occasionally touch upon the main ingredients.<br>                           
+                  
+                </p>
+                <p><strong>Specific Skincare Products Used:</strong></p>
+                <p>
+                  Cleansers: A basic and regular part of their skincare routine.<br>
+                  Moisturizers: They often use lotions recommended or prescribed by hospitals, such as Vitamin E lotion or hydrosilicone ointment, which may be developed by local institutions like Zhejiang University. These products may not always have ingredients explicitly listed.
+                </p>
+                
+                <div class="img-wrap">
+                  <div class="border">
+                      <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/hpcream.jpg" alt="hpcream">
+                  </div>
+                  <div class="disc">Figure. Daily skincare products like Vitamin E lotion or hydrosilicone ointment are shown to us by one of the participants aged 40-60.</div>
+                </div>
+                <p><strong>Additional Insights (Female, 40-50 years old):</strong></p>
+                <p>
+                  Skincare Selection: As they age, they tend to stick with products they experimented with when they were younger, showing a strong preference for consistency in their routines.<br>
+                  Skincare Habits: Generally, their skincare routines are minimal, reflecting a less intensive approach compared to younger groups.
+                </p>
+                <p><strong>&bull;&emsp;Overall Trend Analysis:</strong></p>
+                <p>
+                  <strong>Young Group (20-30 years old):</strong> Consumers in this age group, both male and female, are more concerned with specific skincare issues such as moisturizing, acne treatment, and sensitive skin. They focus on the effectiveness of products and are more likely to rely on real user feedback, recommendations from friends, or professional advice. They are cautious about blindly following influencers and social media trends.<br>
+                  <strong>Middle-aged Group (30-40 years old):</strong> Consumers in this age range start paying more attention to product ingredients and scientific background, showing a strong focus on safety and actual efficacy. Their choices are more rational, and they are less likely to try emerging ingredients unless these ingredients are widely accepted and proven effective.<br>
+                  <strong>Mature Group (50-60 years old):</strong> Female consumers in this age group place higher trust in products backed by research and supported by professional institutions. They prefer natural ingredients but are also willing to try synthetic ingredients if they prove to be more effective. This group also demonstrates a preference and support for domestic brands.
+                </p>
+                <p><strong>&bull;&emsp;Reflection:</strong></p>
+                <p>Based on these insights, it is clear that efficacy, scientific backing, and transparency in product formulation are crucial in influencing consumer decisions. Packaging, though considered by some, often takes a backseat to product performance and ingredient reliability. Further, while natural extracts are preferred, there is openness to synthetic alternatives if proven effective. Moving forward, a focus on educating consumers about ingredient benefits and providing clear, reliable product information can enhance trust and acceptance in the market.</p>
+                <p><strong>&bull;&emsp;Action:</strong></p>
+                <p>
+                  1.	Emphasize Efficacy: Highlight the proven results and effectiveness of products to build trust.<br>
+                  2.	Utilize Trusted Endorsements: Leverage recommendations from trusted sources like professionals and real users.<br>
+                  3.	Age-Specific Marketing: Tailor marketing strategies to the specific needs and preferences of each age group.<br>
+                  4.	Minimize Packaging: Opt for minimalist, eco-friendly packaging that appeals to practical and quality-focused consumers.<br>
+                  5.	Develop Familiar Products: Create products that align with existing routines, especially for older consumers.<br>
+                  6.	Highlight Local Credibility: Promote partnerships with local institutions or hospital-backed products to build trust.<br>
+                  7.	Address Price Sensitivity: Offer a range of price points with a focus on value for money.<br>
+                  8.	Promote Balanced Ingredients: Emphasize the benefits of both natural and scientifically advanced ingredients.
+                  9.	Learn the key cosmetics regulations in China
+                  
+                  
+                </p>
+              </div>
+
+              <h2 id="4-3">Act - close the loop</h2>
+              <p>To ensure our design aligns with expectations, we have delved into comprehensive research of the beauty industry. Through surveys, focus group discussions, one-on-one interviews, and social media engagements, we have gathered insights into the needs, preferences, and usage habits of our target consumers, as well as their specific desires for beauty products. Moreover, we have analyzed the offerings of our competitors to grasp market dynamics and uncover niches for differentiation. Collaborating closely with researchers and formulators, we have ensured our products are safe, potent, and adhere to regulatory standards. Post each stakeholder interview, we persist in propelling the project forward. We actively refine our strategies, convene pertinent meetings, and deliberate on and revise our product design schemes. This approach is to guarantee that each conversation yields tangible value. We aspire for the outcomes of these discussions to transcend documentation and translate into actionable steps. And indeed, at iZJU-CHINA, we have successfully done so!</p>
+              <p>Based on the results of the previous part (anticipation, reflection, and engagement) of our AREA framework, we realized that we have many things to do other than just refining the project itself:</p>
+              <p><a href="https://2024.igem.wiki/izju-china/education">&bull;   Education:</a> we believe it is essential to provide education on basic skincare knowledge and synthetic biology to alleviate public concerns about products produced by synthetic biology.</p>
+
+              <p><a href="https://2024.igem.wiki/izju-china/entrepreneurship">&bull;   Entrepreneurship:</a> from our discussions with various professionals in the beauty industry, we have gained valuable insights into making a real product and were moved by their spirit of innovation and entrepreneurship. And are trying to design a product that cooperates with people's expectations.</p>
+              
+              <p><a href="https://2024.igem.wiki/izju-china/inclusivity">&bull;   Inclusivity:</a> Skincare product usually has a large target audience, regardless of gender, financial background, disabilities, and so on, we normally think a greater skin condition is better. And we hope to share our project with more target audiences and incorporate their perspectives into our project.</p>
+          </div>
+          <div class="s1">
+            <div class="h1-wrap">
+              <h1 id="5">Conclusion</h1>
+            </div>
+            <p>In the process of market research and ensuring that our design meets expectations, we have delved deeply into understanding the beauty industry. We have consulted with experts from various fields, listened to the needs of potential consumers, and continuously refined our product to achieve a closed loop in product design. This journey is incredibly rewarding, and we are grateful for the guidance from all the experts, the voices of the public, and the dedicated efforts of our team members who have worked tirelessly behind the scenes.</p>
+            <div class="img-wrap">
+              <div class="border">
+                  <img src="https://static.igem.wiki/teams/5371/human-practice/ihp/conclu1.jpg" alt='meetingrecord'>
+              </div>
+              <div class="disc">Figure. Some of our meeting records and notes on interview preparations.</div>
+            </div>                                               
+          </div>
+          <div class="s1">
+            <div class="h1-wrap">
+              <h1 id="6">References:</h1>
+            </div>
+            <p style="text-align: left;">1. Framework for responsible research and innovation [Internet]. [cited 2023 Oct 5]. Available from: https://www.ukri.org/who-we-are/epsrc/our-policies-and-standards/framework-for-responsible-innovation/</p>
+            <p style="text-align: left;">2. Sustainability and social impact in the beauty industry | Deloitte Global [internet]. [See 26 September 2024].  At: https://www.deloitte.com/global/en/Industries/consumer/perspectives/sustainability-social-impact-beauty-industry.html</p>
+            <p style="text-align: left;">3.	tatista Research Department. Beauty industry worldwide - statistics & facts. Statista. 2023.</p>
+            <p style="text-align: left;">4.	Brown TL, Fraser K. The rise of clean beauty: Market and consumer trends. J Consum Mark. 2021;38(4):389-400.</p>
+            <p style="text-align: left;">5.	Nguyen T, Haider Z, Jones J. The financial accessibility of skincare products: A growing concern. Int J Cosmet Sci. 2020;42(6):574-581.</p>
+            <p style="text-align: left;">6.	Pichot R, Belin C. Advances in ceramide biotechnology: Sustainable production methods. Biotechnol Adv. 2021;48:107713.</p>
+            <p style="text-align: left;">7.	An S, Lee AY. Ceramide and skin barrier function. Korean J Dermatol. 2012;50(7):583-589.</p>
+            <p style="text-align: left;">8. Lopes NP, Kato MJ, Yoshida M, et al. Biosynthesis and biological roles of chamomile-derived bisabolol. Phytochemistry. 2000;55(7):759-767.</p>
+            <p style="text-align: left;">9. Patil S, Jain A, Patil A, et al. Yeast extract: A potential ingredient for skin regeneration. J Cosmet Dermatol. 2020;19(5):1200-1206.</p>
+            <p style="text-align: left;">10. Moore J. Transparency in beauty products: A consumer-driven trend. J Cosmet Sci. 2019;45(2):112-120.</p>
+            <p style="text-align: left;">11. Taylor S, Smith R. Ethical sourcing in the beauty industry: Challenges and solutions. J Bus Ethics. 2018;149(3):567-584.</p>
+            <p style="text-align: left;">12. Green W, Johnson C. The environmental cost of cosmetic raw materials. J Sustain Prod Packag. 2017;11(1):25-32.</p>
+            <p style="text-align: left;">13. Jones P, Hill R, Parnell A. Sustainable packaging: Meeting consumer demand for eco-friendly beauty products. Int J Sustain Dev World Ecol. 2020;27(4):375-385.</p>
+            <p style="text-align: left;">14. TDR. Saccharomyces Lysate Extract [Internet]. The Dermatology Review. 2022 [cited 2024 Sep 18]. Available from: https://thedermreview.com/saccharomyces-lysate-extract/</p>
+          </div>
+          
+
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename = 'ihp.js')}}"></script>
+
+
+{% endblock %}

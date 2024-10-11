@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block title %}Software{% endblock %}
+
+{% block page_content %}
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+  <div class="wave-head" style="width: 150vw;"></div>
+  <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+  <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh"></div>
+  <!-- 此处修改page head图片 -->
+  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/software.svg" class='head-img'>
+</div>
+
+
+
+<!-- 文档内容 -->
+<div class="main">
+  <div class="menubg">
+      <div data-scroll-watcher=""></div>
+      <div id="menu" class="">
+          <div id="scrollbar1">
+
+              <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                  <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+              </div>
+
+              <div id="overlay">
+                  <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+              </div>
+
+          </div>
+
+          <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+              <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+          </div>
+
+          <div class="menucontent">
+              <div class="t1" tid="0">Motivation</div>
+              <div class="t1" tid="1">Requirement Analysis</div>
+              <div class="t1" tid="2">Software Structure</div>
+              <div class="h2-sec">
+                  <div class="t2" tid="2-0">&bull;&emsp;Overview</div>
+                  <div class="t2" tid="2-1">&bull;&emsp;Dot matrix segmentation</div>
+                  <div class="t2" tid="2-2">&bull;&emsp;Dot matrix recognition</div>
+                  <div class="t2" tid="2-3">&bull;&emsp;Cell segmentation</div>
+                  <div class="t2" tid="2-4">&bull;&emsp;Fluorescence detection and visualization</div>
+              </div>
+              <div class="t1" tid="3">Model Performance</div>
+              <div class="t1" tid="4">Future Work</div>
+          </div>
+      </div>
+  </div>
+  <div id="content">
+      <div class="s1">
+          <div class="h1-wrap">
+              <h1 id="0">Motivation</h1>
+          </div>
+          <p>
+            The practical needs of wet lab experiments and measurement processes lead us to design a system for trapping single yeast cells to study their oscillation patterns. However, we encountered several challenges:
+          </p>
+          <p>1. The oscillation cycle of the engineered yeast is roughly 10 hours, while its replicate life span (RLS) exceeds 70 hours, necessitating the processing of a vast number of images.
+          </p>
+          <p>2. The difficulty and inconvenience in precisely segmenting mutiple yeast cells from the images.
+          </p>
+          <p>3. There is currently a gap in the availability of an integrated system capable of performing from submatrix segmentation to submatrix and yeast recognition.
+          </p>
+      </div>
+
+      <div class="s1">
+          <div class="h1-wrap">
+              <h1 id="1">Requirement Analysis</h1>
+          </div>
+
+          <p>Primarily, we have identified our target audience as researchers in fluorescence photo studies and relevant industry field. Our aim is to develop a user-friendly software, enabling interactive utilization and interpretation of experimental interpretation. Lastly, we are committed to protecting user privacy.
+          </p>
+          <p>Therefore, we have designed a model with the following characteristics
+          </p>
+          <p>1. Effective data processing: Capable of processing extensive images
+          </p>
+          <p>2. Accurate image segmentation: Capable of accurate segmenting images to the desired resolution.
+          </p>
+          <p>3. Dot recognition: The model should have high sensitivity to identify the submatrix with dots.
+          </p>
+      </div>
+
+
+      <div class="s1">
+          <div class="h1-wrap">
+              <h1 id="2">Software structure</h1>
+          </div>
+
+          <h2 id="2-0">&bull;&emsp;Overview</h2>
+          <p>To tackle the challenges in image processing, our software, LuminoSeg, integrates multiple deep learning models and is divided into three main components: dot matrix segmentation using YOLOv8, dot matrix recognition using CNN, and single yeast cell segmentation using Cellpose Cyto3.
+          </p>
+          <div class="img-wrap">
+              <div class="border">
+                  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/software.png">
+              </div>
+              <div class="disc">Figure 1. General Overview of LuminoSeg</div>
+          </div>
+
+
+          <h2 id="2-1">&bull;&emsp;Dot matrix segmentation</h2>
+          <div class="img-wrap">
+              <div class="border">
+                  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/2.png" style="transform: scale(1.4);transform-origin: left;margin-bottom: -9vh;">
+              </div>
+              <div class="disc">Figure 2. The YOLOv8 structure for dot matrix segmentation.</div>
+          </div>
+          <p>In this research, we employed the YOLOv8 model to detect and segment cell traps within microscopic images. The YOLO model operates through a series of steps: converting input data into tensors, normalization, convolution, activation functions, and predictions. YOLO relies solely on convolutional layers, making it a fully convolutional network (FCN). In the YOLOv3 paper, the authors introduce a more advanced feature extractor called Darknet-53 [1]. As its name suggests, it contains 53 convolutional layers, each followed by a batch normalization layer and a Leaky ReLU activation function [2]. Our images involve three classes: cell trap, dot, and background. Instead of pooling layers, we used a convolutional layer with a stride of 2 for downsampling the feature map. Under the premise of small datasets, we found that the detection accuracy of well-established SSD models is far less accurate than that of YOLO models. Through the convolutional neural network (CNN) architecture design of P4, YOLOv8 achieves high resolution detection, allowing precise localization and segmentation of submatrix. We manually annotated the block diagram using 76 raw data figures and successfully trained the model confidence to 0.9 or higher.
+          </p>
+          
+          <h2 id="2-2">&bull;&emsp;Dot matrix recognition</h2>
+          <p>The process of manually annotating the massive amount of image data obtained from microscopy is not only time-consuming but also labor-intensive. To address this, we have implemented machine learning models for the automatic recognition of binary matrix values, streamlining the batch processing workflow. Focusing on the binary nature of these matrices, we simplified the model by utilizing only the grayscale channel and applied histogram equalization to boost contrast. We utilized CNNs, renowned for their prowess in image processing, with a compact architecture consisting of two convolutional layers succeeded by two fully connected layers (Fig 3). Compared and tested on different models, the CNN is sufficient to meet our needs. To enhance the robustness of the model and reduce overfitting, we expanded the dataset by generating additional images through transformations based on the manually annotated samples. This approach significantly improves the efficiency of biological image processing using machine learning techniques with good model performance (check performance for details). 
+          </p>
+          <div class="img-wrap">
+              <div class="border" style="width: 50%;">
+                  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/3.png">
+              </div>
+              <div class="disc">Fig 3. The CNN structure for dot recognition.</div>
+          </div>
+  
+
+          <h2 id="2-3">&bull;&emsp;Cell segmentation</h2>
+          <p>Cellpose, which is built on the U-Net3 architecture, is adapted for accurate cell segmentation from a diverse image types without the need for model retraining or parameter tuning. It employs a process of downsampling and upsampling feature maps, with skip connections that bridge layers of equivalent size and global skip connections from the image's initial state. Thus, cellpose can compute at the low resolution to all subsequent stages of processing.
+          </p>
+          <p>Based on the latest iteration of the cellpose model, cyto3, we have trained our model to precisely recognize and segmented yeast cells [3]. In our implementation with tagged images with its number, the model is initiated with image input, and proceeded with denoising, and calibrates cell diameter pixels to optimize recognition accuracy. Then we manually modified incorrectly segmented yeast cells, thereby ensuring the precise segmentation of yeast (Fig 4).
+          </p>
+          <div class="img-wrap">
+              <div class="border" style="width: 50%;">
+                  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/4.png">
+              </div>
+              <div class="disc">Figure 4. The results of trained cyto3 model recognition. The colored dots represent an identified yeast.</div>
+          </div>
+
+          <h2 id="2-4">&bull;&emsp;Fluorescence detection and visualization</h2>
+          <p>Once the cell segmentation is complete, the imageJ is applied to perform the subsequent visualizations (Fig 5). The fluorescence data is then processed for visualization of the oscillating curve or period analysis using the Fast Fourier Transform (FFT) in MATLAB.
+          </p>
+          <div class="img-wrap">
+              <div class="border">
+                  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/fig5.svg">
+              </div>
+              <div class="disc">Figure 5. Visualization and the FFT of the florescence data.</div>
+          </div>
+
+      </div>
+
+
+      <div class="s1">
+          <div class="h1-wrap">
+              <h1 id="3">Model Performance</h1>
+          </div>
+          <p>To enhance the CNN model's accuracy and generalization capability, we utilized images for the training set. Additionally, we applied various image augmentations, including affine transformations, random cropping, and slight rotations, to artificially expand the dataset, resulting in a total of 6,464 images. Of these, 80% were randomly assigned to the training set, while 20% were allocated for validation. After training the model for 80 epochs, the following results were achieved:
+          </p>
+          <p>
+              &bull;&emsp;Best Model Training Accuracy: 97.60%
+          </p>
+          <p>
+              &bull;&emsp;Best Model Validation Accuracy: 99.30%
+          </p>
+          <p>
+              &bull;&emsp;Best Model Training F1-Score: 0.976
+          </p>
+          <p>
+              &bull;&emsp;Best Model Validation F1-Score: 0.993
+          </p>
+          <p>These results indicate that the model achieved high precision and generalization performance.
+          </p>
+          <div class="img-wrap">
+              <div class="border">
+                  <img src="https://static.igem.wiki/teams/5371/dry-lab/software/fig6.png">
+              </div>
+          </div>
+      </div>
+
+      <div class="s1">
+          <div class="h1-wrap">
+              <h1 id="4">Future Work</h1>
+          </div>
+          <p>While our model has successfully reduced manual effort and enhanced reproducibility and scalability for large datasets, there is still room for further improvement. Here are the key areas we plan to address:
+          </p>
+          <p>1.	Enhancing model adaptability to different image types
+          </p>
+          <p>Our current use of YOLO allows for the processing of images of varying sizes. However, the detection of subtle differences in diagrams can still be challenging, potentially leading to segmentation errors and data loss. To address this, we will explore the integration of deeper network architectures or attention mechanisms to improve feature expression and model performance. 
+          </p>
+          <p>2. Innovating evaluation techniques
+          </p>
+          <p>We will develop a model capable of online updates and real-time user interaction to facilitate continuous learning and improvement, moving beyond traditional manual evaluation methods.
+          </p>
+          <p>3. Meeting customized requirements
+          </p>
+          <p>We will engage with microfluidics and fluorescence microscopy experts to further customize the model, ensuring it meets the specialized needs of these fields.
+          </p>
+      </div>
+
+
+
+      <div class="s1">
+          <div class="h1-wrap">
+              <h1 id="5">References</h1>
+          </div>
+
+          <p style="text-align: left;">1.	Redmon J, Farhadi A. YOLOv3: An Incremental Improvement. ArXiv [Internet]. 2018 Apr 8; Available from: https://www.semanticscholar.org/paper/YOLOv3%3A-An-Incremental-Improvement-Redmon-Farhadi/ebc96892b9bcbf007be9a1d7844e4b09fde9d961
+          </p>
+          <p style="text-align: left;">2.	Ultralytics. Object Detection Datasets Overview [Internet]. Available from: https://docs.ultralytics.com/datasets/detect
+          </p>
+          <p style="text-align: left;">3.	Stringer C, Wang T, Michaelos M, Pachitariu M. Cellpose: a generalist algorithm for cellular segmentation. Nat Methods. 2021 Jan;18(1):100–6.
+          </p>
+   
+      </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

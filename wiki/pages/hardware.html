@@ -1,0 +1,244 @@
+        {% extends "layout.html" %}
+
+        {% block title %}Hardware{% endblock %}
+
+        {% block page_content %}
+
+
+
+        <!-- page head wave 页头波浪 -->
+        <div class="wave-section-head">
+            <div class="wave-head" style="width: 150vw;"></div>
+            <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+            <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+            <!-- 此处修改page head图片 -->
+            <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/hardware.svg" class='head-img'>
+        </div>
+
+        <!-- 文档内容 -->
+        <div class="main">
+            <div class="menubg">
+                <div data-scroll-watcher=""></div>
+                <div id="menu" class="">
+                    <div id="scrollbar1">
+
+                        <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                            <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                        </div>
+
+                        <div id="overlay">
+                            <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                        </div>
+
+                    </div>
+
+                    <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                        <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+                    </div>
+
+
+                    <div class="menucontent">
+                        <div class="t1" tid="0">Introduction</div>
+                        <div class="t1" tid="1">Structure Overview</div>
+                        <div class="t1" tid="2">Design</div>
+                        <div class="h2-sec">
+                            <div class="t2" tid="2-0">&bull;&emsp;Microfluidic chip</div>
+                            <div class="t2" tid="2-1">&bull;&emsp;Accessory plumbing system</div>
+                            <div class="t2" tid="2-2">&bull;&emsp;Jig of the chip</div>
+                        </div>
+                        <div class="t1" tid="3">Device Budget</div>
+                        <div class="t1" tid="4">Testing, Feedback and Improvement</div>
+                        <div class="h2-sec">
+                            <div class="t2" tid="4-0">&bull;&emsp;Advantages</div>
+                            <div class="t2" tid="4-1">&bull;&emsp;Shortcomings</div>
+                            <div class="t2" tid="4-2">&bull;&emsp;Improvements based on feedback</div>
+                        </div>
+                        <div class="t1" tid="5">Future Application</div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                    <div class="s1">
+                        <div class="h1-wrap">
+                            <h1 id="0">Introduction</h1>
+                        </div>
+                        <p>Hardware session of this project is mainly driven by applicational demands from wet lab and measurement. To meet need for measuring fluorescent level of yeast cells in single-cell resolution and a real-time manner, and the replicative lifespan (RLS) of them, a system including microfluidic chips, the jig of the chip, and the accessory plumbing system was designed and constructed.
+                        </p>
+                    </div>
+
+                    <div class="s1">
+                        <div class="h1-wrap">
+                            <h1 id="1">Structure Overview</h1>
+                        </div>
+                        <div class="img-wrap">
+                            <div class="border">
+                                <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/1.svg">
+                            </div>
+                            <div class="disc">Figure 1. Overview of the microfluidic ship system</div>
+                        </div>
+                    </div>
+        
+                    
+                    <div class="s1">
+                         <div class="h1-wrap">
+                            <h1 id="2">Design</h1>
+                        </div>
+                        <h2 id="2-0">&bull;&emsp;Microfluidic chip</h2>
+                        
+                            <p>Microfluidic chip features a microstructure with cavity, which is formed by a piece of Polydimethylsiloxane (PDMS) with microstructure etched onto its surface bonded to a piece of glass plate of certain thickness. PDMS is transparent, physiologically inert, chemically stable, hydrophobic and resilient, making it suitable for building microfluidic chips. 
+                            </p>
+                            <p>The microstructures include the “cell trap”, the “channel”, the heat exchanger, the pores and encoding matrix. 
+                            </p>
+                            <p>The cell trap is a channel of certain size, featuring a “neck” of certain size, which fixes yeast cells (mother cells) of certain range of sizes while allowing the spores (daughter cells) of the mother cells to detach under static pressure (Figure 1). This allows the fixation/anchoring of the targeted cells, constant supplement of fresh culturing media, and separation of daughter cells, enabling the robust real-time tracking of fluorescent intensity in single cell resolution and RLS measurement of yeast cells.
+                            </p>
+                            <p>The “channel” is responsible for distributing cells and culturing media into “cell traps”, while maintaining a dynamic pressure caused by different flow rates.
+                            </p>
+                            <p>The heat exchanger is a twisting section where fluid inside slows down under larger resistance and exchange heat with the environment of incubator, which provides normal temperature for yeast growth and survival.
+                            </p>
+                            <p>The pores include holes punctured all the way through the PDMS material and etched areas enabling continuity of the holes to the rest of the microstructures.
+                            </p>
+                            <p>The encoding matrix are made of several submatrix, each of which include one positioning dot and five encoding dots. Positioning dot confirms the existence of the submatrix and provides absolute positioning information relative to adjacent “cell traps”. Encoding dots in each submatrix occupy five positions, corresponding to five digits in binary. Etched holes indicate “one”, while unetched places indicate “zero”, hence the 32 differentiated submatrix for the positioning of “cell traps”.
+                            </p>
+                            <p>The microstructures are etched on the surface of the molds using lithography, which are then formed on PDMS materials. There are two etching depths to the microstructures, 4.5 micron meter and 15 micron meter, requiring overlay process, which involves two sets of masks and positioning errors of patterns of two etching depths. Considering the required preciseness of relative position between positioning dots in dot submatrix and “cell traps”, the dot matrix and “cell traps” are designed with identical etching depth 4.5 micron meter and laid out on the same set of mask, ensuring robustness pf positioning assistance.
+                            </p>
+                            <p>The PDMS material with microstructure is bonded to glass plate with certain thickness, which is primarily determined considering the lens used for measurement. Quantification of the intensity of mcherry requires using 60x lens to observe the nucleus, which has a limited working distance below 0.2mm. Therefore, cover slips that are 0.17mm in thickness are bond to the PDMS material.
+                            </p>
+                        
+                        <div class="img-wrap">
+                            <div class="border">
+                                <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/pic2.svg">
+                            </div>
+                            <div class="disc">Figure 2. The microfluidic chip structure.</div>
+                        </div>
+
+                        <h2 id="2-1">&bull;&emsp;Accessory plumbing system</h2>
+                        
+                            <p>Cell loading and constant supply of culturing media are achieved through the plumbing system, which includes 50ml syringe as reservoir, Teflon tubing, syringe needle with flat top as adapter between syringe and Teflon tubes, 90-degree bended stainless-steel tubes as adapter between Teflon tubes and the microfluidic chip.
+                            </p>
+                            <P>The whole system is gravity driven. Syringe containing culturing media is secured on certain height relative to the chip for constant working pressure and fluid supply. A tripod-based stand is used to secure and record all equipment with height differences. An outlet tube is connected to the outlet pore and the outlet of tube is kept on the same height as the outlet pore to avoid excessive positive or negative pressure. 
+                            </P>
+                        
+                        <div class="img-wrap">
+                            <div class="border" style="width: 50%;">
+                                <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/pic3.svg">
+                            </div>
+                            <div class="disc">Figure 3. The structure of our accessory plumbing system.</div>
+                        </div>
+
+                        <h2 id="2-2">&bull;&emsp;Jig of the chip</h2>
+                        
+                            <p>Choosing thin bed plates bring about less structural integrity and robustness. The 60x lens in measurement have shallow depth of field, which means that subtle deformation caused by small forces are significant enough to bring trouble to observation and quantification. Strains from the pipes are also transduced to the chip through the stainless-steel tubes, causing deformation to the whole chip. Further, the strains are higher around the pores to the extent that the pores tore, reducing concealment under high hydraulic pressure.
+                            </p>
+                            <P>A jig was designed and fabricated, containing two pieces, the bottom plate and the midframe-cover assembly. 
+                            </P>
+                            <p>The bottom plate is a thin plate which is not the main contributor to increasing structural integrity. There is a hole designed in the middle, where the lens approaches the chip, to avoid interference of the lens with the bottom plate.
+                            </p>
+                            <p>The midframe is the main load-carrying structure of the jig. There is a square hole in the middle to accommodate the PDMS part of the chip. On edges of the short sides, two sinking structures are designed for compatibility to the clamp in the incubation chamber of the microscope. On the top surface, several screw holes are designed to attach the cover to the midframe with M2 screws.
+                            </p>
+                            <p>Both bottom plate and midframe are fabricated through 3D printing using light curing resin for ease of manufacturing.
+                            </p>
+                            <p>The cover is made of acrylic for transparency. Several screw holes are reserved for attachment to midframe. Two holes of slightly larger diameter to stainless-steel tubes are hand drilled to allow passage of tubes while reducing stress on the PDMS material from pipes. The cover plate screwed to midframe adds to the rigidity of the assembly.
+                            </p>
+                            <p>The jig and chip are assembled with paper tapes securing them from the vertical sides. 
+                            </p>
+                        
+                        <div class="img-wrap">
+                            <div class="border">
+                                <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/pic4.svg">
+                            </div>
+                            <div class="disc">Figure 4. The jig of the chip.</div>
+                        </div>
+                    </div>
+
+                    <div class="s1">
+                        <div class="h1-wrap">
+                            <h1 id="3">Device Budget</h1>
+                        </div>
+                        <div class="img-wrap">
+                            <div class="border">
+                                <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/pic5.svg">
+                            </div>
+                            <div class="disc">Figure 5. The cost analysis of the hardware.</div>
+                        </div>
+                    </div>
+
+                    <div class="s1">
+                        <div class="h1-wrap">
+                            <h1 id="4">Testing, Feedback and Improvement</h1>
+                        </div>
+                        <p>The microfluidic chip system was tested by us and monitored by the doctors in the Infection Medicine Center of Edinburgh Medical School and the Zhejiang University and the University of Edinburgh Institute. The users of the microfluidic chip system gave a strong affirmation and the following feedback.
+                        </p>
+                        <h2 id="4-0">&bull;&emsp;Advantages</h2>
+                        <h3>High cell retention rate</h3>
+                        <div class="s2">
+                            <p>Long-term operation of the microfluidic chip does not adversely affect yeast growth and budding, while also maintaining a relatively high cell retention rate of 55.6%. In an experiment with a microfluidic chip, where we initially observed 18 cell traps, after an 18-hour observation period, we found that 10 of these traps successfully retained cells.</p>
+                        </div>
+                        <h3>Robust design</h3>
+                        <div class="s2">
+                            <p>The two-layer design makes it extremely rigid over the course of our experiments that takes more than 22 hours.</p>
+                        </div>
+                        <h3>Easy operation</h3>
+                        <div class="s2">
+                            <p>For perfusion, the gravity-driven flow simplifies operation compared to using a microfluidic pressure pump and also helps to reduce costs.</p>
+                        </div>
+                        <h3>Supporting software</h3>
+                        <div class="s2">
+                            <p>We have developed a <a href="https://2024.igem.wiki/izju-china/software">software</a> that integrates image recognition, dot matrix recognition and single cell recognition, which can easily process the produced images.
+                            </p>
+                        </div>
+                        
+                        <h2 id="4-1">&bull;&emsp;Shortcomings</h2>
+                        
+                            <p>The chip cannot achieve 60x magnification and can only be viewed with a 20x lens. As the mcherry signal can only be measured from the nucleus, the 60x magnification is required for observation.
+                            </p>
+                            <P>The PDMS is easily damaged by the stress of the tube to the stainless-steel tube.
+                            </P>
+                        
+
+                        <h2 id="4-2">&bull;&emsp;Improvement based on feedback</h2>
+                        
+                            <p>1.	Use the 0.17mm cover slip to bind to the PDMS material. The thinner glass allows for 60x magnification of focus.  
+                            </p>
+                            <div class="img-wrap">
+                                <div class="border">
+                                    <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/pic6.svg">
+                                </div>
+                                <div class="disc">Figure 6. The 0.17mm coverslip enable us to test cell under the 60x microscope.</div>
+                            </div>
+                            <p>2. Design the Jig of the chip to fix the microfluidic chip and reduce the stress on the PDMS material from stainless-steel tube. Thus, the focus shift was largely reduced.
+                            </p>
+                            <div class="img-wrap">
+                                <div class="border">
+                                    <img src="https://static.igem.wiki/teams/5371/dry-lab/hardware/11.jpg">
+                                </div>
+                                <div class="disc">Figure 7. The focus shift was largely reduced by using the chip jig.</div>
+                            </div>
+                        
+                        
+                    </div>
+
+                    <div class="s1">
+                        <div class="h1-wrap">
+                            <h1 id="5">Future Application</h1>
+                        </div>
+                        <p>We commonly employ the embedding method for single-cell fixation, given its effectiveness. However, prolonged observation necessitates not only stable cell-holding tools but also a consistently viable cellular environment. To meet these needs, we have developed a microfluidic chip system designed specifically for long-term observation.
+                        </p>
+                        <p>Similar single-cell clamped microfluidic systems have been shown not to affect cell survival [1]. In future, cell traps of different sizes can be designed to hold cells or microorganisms in suspension culture. The immobilization of single cells facilitates the study of cellular aging as well as the observation of intricate fluorescence dynamics.
+                        </p>
+                        <p>Moreover, labs can also use the chip jig to support the microfluidic chip, optimizing observation conditions. The accessory plumbing system is user-friendly, simplifying operations and improving efficiency in biological research.
+                        </p>
+                    </div>
+
+                    <div class="s1">
+                        <div class="h1-wrap">
+                            <h1 id="6">References</h1>
+                        </div>
+                        <p style="text-align: left;">1.	Li Y, Jin M, O’Laughlin R, Bittihn P, Tsimring LS, Pillus L, et al. Multigenerational silencing dynamics control cell aging. Proceedings of the National Academy of Sciences. 2017 Oct 17;114(42):11253–8. 
+                        </p>
+                    </div>
+                        
+            </div>
+        </div>
+
+        {% endblock %}
+

@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+
+{% block title %}Measurement{% endblock %}
+
+{% block page_content %}
+
+
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/measurement.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Overview</div>
+                <div class="t1" tid="1">Design in Model Organism/Yeast</div>
+                <div class="t1" tid="2">Design and Principle of Related Hardware</div>
+                <div class="t1" tid="3">Oscillation of mCherry, EGFP and BFP Signals</div>
+                <div class="t1" tid="4">Design Software for Data Analysis</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="4-0">&bull;&emsp;Dot matrix segmentation</div>
+                    <div class="t2" tid="4-1">&bull;&emsp;Dot matrix recognition</div>
+                    <div class="t2" tid="4-2">&bull;&emsp;Cell segmentation</div>
+                    <div class="t2" tid="4-3">&bull;&emsp;Average fluorescence density measurement</div>
+                    <div class="t2" tid="4-4">&bull;&emsp;LOWESS fitting and FFT</div>
+                </div>
+                <div class="t1" tid="5">Safety and Cytotoxicity of Yeast Lysate</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="5-0">&bull;&emsp;Yeast lysates</div>
+                    <div class="t2" tid="5-1">&bull;&emsp;Cytotoxicity testing</div>
+                </div>
+                <div class="t1" tid="6">Measuring Ceramide Level</div>
+                <div class="t1" tid="7">Growth Curve</div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">Overview</h1>
+                </div>
+                <p>The overall goals of measurement include the single cell resolution and real-time quantification of the expression level of Sir2, TSC10, and ERG20-MRBBS genes in Saccharomyces cerevisiae, comparison of the yield of ceramide, and the assessment of the lifespan of Saccharomyces cerevisiae. Fluorescent reporters were designed as the base of real-time measurement of gene expression. A microfluidic chip containing “cell traps” was designed to assist in the measurement of fluorescent reporters and the lifespan of yeast cells (Figure 1).
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/fig1.png">
+                    </div>
+                    <div class="disc">Figure 1. The structure of the microfluidic chip.</div>
+                </div>
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">Design in Model Organism/Yeast</h1>
+                </div>
+                <P>SIR2-HAP4 oscillating circuit is the signal source of spontaneous oscillation, among which SIR2 is one of the most suitable targets for measuring such oscillation (Figure 2).
+                </P>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/fig2.png">
+                    </div>
+                    <div class="disc">Figure 2. Schematic of integrated SIR2-HAP4 oscillator, with downstream regulated TSC10 and ERG20-MrBBS.</div>
+                </div>
+                <P>As GAL4 was designed to be directly downstream of SIR2 and be controlled by the exact same CYC1 promoter as SIR2, the fluorescent protein mCherry was designed to be linked to the C-terminal of SIR2 via a flexible linker (Figure 3), which was proved not to affect cell growth or aging (Zhou et al., 2023). 
+                </P>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/fig3sir2.png">
+                    </div>
+                    <div class="disc">Figure 3. Plasmid map to construct mCherry reporter downstream SIR2.</div>
+                </div>
+                <P>EGFP and BFP were connected respectively to the downstream of TSC10 and ERG20-MRBBS via a self-cleaving 2A peptide (P2A) (Figure 4), which enabled direct control by the exact same promoters of targeted genes with minimal interference of the normal functions of the proteins.
+                </P>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/4.png">
+                    </div>
+                    <div class="disc">Figure 4. Plasmid maps for fluorescent reported expression of TSC10 (A) and ERG20-MrBBS (B).</div>
+                </div>
+            </div>
+                    
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">Design and Principle of Related Hardware</h1>
+                </div>
+                <P>Measurement of fluorescent intensity in a single-cell resolution and real-time manner, and the replicative lifespan (RLS) of individual cells comes with challenges, including random drifting of cells, which adds difficulty to cell tracking considering a moderate sampling interval for a long sampling duration, rapid refreshing of culturing media for nominal cell growth, and distinguishing the targeted mother cells from their daughter cells during their whole RLS. Therefore, a microfluidic chip, the core functional unit of which is a “cell trap”, with peripheral hardware was designed to tackle those challenges. 
+                </P>
+                <p>“Cell trap”, the core structure of the microfluidic chip, is a channel of certain size, featuring a “neck” of certain size, which fixes yeast cells (mother cells) of certain range of sizes while allowing the spores (daughter cells) of the mother cells to detach under static pressure. This allows the fixation/anchoring of the targeted cells, constant supplement of fresh culturing media, and separation of daughter cells, enabling the robust real-time tracking of fluorescent intensity in single cell resolution and RLS measurement of yeast cells, or at least those closest to the “neck” in “cell traps” (Figure 1). 
+                </p>
+                <p>Other main functional structures include the “channel”, which is responsible for the distribution of cells and culturing media into different “cell traps” and creating differences of dynamic pressure for the normal functioning of “cell traps”, and heat exchanger, which allows the heating of culturing media to the optimal temperature for yeast growth, and pores for the insertion of pipes (Figure 1). Other peripheral hardware is described in the <a href="https://2024.igem.wiki/izju-china/hardware">hardware</a> session. 
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="3">Oscillation of mCherry, EGFP and BFP Signals</h1>
+                </div>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/5.png">
+                    </div>
+                    <div class="disc">Figure 5. Oscillation of mCherry,EGFP and BFP in NH1574T2MEG. Dynamics of EGFP, BFP, and mCherry intensity in yeast cells (A,B); Power spectrum of BFP (C), GFP (D), and mCherry (E) fluorescence intensity (n=8).</div>
+                </div>
+                <p>As shown in Figure 5, there were periodic fluctuations in mCherry, EGFP and BFP channels. Power spectrum of the signals through Fast Fourier Transform indicated a similar peak frequency/period across three channels, suggesting an orchestrated oscillation of expression among the reported genes, SIR2, TSC10, and ERG20-MrBBS. 
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="4">Design Software for Data Analysis</h1>
+                </div>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/fig6.png">
+                    </div>
+                    <div class="disc">Figure 6. The standard procedure for data analysis. Check <a href="https://2024.igem.wiki/izju-china/software">software</a> for more information.</div>
+                </div>
+                <h2 id="4-0">&bull;&emsp;Dot matrix segmentation</h2>
+                <div class="s2">
+                    <p>We employed the YOLOv8 model to detect and segment cell traps in single field of view. As a fully convolutional network, YOLO relies exclusively on convolutional layers. The model follows a series of steps: converting input data into tensors, normalizing the data, applying convolutional layers, using activation functions, and making predictions. In this case, images were fed into the YOLOv8 model. Then the model broke down the entire image into chunks, each consisting of one submatrix with three cell traps</p>
+                </div>
+                <h2 id="4-1">&bull;&emsp;Dot matrix recognition</h2>
+                <div class="s2">
+                    <p>We utilized Convolutional Neural Networks (CNNs), known for their efficiency in image processing. The architecture comprised two convolutional layers followed by two fully connected layers. Using CNN, each of the three cell traps was identified and labeled with its respective number.
+                    </p>   
+                </div>
+                <h2 id="4-2">&bull;&emsp;Cell segmentation</h2>
+                <div class="s2">
+                    <p>We employed Cellpose, a model based on the U-Net3 architecture, which excels at accurately segmenting cells across various image types without requiring retraining or parameter adjustments. Using the cell trap and manual correction, the single cell closest to the neck was identified. The mask for the selected cell was saved as a ROI.zip file for further processing.</p>
+                </div>
+                <h2 id="4-3">&bull;&emsp;Average fluorescence density measurement</h2>
+                <div class="s2">
+                    <p>The segmented data was processed using ImageJ, where batch processing was employed to measure the average fluorescence intensity.</p>
+                </div>
+                <h2 id="4-4">&bull;&emsp;LOWESS fitting and FFT</h2>
+                <div class="s2">
+                    <p>The data was fitted using LOWESS (Locally Weighted Scatterplot Smoothing) to create a line chart. Subsequently, the Fast Fourier Transform (FFT) was applied using MATLAB, generating frequency-dependent distributions of the power spectrum. Peaks within these distributions were selected to define the periodic range.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="5">Safety and Cytotoxicity of Yeast Lysate</h1>
+                </div>
+                <p>Assessment of biocompatibility and safety of the yeast lysate of engineered yeast is critical to its real-world application. Therefore, a cytotoxicity test of yeast lysate to L-929, a mouse fibroblast cell line, was performed. 
+                </p>
+                <h2 id="5-0">&bull;&emsp;Yeast lysates</h2>
+                <div class="s2">
+                    <P>Yeast lysates were prepared by suspending washed yeast cells in 4-times volume of lysing buffer and lysed in ultrasound for 20min. The filtered supernatant was then analyzed for concentration of different products. Check <a href="https://2024.igem.wiki/izju-china/protocol">Protocols</a> for detailed steps. 
+                    </P>
+                </div>
+                <h2 id="5-1">&bull;&emsp;Cytotoxicity testing</h2>
+                <div class="s2">
+                    <P>Suspended L-929 cells were grown and attached to calls of 96-well plates. Then cell culture diluted with gradients, 1.25%, 2.5%, 5%, 10%, were added to each well and incubated for 12 hours. 10% of cell counting kit-8 (CCK8) was added to each well and incubated for 2 hours. The wells were then measured at 450nm for absorbance to determine cell viability. Check <a href="https://2024.igem.wiki/izju-china/protocol">Protocols</a> for detailed steps.
+                    </P>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/7.png">
+                        </div>
+                        <div class="disc">Figure 7. Cell viability of L-929 at different concentrations (1.25%, 2.5%, 5%, 10%) of cell lysates of different strains (WT, Production & Oscillation cells, Production cells), (*: p-value≤0.05; **: p-value≤0.01; ****: p-value≤0.0001; 1.25%, 2.5%, 5%, 10%: n=7, Control: n=5)</div>
+                    </div>
+                    <P>As shown in Figure 7, at 1.25% and 2.5%, which are commonly used concentrations in actual applications, there were no significant differences in cell viability among Production & Oscillation cells, Production cells, WT, or blank control, suggesting a reasonable biocompatibility performance. At 5%, though significantly less than the viability of BY4741R, the cell viability of Production & Oscillation cells was significantly better than Production cells, making Production & Oscillation cells a better choice for cell lysate production in terms of effects and biocompatibility. 
+                    </P>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="6">Measuring Ceramide Level</h1>
+                </div>
+                <p>To quantify ceramide production in our engineered yeast strains, we prepared yeast lysate and conducted elisa. A standard curve was drawn using semi-log equation to enhance the accuracy at low concentrations(Fig.8A ). Then ceramide levels of Production & Oscillation cells, Production cells, WT were tested. Since the absolute value of ceramide level (around 10-8 pg/cell) tested in this experiment is much lower than the normal level of ceramides in yeasts, we suspected that our lysing protocol is not effective so that our tested value could reflect the actual production of our yeasts. However, by normalizing the ceramide concentration and demonstrating as fold change, the ceramide level between Production & Oscillation cells, Production cells, and WT all showed significant difference(Fig.8B ). This result indicates that pRS42H-TSC10-EGFP is effective in enhancing ceramide production, and that ceramide-bisabolol oscillator showed advantage in producing ceramides.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/8.png">
+                    </div>
+                    <div class="disc">Figure 8. Measurement of ceramide concentrations of yeast lysates using ELISA kit
+                    <br>(A)	Standard curve of ceramide concentrations.The fitted line for the standard curve is: y = -0.2319x + 2.9105, R² = 0.9574, p=0.0001.
+                    <br>(B)	Fold change of ceramide production among Production & Oscillation cells, Production cells, and WT (NHR1574T2ME, BY4741T2ME, BY4741R) all showed significant differences. (*: p-value≤0.05; **: p-value≤0.01; ****: p-value≤0.0001; n=3)</div>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="7">Growth Curve</h1>
+                </div>
+                <p>To assess the growth characteristics of our engineered yeast strains, we monitored their growth curves under 30℃, 250rpm for 48 hours and tested for growth curve. First, we counted the number of yeasts on hemocytometer and diluted it to draw the standard curve(Fig.9A). The growth curve indicates the cell number at stationary phase showed great difference (Fig.9B), implying a great effect of ceramide-bisabolol oscillator in promoting cell growth and increasing resistance against nutrient restricted or toxic environment. A higher cell count at stationary phase favors single-batched fermentation, as saturated culture accounts for major periods in such approach. 
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/wet-lab/measurement/9.png">
+                    </div>
+                    <div class="disc">Figure 9. Growth curves of WT, Production and Production & Oscillation strains
+                    <br>(A)	Standard curve of the cell concentration in cultures.The fitted line of this standard curve is y=0.02x-0.006, r=0.997, p≤0.05.
+                    <br>(B)	The growth curve is fitted into Logistic curves based on the tested dots. *: p-value≤0.05; **: p-value≤0.01</div>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="8">References</h1>
+                </div>
+                <p>Zhou, Z., Liu, Y., Feng, Y., Klepin, S., Tsimring, L.S., Pillus, L., Hasty, J., Hao, N., 2023. Engineering longevity – design of a synthetic gene oscillator to slow cellular aging. Science (New York, N.Y.) 380, 376. https://doi.org/10.1126/science.add7631.</p>
+            </div>      
+
+    </div>
+</div>
+
+{% endblock %}

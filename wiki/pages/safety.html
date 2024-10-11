@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block title %}Safety{% endblock %}
+
+{% block page_content %}
+
+
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/project/safety/safety.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Selection of Engineered Organism, Selection Marks and Introducing Methods</div>
+                <div class="t1" tid="1">Lab Regulation & Safety Training</div>
+                <div class="t1" tid="2">Implementation Risk Management</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="2-0">&bull;&emsp;Safety for animals, plants, and the environment</div>
+                    <div class="t2" tid="2-1">&bull;&emsp;Our challenge</div>
+                    <div class="t2" tid="2-2">&bull;&emsp;Our solutions</div>
+                </div>
+                <div class="t1" tid="3">Conclusion</div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">Selection of Engineered Organism, Selection Marks and Introducing Methods</h1>
+                </div>
+                <p><i>Saccharomyces cerevisiae</i> was chosen as the engineered organism, the exact strain being BY4741, which is derived from the S288C strain. It is one of the most used yeast strains with commonly used selection markers deleted. It has low pathogenicity and safe to manipulate. Though it is not on whitelist due to the massive spores in large culture, it could be contained in biosafety cabin and PPEs like masks and avoiding large culture. 
+                </p>
+                <p>Selection markers include HygBR, sh Ble, AbaR and ΔURA. HygB targets yeast specific ribosome, while Aba targets yeast specific IPC synthesis, neither of which will be affecting clinical resistance in case of fungus infection. ΔURA is constructed in yeast genome as nutrient defective marker, which will not add to its survival advantage.
+                </p>
+                <p>All antibiotics resistance selection markers, HygBR, sh Ble, AbaR, were designed not to integrate into yeast genome to avoid transfer.
+                </p>
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">Lab Regulation & Safety Training</h1>
+                </div>
+                <p>To ensure the effective management of the laboratory, the institute administration has implemented official regulations governing lab operations. All activities in the lab are carried out in strict compliance with these guidelines. Additionally, our lab has established specific rules for the management of instruments and equipment, which must be followed during experiments.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/project/safety/pic1.jpg">
+                    </div>
+                    <div class="disc">Figure 1. A glimpse of our experiment bench</div>
+                </div>
+                <div style="display: flex;flex-direction: row; width: 100%;">
+                    <div class="img-wrap" style="width: 50%; ">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/project/safety/pic2.jpg">
+                        </div>
+                        <div class="disc">Figure 2. The clean bench for sterile operation</div>
+                    </div>
+                    <div class="img-wrap" style="width: 50%;">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/project/safety/pic3.jpg">
+                        </div>
+                        <div class="disc">Figure 3. Safety measures for the laboratory</div>
+                    </div>
+                </div>
+                
+                <p>Lab access is granted through a formal application process, followed by participation in a mandatory 'Safety Education Class.' The class covers essential topics such as experimental skills, lab maintenance, waste disposal protocols, ethical practices, chemical reagent storage, lab regulations, equipment safety, and emergency response procedures. Only those who complete this class are permitted to conduct experiments.
+                </p>
+                <p>Our lab instructor, Teacher Mengdi Jin, has overseen lab and equipment management at the institute for six years. Her extensive experience with the instruments on the public platform allows her to provide valuable guidance. To minimize potential risks, she ensures that all experimental procedures are performed under her supervision. Before starting any lab work, we attended the 'Safety Education Class' led by her, which outlined specific lab rules and emergency protocols. During experiments, she closely monitors our activities to reduce the risk of accidents or damage.
+                </p>
+                <p>Our laboratory is equipped with a comprehensive set of safety measures, including an Eyewash Station, First Aid Kit, Safety Shower, Fume Hood, Fire Extinguisher, Emergency Response Equipment, Personal Protective Equipment, Chemical Storage Cabinet, and Biosafety Cabinet.
+                </p>
+            </div>
+                    
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">Implementation Risk Management</h1>
+                </div>
+                <h2 id="2-0">&bull;&emsp;Safety for animals, plants, and the environment</h2>
+                <div class="s2">
+                    <p>In our project, we use engineered Saccharomyces cerevisiae to synthesize ceramide, alpha-bisabolol, and yeast lysate to create the yeast extract essence for skincare cosmetics. Our implementation process carefully considers environmental and biological safety risks.
+                    </p>
+                    <p>To address potential risks, we plan to use DNase treatment to process the yeast lysate, ensuring the destruction of any modified DNA sequences. Thus, we can effectively prevent humans, animals (especially microorganisms), and the environment from exposure to recombinant DNA. Additionally, our approach ensures the containment of genetically engineered material within the production process to avoid environmental contamination.
+                    </p>
+                </div>
+                <h2 id="2-1">&bull;&emsp;Our challenge</h2>
+                <div class="s2">
+                    <p>(1) Presence of Engineered DNA in Yeast Lysate: The yeast lysate contains engineered DNA, which could potentially expose people to toxins or modified genetic sequences. Extracellular DNA can exist stably for months before being assimilated by prokaryotic or eukaryotic cells in nature.[1] This could pose a safety concern for those handling or using the products derived from the lysate.
+                    </p>
+                    <p>(2) Volatile Exhaust Gas from Fermentation: During the fermentation process, volatile gases, including nitrogen oxides (NO), are released. These emissions could have harmful effects on both human health and the environment, making the management of exhaust gas critical.
+                    </p>
+                </div>
+                <h2 id="2-1">&bull;&emsp;Our solutions</h2>
+                <div class="s2">
+                    <p>To solve these problems, we propose the following solutions:
+                    </p>
+                    <p>(1) DNA Degradation: We will use DNase to break down and eliminate any modified DNA sequences present in the yeast lysate, reducing the recombinant DNA exposure to the humans, animals (especially microorganisms) and environment.
+                    </p>
+                    <p>(2) Exhaust Gas Treatment: We are exploring the HTP-biofoundry workflow developed by Yuan et al., which has shown promising results in reducing nitrogen oxide emissions by more than 80%.[2] This method may be adapted to our fermentation process, contributing to safer and more environmentally friendly production.
+                    </p>
+                </div>
+                <p>Before the commercialization of our yeast extract essence, we will carry out stringent biosafety testing. This includes ensuring that our engineered yeast and the products derived from it pose no risk to animals, plants, or the environment. In addition, we will collaborate with experts from our institute as well as from the company to optimize our process for both safety and sustainability, and we will provide complete, reliable data to support our applications for regulatory approval and patents.
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="3">Conclusion</h1>
+                </div>
+                <p>In summary, our project is designed with comprehensive safety measures across three key areas: organism selection, lab safety, and implementation. We use Saccharomyces cerevisiae BY4741, a low-pathogenicity strain, ensuring it is safely contained through appropriate lab practices such as biosafety cabinets and PPE. Our lab operates under strict safety regulations, with mandatory training and supervision to prevent accidents. For implementation, we address environmental risks by degrading engineered DNA through DNase treatment and reducing harmful emissions from fermentation. These measures collectively ensure that our project is conducted in a safe and responsible manner.
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="4">References</h1>
+                </div>
+                <p style="text-align: left;">1.	Wang F, Zhang W. Synthetic biology: Recent progress, biosafety and biosecurity concerns, and possible solutions. Journal of Biosafety and Biosecurity. 2019 Mar 1;1(1):22–30.
+                </p>
+                <p style="text-align: left;">2.	An Z, Tao H, Wang Y, Xia B, Zou Y, Fu S, et al. Increasing the heterologous production of spinosad in Streptomyces albus J1074 by regulating biosynthesis of its polyketide skeleton. Synth Syst Biotechnol. 2021 Sep 20;6(4):292–301
+                </p>
+            </div>
+            
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,536 @@
+
+/* 这是最大背景块，插入的时候首先要满足的 */
+.cd-container {
+    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .cd-container::after {
+    content: "";
+    display: table;
+    clear: both;
+    /* 添加背景色 */
+    background-color: rgb(245,245,220);
+    /* 添加边框 */
+    border-top: 1px solid #ccc;
+    /* 添加内边距 */
+    padding-top: 10px;
+  }
+  /* -------------------------------- 
+    
+    Main components 
+    
+    -------------------------------- */
+
+
+/* 最大快 */
+
+#cd-timeline {
+    position: relative;
+    display: none;
+    background-color: rgb(245,245,220);
+    padding: 1em 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  
+  /* 线 */
+  #cd-timeline::before {
+    /* this is the vertical line */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: #d7e4ed;
+  }
+  
+
+
+/* 屏幕大于1170时左列然后右列的设置 */
+
+
+
+
+  @media only screen and (min-width: 1170px) {
+    #cd-timeline {
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+  
+    #cd-timeline::before {
+      left: 50%;
+      margin-left: -2px;
+    }
+  }
+  
+
+
+
+  .cd-timeline-block {
+    position: relative;
+    padding: 2em 0;
+  }
+  
+  .cd-timeline-block::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  
+  .cd-timeline-block:first-child {
+    margin-top: 0;
+  }
+  
+  .cd-timeline-block:last-child {
+    margin-bottom: 0;
+  }
+  
+  @media only screen and (min-width: 1170px) {
+    .cd-timeline-block {
+      margin: 4em 0;
+    }
+  
+    .cd-timeline-block:first-child {
+      margin-top: 0;
+    }
+  
+    .cd-timeline-block:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+
+  /*中间圈  */
+
+/* 这里是手机端 */
+
+  .cd-timeline-img {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.98), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  }
+
+
+
+  
+  .cd-timeline-img img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+  }
+  
+  .cd-timeline-img.cd-picture {
+    background: rgb(210,90,120);
+  }
+  
+  .cd-timeline-img.cd-picture1 {
+    background: #F6AE2D;
+  }
+  
+  .cd-timeline-img.cd-picture2 {
+    background: #DE8552;
+  }
+  
+  .cd-timeline-img.cd-picture3 {
+    background: #CB4364;
+  }
+  
+  .cd-timeline-img.cd-picture4 {
+    background: #A9BA6C;
+  }
+  
+  .cd-timeline-img.cd-picture5 {
+    background: #5BC5AB;
+  }
+  
+  .cd-timeline-img.cd-picture6 {
+    background: #5CE1E6;
+  }
+
+
+
+
+  /* 这里是电脑端 */
+
+  @media only screen and (min-width: 1170px) {
+    .cd-timeline-img {
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      margin-left: -30px;
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+    }
+
+
+
+
+  
+    .cssanimations .cd-timeline-img.is-hidden {
+      visibility: hidden;
+    }
+  
+    .cssanimations .cd-timeline-img.bounce-in {
+      visibility: visible;
+      -webkit-animation: cd-bounce-1 0.6s;
+      -moz-animation: cd-bounce-1 0.6s;
+      animation: cd-bounce-1 0.6s;
+    }
+  }
+  
+
+
+
+  /* 大卡片 */
+  .cd-timeline-content {
+
+    position: relative;
+    margin-left: 100px;
+    background: rgb(210,90,120);
+    border-radius: 50px / 100px; /* 横向半径和纵向半径，创建椭圆形状 */
+    padding: 1em;
+    box-shadow: 10px 10px 0 4px rgb(249,215,225), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  }
+
+
+
+
+  
+  .cd-tir::after {
+    content: "";
+    display: table;
+    clear: both;
+    /* 添加背景色 */
+    background-color: #f0f0f0;
+    /* 添加边框 */
+    border-top: 1px solid #ccc;
+    /* 添加内边距 */
+    padding-top: 10px;
+  }  
+
+
+/* 格子里面所有内容的设置 */
+
+
+  .cd-timeline-content p,
+  .cd-timeline-content .cd-read-more,
+  .cd-timeline-content .cd-date {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    font-size: 0.8125rem;
+    transition: top .2s ease-in-out, width .5s, height .5s;
+
+  }
+
+
+
+  /* 这里负责改文字 */
+  
+  .cd-timeline-content p {
+    margin: 1em 0;
+    margin-top: -10px;
+
+    line-height: 1.6;
+  }
+  .cd-timeline-content p b {
+    margin: 0em -0.5em;
+    line-height: 1.6;
+    color: #0f0104;
+    font-size: 25px;
+  }
+
+
+    .round-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* 使容器变成圆形 */
+    overflow: hidden; /* 隐藏超出圆形区域的部分 */
+    position: relative; /* 可选：用于定位图片（如果需要） */
+    transition: top .2s ease-in-out, width .5s, height .5s;
+    padding-right: 20px;
+    }
+
+
+
+    /* 变小变粗了 */
+    .round-image:hover {
+    width: 200px;
+    height: 200px;
+    }
+
+
+
+
+
+
+    .round-image img{
+
+    width: 100%; /* 使图片的宽度等于容器的宽度 */
+    height: 100%; /* 使图片的高度等于容器的高度 */
+    object-fit: cover; /* 确保图片完全覆盖容器 */
+    object-position: center; /* 可选：确保图片在容器中居中显示 */
+
+    }
+
+
+    .c1 {
+        padding-top: 10px;
+        width: 100%;
+        position: relative;
+        display: flex;
+
+    }
+
+
+/* 框底下的readme */
+.cd-timeline-content .cd-read-more1 {
+      float: left;
+      width: 130px;
+      height: 40px;
+      margin-top: -40px;
+      margin-left: -30px;
+      background: #090103;
+      border-radius: 5.25em;
+      display: flex; /* 启用 flexbox 布局 */
+      align-items: center; /* 垂直居中对齐图片 */
+      justify-content: center; /* 水平居中对齐图片 */
+      overflow: hidden; /* 确保图片不溢出圆角区域 */
+    }
+
+    .cd-timeline-content .cd-read-more1 a {
+      display: block; /* 使链接占据整个区域 */
+      width: 100%; /* 链接宽度与容器一致 */
+      height: 100%; /* 链接高度与容器一致 */
+      position: relative; /* 设置为相对定位 */
+    }
+
+    .cd-timeline-content .cd-read-more1 img {
+      width: 100%; /* 图片宽度与链接一致 */
+      height: 100%; /* 图片高度与链接一致 */
+      object-fit: cover; /* 确保图片覆盖整个链接区域 */
+      position: relative; /* 设置为相对定位 */
+      transform: translate(0px,-10px) scale(3); /* 中心居中并扩大三倍 */
+    }
+
+  
+/* 向右连接到红圈的线 */
+    .cd-timeline-content::before {
+    content: "";
+    position: absolute;
+    top: 16px; /* 控制线条的垂直位置 */
+    margin-left: -10px;
+    right: 100%; /* 将线条定位在父元素的右边缘 */
+    height: 5px; /* 线条的高度 */
+    width: 10vw; /* 线条的宽度，可以根据需要调整 */
+    background: rgb(210,90,120); /* 线条的颜色 */
+}
+  
+  @media only screen and (min-width: 768px) {
+    .cd-timeline-content h2 {
+      font-size: 20px;
+      font-size: 1.25rem;
+    }
+  
+    .cd-timeline-content p {
+      font-size: 18px;
+      font-size: 1rem;
+    }
+  
+    .cd-timeline-content .cd-read-more,
+    .cd-timeline-content .cd-date {
+      font-size: 14px;
+      font-size: 0.875rem;
+    }
+  }
+  
+
+
+
+  @media only screen and (min-width: 1170px) {
+    /* .cd-timeline-content {
+      margin-left: 0;
+      padding: 1.6em;
+      width: 90%;
+    } */
+  
+    .cd-timeline-content::before {
+      top: 24px;
+      left: 100%;
+      border-color: transparent;
+      border-left-color: #ffffff;
+    }
+  
+    .cd-timeline-content .cd-read-more {
+      float: left;
+    }
+  
+    .cd-timeline-content .cd-date {
+      position: absolute;
+      width: 100%;
+      left: 122%;
+      top: 6px;
+      font-size: 16px;
+      font-size: 1rem;
+    }
+  
+    .cd-timeline-block:nth-child(even) .cd-timeline-content {
+      float: right;
+    }
+  
+    .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+      top: 24px;
+      left: auto;
+      right: 100%;
+      border-color: transparent;
+      border-right-color: #ffffff;
+    }
+  
+    .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+      float: right;
+    }
+  
+    .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+      left: auto;
+      right: 122%;
+      text-align: right;
+    }
+  
+    .cssanimations .cd-timeline-content.is-hidden {
+      visibility: hidden;
+    }
+  
+    .cssanimations .cd-timeline-content.bounce-in {
+      visibility: visible;
+      -webkit-animation: cd-bounce-2 0.6s;
+      -moz-animation: cd-bounce-2 0.6s;
+      animation: cd-bounce-2 0.6s;
+    }
+  }
+
+
+
+  /* ========================================================================== */
+
+
+/*====================== 
+这里是跳出的全页配置
+==================  */
+
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 30%;
+    z-index: 9999;
+    border-radius: 67px;
+    animation: fade-in .5s ease forwards;
+    flex-direction: column;
+    background: white;
+    box-shadow: 10px 10px 0 4px rgb(249,215,225), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  /* 文本框上面 */
+  .PopUpTitle {
+    background-color:  rgb(214,59,119);
+    border-radius: 67px 67px 0 0;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  }
+  
+
+
+
+  /* 这个是跳出来的 */
+  .PopUpContent {
+
+    color: rgb(214,59,119);
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    height: fit-content;
+    overflow-y: auto;
+    padding-top: 2%;
+  }
+  
+  
+  
+  
+  .boton-ocultar {
+    border-radius: 50%;
+    width: 30px;
+    height: auto;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    box-shadow: 2px 2px 4px black;
+    margin-bottom: 9%;
+    position: absolute;
+    float: right;
+    top: 5%;
+    right: 5%;
+  }
+  
+  .boton-ocultar:hover {
+    background-color: rgb(227, 7, 7);
+  }
+  
+  .boton-mostrar-timeline {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    color: #000;
+    background: #fff;
+    line-height: 30px;
+    border-radius: 40px;
+    padding: 20px;
+    font-size: 70px;
+    font-weight: 600;
+    box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px, rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transition: all 0.2s;
+  
+  
+  }
+  
+  .boton-mostrar-timeline:hover {
+    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px, rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+    transform: scale(1.01);
+  }
+

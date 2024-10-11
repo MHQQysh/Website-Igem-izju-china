@@ -1,0 +1,129 @@
+    
+#loading-container {
+	background-color: #0f1819;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+	z-index: 9999;
+	width:100vw;
+	height: 100vh;
+}
+body {
+    background-color: #0f1819;
+    width:100%;
+    overflow-x:hidden;
+}
+
+.loading {
+	font-family: "Montserrat";
+}
+.loading-1,.loading-z {
+    width: 250px;
+    left:0;
+    scale: 90%;
+    animation: cut-ani-1 2s ease-in-out infinite alternate;
+}
+/*我实在不知道怎么让省略号依次出现！！！*/
+.dot-1 {
+    animation: appear-ani-1 1.5s ease-in-out infinite normal;
+}
+.dot-2 {
+    animation: appear-ani-2 1.5s ease-in-out infinite normal;
+}
+.dot-3 {
+    animation: appear-ani-3 1.5s ease-in-out infinite normal;
+}
+
+@keyframes appear-ani-1 {
+    0% {
+        opacity: 0%
+    }
+    25% {
+        opacity: 100%
+    }
+    50% {
+        opacity: 100%
+    }
+    75% {
+        opacity: 100%
+    }
+    100% {
+        opacity: 100%
+    }
+}
+@keyframes appear-ani-2 {
+    0% {
+        opacity: 0%
+    }
+    25% {
+        opacity: 0%
+    }
+    50% {
+        opacity: 100%
+    }
+    75% {
+        opacity: 100%
+    }
+    100% {
+        opacity: 100%
+    }
+}
+@keyframes appear-ani-3 {
+    0% {
+        opacity: 0%
+    }
+    25% {
+        opacity: 0%
+    }
+    50% {
+        opacity: 0%
+    }
+    75% {
+        opacity: 100%
+    }
+    100% {
+        opacity: 100%
+    }
+}
+/*文本样式*/
+.loading-text {
+    transform: translateX(-50px) translateY(-70px);
+    color: linear-gradient(to left, #c696ff 0%, #fb96ff 50%, #ffa3d7 100%);
+    font-weight: 800;
+    font-family:'Montserrat';
+	position: relative;
+	display: block;
+	/* width: 100%; */
+	padding:0;
+	margin-top: 30px;
+	text-align: center;
+	top:calc(50% + 100px);
+	left:75px;
+	/* transform: translateX(100%); */
+}
+.loading > div:first-of-type {
+	width:100%;
+	position: absolute;
+	top:calc(50% - 125px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loading > div > * {
+	position: absolute;
+	/* top:calc(50% - 125px); */
+	left:calc(50% - 125px);
+}
+
+
+@keyframes loading-1 {
+	0% {
+		transform:scale(100%) rotate(0);
+	}
+	100% {
+		transform:scale(100%) rotate(90deg);
+	}
+}

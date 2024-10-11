@@ -1,0 +1,18 @@
+.cardq-container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #d0e1ff;
+    width: inherit;
+
+}
+.cardq {
+    background-color: #f7faff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

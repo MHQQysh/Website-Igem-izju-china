@@ -1,0 +1,522 @@
+{% extends "layout.html" %}
+
+{% block title %}Engineering Success{% endblock %}
+{% block lead %}Demonstrate engineering success in a technical aspect of your project by going through at least one
+iteration of the engineering design cycle. This achievement should be distinct from your Contribution for Bronze.{%
+endblock %}
+
+{% block page_content %}
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+  <div class="wave-head" style="width: 150vw;"></div>
+  <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+  <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh"></div>
+  <!-- 此处修改page head图片 -->
+  <img src="https://static.igem.wiki/teams/5371/project/engineering/engineering.svg" class='head-img'>
+</div>
+
+
+
+<!-- 文档内容 -->
+<div class="main">
+  <div class="menubg">
+    <div data-scroll-watcher=""></div>
+    <div id="menu" class="">
+      <div id="scrollbar1">
+
+        <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+          <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+        </div>
+
+        <div id="overlay">
+          <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+        </div>
+
+      </div>
+
+      <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+        <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+      </div>
+
+      <div class="menucontent">
+        <div class="t1" tid="0">Overview</div>
+        <div class="t1" tid="1">Project Design</div>
+        <div class="h2-sec">
+          <div class="t2" tid="1-0">&bull;&emsp;Cycle 1 - production of ceramides and bisabolol</div>
+          <div class="t2" tid="1-1">&bull;&emsp;Cycle 2 - introduction of genome longevity oscillator</div>
+          <div class="t2" tid="1-2">&bull;&emsp;Cycle 3 - modular design integrates production and oscillation
+          </div>
+
+        </div>
+        <div class="t1" tid="2">Building pRS42H-TSC10 Plasmid</div>
+        <div class="h2-sec">
+          <div class="t2" tid="2-0">&bull;&emsp;Cycle 1 - original experiment design</div>
+          <div class="t2" tid="2-1">&bull;&emsp;Cycle 2 - improvement on plasmid design and experiments</div>
+
+        </div>
+        <div class="t1" tid="3">Microfluidic Chip & Accessories</div>
+        <div class="h2-sec">
+          <div class="t2" tid="3-0">&bull;&emsp;Cycle 1 - microfluidic chip with accessories</div>
+          <div class="t2" tid="3-1">&bull;&emsp;Cycle 2 - improved chip, accessories, and operating procedures</div>
+          <div class="t2" tid="3-2">&bull;&emsp;Cycle 3 - jig of the chip</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="0">Overview</h1>
+      </div>
+      <div class="img-wrap" style="width: 60%; transform: translateX(30%);">
+        <div class="border">
+          <img src="https://static.igem.wiki/teams/5371/project/engineering/1.png" style="transform: scale(1.2) translateY(0%);">
+        </div>
+        <div class="disc">Figure 1 Design-Build-Test-Learn Engineering cycle</div>
+      </div>
+      <p>
+        On this page we describe the engineering design cycle for the following subprojects: project design,
+        building of TSC10 plasmid, and hardware. The engineering cycle consists of four stages: Design, Build,
+        Test, and Learn.
+      </p>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="1">Project Design</h1>
+      </div>
+      <h2 id="1-0">&bull;&emsp;Cycle 1 - production of ceramides and bisabolol</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>Given the prevalence of skin problems caused by environmental irritants, we aim to design an
+          eco-friendly, effective, and affordable skincare product. To achieve this, we decided to modify
+          metabolic pathways in yeast to produce key cosmetic ingredients using synthetic biology
+          strategies. After thorough research, we selected ceramides and bisabolol as the primary active
+          components for our product.
+        </p>
+      </div>
+      <h3>Build</h3>
+      <div class="s2">
+        <p>
+          Our design involves overexpressing the tsc10 gene to produce excess ceramides and introducing
+          the fused protein ERG20-MrBBS into yeast. We can monitor the expression of TSC10 and ERG20-MrBBS
+          through the green and blue fluorescence emitted by EGFP and BFP, respectively[1][2].
+        </p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/2.png">
+          </div>
+          <div class="disc">Figure 2 Overexpressing MrBBS-ERG20 and TSC10 to produce bisabolol and ceramide</div>
+        </div>
+      </div>
+
+      <h3>Test</h3>
+      <div class="s2">
+        <p>
+          Upon further literature review, we discovered that excess ceramides and bisabolol can have
+          adverse effects on yeast[3][4].
+        </p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/3.png">
+          </div>
+          <div class="disc">Figure 3 Adverse effects of excess bisabolol and ceramide</div>
+        </div>
+        <p>
+          Therefore, we assessed the feasibility and limitations of our initial design.
+        </p>
+
+        <div class="info g">
+          <div class="title">Feasibility</div>
+          <p class="no-indent">-All components are readily available and listed in the <a href="part">Parts</a>
+            section.</p>
+          <p class="no-indent">-Both TSC10 and ERG20-MrBBS are driven by the CYC1 promoter, which is effective and
+            commonly used in yeast.</p>
+          <p class="no-indent">-TSC10 is tagged with EGFP, and ERG20-MrBBS is tagged with BFP, allowing easy detection
+            of gene expression through green and blue fluorescence.</p>
+        </div>
+        <div class="info">
+          <div class="title">Shortcomings</div>
+          <p class="no-indent">-Both bisabolol and ceramides can negatively impact yeast viability.</p>
+          <p class="no-indent">-Excess ceramides can also cause skin issues, necessitating careful control of ceramide
+            levels in skincare products.</p>
+        </div>
+      </div>
+
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>
+          We decided to proceed with overexpressing tsc10 and introducing ERG20-MrBBS, but with a greater focus on
+          protecting yeast to enhance ingredient production. We conducted further literature reviews to develop
+          strategies for controlling production within safe and effective ranges.
+        </p>
+      </div>
+
+
+
+      <h2 id="1-1">&bull;&emsp;Cycle 2 - introduction of genome longevity oscillator</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>
+          Inspired by Zhou et al. (2023), we explored the use of a genome oscillator, specifically the SIR2-HAP4
+          oscillator, to extend the lifespan of yeast. We realized that this system could be adapted to protect yeast
+          and enhance the production of our target ingredients.
+        </p>
+      </div>
+
+      <h3>Build</h3>
+      <div class="s2">
+        <p>
+          Our design involves inserting tsc10 and ERG20-MrBBS downstream of the sir2 and hap4 genes, respectively.
+        </p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/4.png">
+          </div>
+          <div class="disc">Figure 4 Inserting ERG20-MrBBS and TSC10 into yeast genome to regulate bisabolol-ceramide oscillation</div>
+        </div>
+        <p>
+          This setup allows the oscillation of sir2 and hap4 to cause fluctuations in the production of ceramides and
+          bisabolol.
+        </p>
+      </div>
+
+      <h3>Test</h3>
+      <div class="s2">
+        <p>
+          After consulting with our instructors, we evaluated the feasibility and limitations of this approach:
+        </p>
+        <div class="info g">
+          <div class="title">Feasibility</div>
+          <p class="no-indent">-All components are readily available and listed in the <a href="part">Parts</a>
+            section.</p>
+          <p class="no-indent">-ERG20-MrBBS will be inserted downstream of sir2 and will oscillate with the SIR2
+            protein.</p>
+          <p class="no-indent">-TSC10 will be inserted into the 35S rDNA region and will oscillate with the HAP4
+            protein.</p>
+          <p class="no-indent">-The oscillating system can effectively protect yeast from the negative effects of
+            bisabolol and ceramides, enhancing production by increasing yeast viability.</p>
+        </div>
+        <div class="info">
+          <div class="title">Shortcomings</div>
+          <p class="no-indent">-Gene insertions in yeast can be challenging and prone to failure.</p>
+          <p class="no-indent">-Insertions limit the flexibility of yeast to produce additional cosmetic products.</p>
+          <p class="no-indent">-Insertions restrict the copy number of tsc10 and ERG20-MrBBS, limiting the maximum
+            production of ceramides and bisabolol.</p>
+        </div>
+      </div>
+
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>
+          We recognize the genome longevity oscillator as an effective method to enhance yeast production in the
+          presence of toxic products. However, we decided to redesign the system to better integrate cosmetic
+          ingredient production into the yeast genome oscillator.
+        </p>
+      </div>
+
+
+      <h2 id="1-2">&bull;&emsp;Cycle 3 - modular design integrates production and oscillation</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>We adopted a modular design approach to rebuild our production system, achieving oscillation without
+          inserting genes into the yeast genome. This modular design facilitates the parallel assembly of multiple
+          plasmids during experiments, allows for easy modification in case of issues, and enables the future
+          expansion of cosmetic ingredient production.</p>
+      </div>
+      <h3>Build</h3>
+      <div class="s2">
+        <p>Instead of directly inserting tsc10 and ERG20-MrBBS into the genome, we maintained these genes on plasmids
+          and swapped the promoters to link the production system with SIR2 and HAP4.</p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/5.png">
+          </div>
+          <div class="disc">Figure 5 Modular design to separate oscillation and production.</div>
+        </div>
+      </div>
+      <h3>Test</h3>
+      <div class="s2">
+        <p>We successfully transferred the pRS42H-TSC10 plasmid and the pESC-ERG20-MrBBS plasmid into yeast with the
+          genome longevity oscillator, significantly enhancing the production of ceramides and bisabolol. For more
+          details, please refer to our <a href="https://2024.igem.wiki/izju-china/results">Results</a> section.</p>
+      </div>
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>Our future work will focus on the following aspects:</p>
+        <p>1. Yeast Suicide Module: To further ensure the safety of our product, we plan to introduce a promoter
+          (activated by small molecules) - SIR2 plasmid into yeast. This will allow us to control yeast quantity by
+          adding small molecules to induce cell senescence when there are excess yeasts.</p>
+        <p>2. Precise Manipulation of Cosmetic Ingredient Production: After simulating an improved model, we will
+          modify the promoters and add other regulatory elements accordingly. This will enable precise control over
+          the production of cosmetic ingredients, ensuring that yeast produces ceramides and bisabolol at levels that
+          meet industry standards.</p>
+      </div>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="2">Building pRS42H-TSC10 Plasmid</h1>
+      </div>
+      <h2 id="2-0">
+        &bull;&emsp;Cycle 1 - original experiment design
+      </h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>First, we decided to use a restriction enzyme to cut the vector, preparing it for subsequent insertion
+          steps. Next, we utilized PCR to obtain the CYC1 promoter and the TSC10 gene fragment. We then connected
+          these fragments using Gibson assembly, ensuring they were correctly integrated into the vector. This process
+          will help us construct the desired recombinant vector for future experiments.</p>
+      </div>
+      <h3>Build</h3>
+      <div class="s2">
+        <p>(1) To build the vector, we used BplⅠ and BamHⅠ to cut the vector and disrupt the TEF promoter, allowing us
+          to insert the CYC1 promoter and TSC10 into the plasmid.</p>
+        <div class="img-wrap">
+          <div class="border" style="display: flex;">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/6-1.png" style="object-fit: cover;">
+          </div>
+          <div class="disc">Figure 6 BplⅠ and BamHⅠare used to cut the vector, but did not delete the whole TEF promoter</div>
+        </div>
+        <p>(2) To obtain CYC1 promoter and TSC10, we designed relevant primers and conducted colony PCR (click on <a
+            href="https://2024.igem.wiki/izju-china/protocol">protocol</a> for more information) </p>
+      </div>
+      <h3>Test</h3>
+      <div class="s2">
+        <p>(1) After cutting the vector, we realized that using BplⅠ and BamHⅠ might not completely disrupt the TEF
+          promoter, potentially overriding the regulative function of CYC1 promoter. Thus, we decided to look for
+          other restriction enzymes and cutting sites. </p>
+        <p>(2) Using colony PCR, we observed PCYC1 electrophoretic band, but no TSC10 bands.</p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/7.png">
+          </div>
+          <div class="disc">Figure 7 There are PCYC bands but no TSC10 bands in colony PCR results</div>
+        </div>
+      </div>
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>(1) Since the TEF promoter is stronger than the CYC1 promoter, it is crucial to completely remove the TEF
+          promoter sequence. Therefore, we need to find better cutting sites.</p>
+        <p>(2) To determine the cause of the experiment's failure, we checked our primers, PCR programs, and DNA
+          templates, and decided to change our DNA extraction method and improve the PCR programs.</p>
+      </div>
+      <h2 id="2-1">&bull;&emsp;Cycle 2 - improvement on plasmid design and experiments</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>Following the last iteration of the Design-Test-Build-Learn cycle, we revised our design and tried a
+          different PCR program. We decided to continue using restriction enzymes to linearize the vector due to its
+          simplicity and speed. However, we switched to different restriction enzymes to ensure the TEF promoter was
+          fully disrupted. To address the poor TSC10 PCR results, we adopted touchdown PCR and extracted yeast genomic
+          DNA instead of using colony PCR.</p>
+      </div>
+      <h3>Build</h3>
+      <div class="s2">
+        <p>(1) After consulting our instructors, we used NaeⅠ and BamHⅠ this time. Although NaeⅠ also cuts the f1 ori
+          region on the plasmid, it completely removes the TEF promoter.</p>
+        <div class="img-wrap">
+          <div class="border" style="display: flex;">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/8-1.png" style="object-fit: cover;">
+          </div>
+          <div class="disc">Figure 8 NaeⅠ and BamHⅠare used to cut the vector and deleted the whole TEF promoter</div>
+        </div>
+        <p>(2) We used commercial kits to extract yeast genome DNA instead of colony PCR. Also, we changed the PCR
+          program into touchdown PCR. For more information, please click on <a
+            href="https://2024.igem.wiki/izju-china/protocol">protocol</a>.</p>
+      </div>
+      <h3>Test</h3>
+      <div class="s2">
+        <p>After using NaeⅠ and BamHⅠto cut the vector and connect to CYC1 promoter and TSC10, we successfully built
+          pRS42H-TSC10 plasmid:</p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/9.png">
+          </div>
+          <div class="disc">Figure 9 After updating vector-cutting and PCR programs, our PCR achieved positive results.</div>
+        </div>
+      </div>
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>
+          Moving forward, we need to measure the level of ceramides after transferring the pRS42H-TSC10 plasmid and
+          adjust promoters or other regulatory elements of gene expression to ensure that yeast produces ceramides at
+          levels that meet industry standards.
+        </p>
+      </div>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="3">Microfluidic Chip & Accessories</h1>
+      </div>
+      <h2 id="3-0">&bull;&emsp;Cycle 1 - microfluidic chip with accessories</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>To meet our need of observing fluorescent intensity of yeast cells in single-cell resolution and a
+          real-time manner, a microfluidic chip was designed. The microstructures anchoring yeast cells and
+          dispatching cell suspension and culturing media were designed referring to (5). PDMS was chosen as
+          the material for the chip for transparency and stability. The outer profile of the chip was designed to
+          fit into the slot of culturing chamber of the confocal microscope that we chose for observation. </p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/10.svg">
+          </div>
+          <div class="disc">Figure 10. The microfluidic chip structure.</div>
+        </div>
+      </div>
+      <h3>Build</h3>
+      <div class="s2">
+        <p>The design was sent to Zhongxinhengqi Co. for manufacture. The chip was bond to 1mm thick glass slide as
+          carrying plate. The media supplying tubes were inserted into the chip via straight stainless-steel tubes.
+          Culturing media were contained in a 50ml syringe with piston removed raised to 90cm above the chip for
+          gravity feeding. Outlet tube was inserted in the same way as the supplying tube, with its end placed at
+          same level as the chip to avoid excess positive/negative pressure. Check <a
+            href="https://2024.igem.wiki/izju-china/hardware">hardware</a> for detailed design.</p>
+      </div>
+      <h3>Test</h3>
+      <div class="s2">
+        <p>The chip with accessories were installed as designed. Yeast cells suspension was filled into the 50ml
+          syringe and raised to 60mm above the chip, trying to load cells through gravity. No cells were observed to
+          be loaded into chip. So it was attempted to be forced into the chip by pushing the piston of the syringe.
+          Though successful, it was met with significant resistance. The 60x lens that was planned for observation
+          could not properly focus, so it was switched to 20x lens. The tubes connected to the chip were forced to
+          bend to side to enable the cover of culturing chamber to close up. After testing, when disassembling and
+          cleaning the chip, we discovered cracks on the PDMS chip around the pores with reduced tightness under
+          hydraulic pressure, which was most likely caused by stress from stainless-steel tubes inserted. We also
+          discovered clogs in channels in the chip, making it unable to be reused. </p>
+      </div>
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>The resistance was caused by air in the chip, which should be expelled from the whole system in further
+          tests, from the inlet tubes, chip, to the outlet tube.</p>
+        <p>
+          Inability of 60x lens to properly focus was caused by their limited working distance. Thinner carrying
+          glass plate should be applied to address this issue.
+        </p>
+        <p>
+          The clogging of the chip could be avoided by filtering all acellular fluids through 0.22μm filters and
+          washing all tubes with filtered ddH2O.
+        </p>
+        <p>
+          The stress on PDMS chip by stainless-steel tubes was mainly caused by the height limit imposed by
+          culturing chamber. Design choices like 90 degrees bended tubes and supports of the tubes could be adopted.
+        </p>
+        <div class="img-wrap">
+          <div class="border" style="width: 35%;">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/11.svg">
+          </div>
+          <div class="disc">Figure 11. The microfluidic with. Red box indicates the stress from the stainless steel tube.</div>
+        </div>
+      </div>
+
+
+      <h2 id="3-1">&bull;&emsp;Cycle 2 - improved chip, accessories, and operating procedures</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>Based on what were learned from the last cycle, the carrying glass plate was switched to a 0.17mm thick
+          cover slip. The stainless-steel tubes connecting the chip and inlet and outlet tubes changed from straight
+          ones to 90 degrees bended ones.</p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/12.png">
+          </div>
+          <div class="disc">Figure 12. The stainless steel was changed to the 90 degree bended stainless-steel tube.</div>
+        </div>
+      </div>
+
+      <h3>Build</h3>
+      <div class="s2">
+        <p>The chip and tubes were pre perfused with filtered ddH2O. The chip was perfused in vacuum, with 0.0075%
+          Tween-20 dropped on pores of the chip. The tubes were perfused with syringe. The whole chip and accessories
+          assembly was built according to design. </p>
+      </div>
+      <h3>Test</h3>
+      <div class="s2">
+        <p>
+          The YPD media were filtered before usage. A time-lapse microscopy was set up to test the system in real
+          observation. Focus shift that was not compensated by auto focus was discovered when inspecting pictures taken.
+        </p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/13.svg">
+          </div>
+          <div class="disc">Figure 13. The 0.17mm coverslip enable us to test cell under the 60x microscope.</div>
+        </div>
+      </div>
+
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>
+          The focus shift was caused by deformation of chip significant enough to be uncorrectable by auto focus. This could be caused
+          by two factors. One was shifting to thinner carrying glass plates, which were not rigid enough to resist minor
+          forces imposed on them. Another was the stainless-steel tubes inserted into the chip, which were likely to be
+          the sources of subtle forces. A support or jig for both the chip itself and the stainless-steel tubes could
+          probably solve the problems of focus shift.
+        </p>
+      </div>
+
+      <h2 id="3-2">&bull;&emsp;Cycle 3 - jig of the chip</h2>
+      <h3>Design</h3>
+      <div class="s2">
+        <p>
+          A jig to support the chip itself and the stainless-steel tubes inserted into the chip was designed. The bottom
+          piece and the mainframe supported the chip, while a piece of drilled acrylic screwed to mainframe supported
+          the
+          stainless-steel tubes without significantly affecting observation. Check <a
+            href="https://2024.igem.wiki/izju-china/hardware">hardware</a> for detailed design.
+        </p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/14.svg">
+          </div>
+          <div class="disc">Figure 14. The jig of the chip.</div>
+        </div>
+      </div>
+
+      <h3>Build</h3>
+      <div class="s2">
+        <p>The bottom plate and midframe were 3D printed in light curing resin. The piece of acrylic was hand drilled to
+          ensure matching precision to the chip. The acrylic piece was screwed to the midframe with M2 screws. The jig
+          and the chip were secured using paper tapes. Check <a href="https://2024.igem.wiki/izju-china/hardware">hardware</a>
+          for detailed information.</p>
+      </div>
+      <h3>Test</h3>
+      <div class="s2">
+        <p>
+          The chip-jig assembly with accessory plumbing systems were tested with time-lapse microscopy under 60x lens.
+          No obvious focus shift was observed.
+        </p>
+      </div>
+      <h3>Learn</h3>
+      <div class="s2">
+        <p>This design was effective. It helped support the jig and reduce deformation of the chip, hence less focus shift.</p>
+        <div class="img-wrap">
+          <div class="border">
+            <img src="https://static.igem.wiki/teams/5371/project/engineering/11.jpg">
+          </div>
+          <div class="disc">Figure 15. The focus shift was largely reduced by using the chip jig.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="4">References</h1>
+        <p style="text-align: left;">1. Jiang, Y. et al. Engineering Saccharomyces cerevisiae for enhanced (-)-α-bisabolol production. Synth Syst
+          Biotechnol 8, 187–195 (2023).</p>
+        <p style="text-align: left;">2. Morimoto, Y. & Tani, M. Synthesis of mannosylinositol phosphorylceramides is involved in maintenance of
+          cell integrity of yeast Saccharomyces cerevisiae. Mol Microbiol 95, 706–722 (2015).</p>
+        <p style="text-align: left;">3. Boo, Y. C. Human Skin Lightening Efficacy of Resveratrol and Its Analogs: From in Vitro Studies to
+          Cosmetic Applications. Antioxidants 8, 332 (2019).</p>
+        <p style="text-align: left;">4. Uchida, Y. & Park, K. Ceramides in Skin Health and Disease: An Update. Am J Clin Dermatol 22, 853–866
+          (2021).</p>
+        <p style="text-align: left;">5. Li Y, Jiang Y, Paxman J, O'Laughlin R, Klepin S, Zhu Y, et al. A programmable fate decision landscape underlies single-cell aging in yeast. Science. 2020 Jul 17;369(6501):325–9.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

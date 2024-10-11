@@ -1,0 +1,331 @@
+{% extends "layout.html" %}
+
+{% block title %}Entreprenuriship{% endblock %}
+
+{% block page_content %}
+
+
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/entrepreneurship.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Custom Analysis</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="0-0">&bull;&emsp;Problem statement</div>
+                    <div class="t2" tid="0-1">&bull;&emsp;Potential customers & application scene</div>
+                </div>
+                <div class="t1" tid="1">Solution</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="1-0">&bull;&emsp;Technical feasibility</div>
+                    <div class="t2" tid="1-1">&bull;&emsp;Minimum viable products</div>
+                    <div class="t2" tid="1-2">&bull;&emsp;Core competence</div>
+                </div>
+                <div class="t1" tid="2">Market Analysis</div>
+                <div class="t1" tid="3">Policy</div>
+                <div class="t1" tid="4">Cost Analysis</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="4-0">&bull;&emsp;Product process cost</div>
+                    <div class="t2" tid="4-1">&bull;&emsp;Packaging cost</div>
+                    <div class="t2" tid="4-2">&bull;&emsp;Sale cost</div>
+                    <div class="t2" tid="4-3">&bull;&emsp;Labor Cost</div>
+                    <div class="t2" tid="4-4">&bull;&emsp;Delivery cost</div>
+                    <div class="t2" tid="4-5">&bull;&emsp;EBIT</div>
+                </div>
+                <div class="t1" tid="5">Competition Analysis</div>
+                <div class="t1" tid="6">Business Model Canvas</div>
+                <div class="t1" tid="7">Fund Raising</div>
+                <div class="t1" tid="8">Future Plans</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="8-0">&bull;&emsp;Business registration</div>
+                    <div class="t2" tid="8-1">&bull;&emsp;Technical development</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">Custom Analysis</h1>
+                </div>
+                <h2 id="0-0">&bull;&emsp;Problem statement</h2>
+                <div class="s2">
+                    <p>In today’s fast-paced world, many people experience skin issues due to modern lifestyle factors, such as lack of sleep and high-stress levels. These factors disrupt the skin's natural barrier, leading to various skin imbalances. According to our iHP survey, 82.1% of respondents believe that skincare is essential. Market research indicates a growing demand for cosmetics, particularly among individuals aged 20 to 40. However, many consumers face budget constraints, finding it challenging to balance affordability with effectiveness. Approximately 44.1% of consumers spend between $28.14 and $70.35 per month on skincare. This is supported by market reports showing that over 63% of women aged 20 to 40 in the Asian market have a monthly cosmetics budget of no more than $50 USD [1].
+                    </p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/fig1.jpg">
+                        </div>
+                        <div class="disc">Figure. Consumers' willingness and budget to buy cosmetics.</div>
+                    </div>
+                </div>
+                <h2 id="0-1">&bull;&emsp;Potential customers & application scene</h2>
+                <div class="s2">
+                    <p>Recognizing the unmet needs of our customers, we set out to develop skincare products that are both cost-effective and of high quality. Our products are designed to address common skincare issues, be gentle on sensitive skin, and cater to a wide range of individual skin conditions. According to the Asian Consumer Trends Report 2024, individuals aged 20 to 40 make up over 70% of total market spending on cosmetics, highlighting their purchasing power and strong interest in skincare products [2]. Therefore, we have structured our business model as direct-to-consumer (To-C), primarily targeting the young to mid-age population (20-40).
+                    </p>
+                    <p>Target audience:</p>
+                    <p>Career Women: This group often faces high work pressure and needs effective skincare solutions to address issues caused by long hours and irregular schedules.
+                    </p>
+                    <p>Young Mothers: With their busy family lives and parenting responsibilities, they seek simple, quick, and affordable skincare options.
+                    </p>
+                    <p>Health-Conscious Consumers: As healthy lifestyles become more popular, a growing number of consumers are looking for skincare products that are suitable for sensitive skin.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">Solution</h1>
+                </div>
+                <h2 id="1-0">&bull;&emsp;Technical feasibility</h2>
+                <div class="s2">
+                    <p>Our product “Yeastea” has an integrated oscillating system design. We constructed a yeast strain that can produce ceramide and bisabolol.  Check <a href="https://2024.igem.wiki/izju-china/description">project description</a> for more details.
+                    </p>
+                </div>
+                <h2 id="1-1">&bull;&emsp;Minimum viable products</h2>
+                <div class="s2">
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/fig2pic3.svg">
+                        </div>
+                        <div class="disc">Figure. The minimum viable products—Yeastea.</div>
+                    </div>
+                    <p>Our project aims to provide skincare solutions for both the general public and individuals with sensitive skin, with a focus on the young to mid-age population. The benefits of our products include smoothing the skin, reducing inflammation, and strengthening the skin barrier.
+                    </p>
+                    <p>To achieve this, we have combined two powerful ingredients—ceramide and bisabolol—into a yeast lysis extract. The growing emphasis on skincare and the rising trend of using yeast essence extract indicate significant market potential. By gathering user feedback in the future, we are confident in developing a product that is both cost-effective and highly beneficial.
+                    </p>    
+                </div>
+                <h2 id="1-2">&bull;&emsp;Core competence</h2>
+                <h3>1.	The all-in-one skincare solution</h3>
+                <div class="s2">
+                    <p>Unlike traditional yeast extract products, our formula also includes ceramide and α-bisabolol, offering consumers a wide range of skin-repairing benefits in a single solution. Ceramide helps repair the skin barrier and provides deep moisturization, while α-bisabolol delivers anti-inflammatory and soothing effects. Yeast extract enhances hydration and overall skin condition. This all-in-one product addresses the comprehensive skincare needs of modern consumers, including those with sensitive skin, thereby increasing its market appeal.
+                    </p>  
+                </div>
+                <h3>2.	Reducing product toxicity to yeast</h3>
+                <div class="s2">
+                    <p>We employ a gene oscillation strategy to engineer yeast capable of producing both ceramide and α-bisabolol. Since these substances are toxic to yeast when produced in excess, the oscillation system ensures balance. When the production of one compound reaches a high level, the yeast shifts to producing the other, preventing the accumulation of toxicity from overproduction. This technique optimizes overall production efficiency by minimizing toxicity.
+                    </p>  
+                </div>
+                <h3>3.	Sustainable production</h3>
+                <div class="s2">
+                    <p>In contrast to conventional plant extraction or chemical synthesis methods, our biosynthetic approach leverages renewable biological resources like yeast, ensuring an eco-friendly process. By fully utilizing yeast lysate, we achieve high resource efficiency and reduce waste, aligning with sustainable practices. This approach meets the growing consumer demand for environmentally friendly products and reflects our team's commitment to environmental protection.
+                    </p>  
+                </div>
+            </div>
+                    
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">Market Analysis</h1>
+                </div>
+                <h3> SOM:</h3>
+                <div class="s2">
+                    <p>Our initial focus is on the skincare consumers in the southeastern region of China, a key area for skincare product consumption. The skincare market size in this region is estimated at 5 billion CNY, with approximately 5 million consumers suffering from sensitive skin. These individuals represent our potential customer base, signaling strong market potential.
+                    </p>
+                </div>
+                <h3> SAM:</h3>
+                <div class="s2">
+                    <p> As our business expands, we will target the entire Chinese market. The size of China's cosmetics market is about 200 billion CNY, with around 20 billion CNY allocated to skincare products for sensitive skin [3]. We anticipate a greater demand for skincare products like "Yeastea," and aim to reach a target consumer base of 50 million nationwide.
+                    </p>
+                </div>
+                <h3> TAM:</h3>
+                <div class="s2">
+                    <p>To evaluate the maximum market potential of "Yeastea," we considered the global skincare market, which is valued at around 150 billion USD (1 USD = 7.05 CNY as of 9/25/2024). There is increasing global demand for products containing natural ingredients and designed for sensitive skin [4].
+                    </p>
+                </div>
+                <p>In 2021, the market size of China's cosmetics raw materials industry was about 11.074 billion CNY, and it is expected to increase to 11.653 billion CNY in 2022. The East and  South China regions are the main consumer areas for cosmetics raw materials, indicating the warehouse and sales advantage. It is expected that by 2025, the scale of China's cosmetics market will reach 579.1 billion CNY [5]. Combined with the trend of the global market, we foresee that "Yeastea" will enter a market that is profitable and has great growth potential. Moreover, the global market size of skincare raw material manufacturers is about 16.706 billion USD, offering a broad selection of suppliers for raw material procurement and supply chain management [6].
+                </p>
+                <p>Based on this analysis, we have identified a market that is profitable and has great market prospects for skin care products. We are optimistic about the future market potential of "Yeastea”.</p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="3">Policy</h1>
+                </div>
+                <p>Under the grand blueprint of the national "14th Five-Year Plan", the cosmetics industry has ushered in a golden era of technological innovation and high-quality development. Our project aligns with this trend, utilizing gene-editing technology to create revolutionary skincare products. By precisely modifying yeast, our products integrate the natural skincare benefits of yeast extract with α-bisabolol and ceramide. This innovation meets the demand for high-end manufacturing and cutting-edge raw material production.
+                </p>
+                <p>Leveraging the policy advantages of the "14th Five-Year Plan," our product is eligible for government-backed political and financial support, as well as preferential economic policies from banks. This provides a solid policy foundation for our research and offers strong protection for product market promotion and brand building. We are confident that under the guidance of national policies and growing market demand, our project will pioneer a new chapter in the cosmetics industry, offering consumers more affordable, gentle, and effective skincare solutions.
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="4">Cost Analysis</h1>
+                </div>
+                <p>Our business model focuses primarily on a To-C (Direct-to-Consumer) approach, selling the "Yeastea" Essence directly to customers.  In this part, we analyze the cost of the final product and EBIT (earnings before interest and tax) over the first 5 years. Based on the success of other emerging domestic brands like Perfect Diary, it is reasonable to estimate that our sales volume will capture 5% of the Serviceable Obtainable Market (SOM) within this period. The selling price for each product (30ml) is set at $20 USD, with an estimated total sales volume of $200,000 USD. We project total profits to reach $4,000,000 USD.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/fig3pic4.svg">
+                    </div>
+                    <div class="disc">Figure. An overview of the cost structure.</div>
+                </div>
+                <h2 id="4-0">&bull;&emsp;Product process cost</h2>
+                <div class="s2">
+                    <p>We plan to keep a contract with OEMs (Original Equipment Manufacturers) to process "Yeastea". OEM is responsible for providing a unique formula for "Yeastea", processing the raw materials and assembling the ingredients into final products. We provide the essential raw materials and cutting-edge techniques necessary to produce α-Bisabolol and ceramide. By calculating the raw material and processing costs per unit, we estimate total raw material expenses based on projected sales volume.</p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/pic5.svg">
+                        </div>
+                    </div>
+                    <p>~total: 83,900USD</p>
+                </div>
+                <h2 id="4-1">&bull;&emsp;Packaging cost</h2>
+                <div class="s2">
+                    <p>The product will be packaged in a standard glass essence bottle with a pump head, designed for easy use. The outer packaging will be a cardboard box with a protective sponge to prevent breakage during shipping.</p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/pic6.svg">
+                        </div>
+                    </div>
+                    <p>~total:126,000USD</p>
+                </div>
+                <h2 id="4-2">&bull;&emsp;Sale cost</h2>
+                <div class="s2">
+                    <p>Considering the prosperous development of e-commerce, we plan to sell our products on Taobao—one of China’s largest online cosmetics platforms. Additionally, we will collaborate with influential bloggers on platforms such as TikTok and Xiaohongshu, both of which are highly popular among younger consumers.</p>
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/pic7.svg">
+                        </div>
+                    </div>
+                    <p>~total:160,548USD</p>
+                </div>
+                <h2 id="4-3">&bull;&emsp;Labor Cost</h2>
+                <div class="s2">
+                    <p>Since the OEM handles production, we only need a small team of five employees to manage the online shop. With an average annual salary of 8,611 USD per employee, the total labor cost is approximately 43,055 USD.</p>
+                </div>
+                <h2 id="4-4">&bull;&emsp;Delivery cost</h2>
+                <div class="s2">
+                    <p>Express transportation within China is charged as the main form of transportation. The average weight per product is about 300 grams, and the average delivery cost per unit is about 0.70 USD. The total delivery expense is about 70,000USD</p>
+                </div>
+                <h2 id="4-5">&bull;&emsp;EBIT</h2>
+                <div class="s2">
+                    <p>EBIT (earning before interest and tax) helps to evaluate the operational efficiency and profitability of our company. By subtracting the total costs from total revenue, we estimate an EBIT of $3,516,497 USD over the first five years. This estimated value implies that in our business model, our products, although cost-effective for consumers, still have a profit margin.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="5">Competition Analysis</h1>
+                </div>
+                <p>In the competitive landscape of reparative skincare, our Yeastea product distinguishes itself with exceptional production efficiency and cost-effectiveness, making it an attractive option for value-conscious consumers. This positions us to access a broad market segment with substantial growth potential.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/picpic1.png">
+                    </div>
+                    <div class="disc">Figure. Analysis chart of skin care products with repairing effects. Icons represent</div>
+                </div>
+                <p>Analyzing the market further, it becomes clear that while products like Cerave offer robust reparative properties, they often come with a hefty price tag and contain a relatively high concentration of potentially irritating chemical substances and preservatives, such as hydroxyphenyl methyl ester and hydroxyphenyl propyl ester, making them less suitable for individuals with sensitive skin. On the other hand, more affordable alternatives like Pigeon may fall short in delivering the desired reparative outcomes. 
+                </p>
+                <p>Yeastea, however, strikes the ideal balance between efficacy and affordability. It is formulated with a careful selection of simple, safe ingredients that are gentle on sensitive skin. Our formula goes beyond basic reparative ingredients by incorporating ceramide and bisabolol, which are known for their anti-inflammatory and antibacterial properties. This powerful combination is a rare gem in the market, delivering an unparalleled "repair pro" effect. It ensures that our product not only meets but surpasses consumer expectations for effective and gentle skincare.
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="6">Business Model Canvas</h1>
+                </div>
+                <p>The Business Model Canvas is a strategic tool designed to help swiftly and effectively to define and communicate a business concept. It organizes key elements of a business into a coherent structure, allowing for a clear overview of how the business operates. The right side of the canvas emphasizes the customer, while the left side focuses on the business itself. These two aspects converge around the value proposition, which represents the exchange of value between the business and its customers.
+                </p>
+                <p>Below is the Business Model Canvas for our “Yeastea” yeast extract skincare product.</p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/pic9.svg">
+                    </div>
+                </div>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/pic10.svg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="7">Fund Raising</h1>
+                </div>
+                <p>After establishing the company, we will primarily focus on R&D investment and product testing for the first two years, during which we will not generate profits and will require funding. Based on our cost analysis, the five-year production plan estimate is 483,503 USD, with profitability anticipated to commence in the third year. For the first three years, we anticipate an investment requirement of 270,000 USD.
+                </p>
+                <p>Regarding <a href="https://2024.igem.wiki/izju-china/safety">safety testing</a> and <a href="https://2024.igem.wiki/izju-china/protocol">experimental investments</a>, we plan to allocate 160,000 USD. In total, the first three years will necessitate a funding of 430,000 USD. To address the initial capital requirements, we aim to raise 450,000 USD over the first two years through the following avenues:</p>
+                <p>	School support: 30,000 USD</p>
+                <p>	Roadshow participation at Juanhu Tech City and Juanhu Venture Fund: 40,000 USD</p>
+                <p>	Zhejiang University Zijingang Campus Entrepreneurial Meta-space Project: 3,000 USD</p>
+                <p>	Participation in 36kr's projects, roadshows, and engagement with venture capitalists for equity swaps: 300,000 USD</p>
+                <p>	Collaboration with Guanchen Biotech, expecting to secure 45,000 to 50,000 USD in financing</p>
+                <p>These strategies will collectively enable us to secure the necessary start-up capital to ensure product development, testing, and market entry.
+                </p>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="8">Future Plans</h1>
+                </div>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/pic11.svg">
+                    </div>
+                </div>
+                <p>We are currently in the implementation stage. In the future, we intend to embark on the implementation phase, which primarily encompasses two major tasks: business registration and technical development.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/human-practice/entreprenuriship/picture12-futureplan.svg">
+                    </div>
+                </div>
+                <h2 id="8-0">&bull;&emsp;Business registration</h2>
+                <div class="s2">
+                    <p>Our objectives include registering the company, securing patents, and executing our commercialization strategy. This entails formalizing our corporate status, protecting our intellectual property, and preparing for market entry.
+                    </p>
+                </div>
+                <h2 id="8-1">&bull;&emsp;Technical development</h2>
+                <div class="s2">
+                    <p>We aim to develop the oscillator yeast, conduct safety tests in accordance with Chinese Law (specifically the Technical Specification for Cosmetic Safety), and refine the yeast based on the results of these safety and efficacy evaluations.
+                    </p>
+                    <p>The overall development process comprises stages of technical development, safety and efficacy testing, business establishment, and commercialization. To this end, we have outlined specific future plans for both business registration and technical development as detailed below.
+                    </p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="9">References</h1>
+                </div>
+                <p>1.	Ustymenko, R. (2023). TRENDS AND INNOVATIONS IN COSMETIC MARKETING. Economics & Education, 8(3), 12-17.</p>
+                <p>2.	Consumer Trends 2024: Opportunities in Asia Pacific [Internet]. Available from: https://www.innovamarketinsights.com/reports/consumer-trends-2024-opportunities-in-asia-pacific/</p>
+                <p>3.	2021年中国本土美妆行业研究报告_澎湃号·湃客_澎湃新闻-The Paper [Internet]. Available from: https://www.thepaper.cn/newsDetail_forward_15563373</p>
+                <p>4.   2022年中国化妆品原料行业现状，含植物类原料的化妆品受到消费者的青睐_华经情报网_华经产业研究院 [Internet]. Available from: https://www.huaon.com/channel/trend/869892.html</p>
+                <p>5.	Statista [Internet]. China: cosmetics market size 2025. Available from: https://www.statista.com/statistics/875794/china-cosmetics-market-size/</p>
+                <p>6.	美妆及化妆品原料行业深度专题 （报告出品方： 中信证券 ） - 雪球 [Internet]. Available from: https://xueqiu.com/9508834377/219609652</p>
+            </div>      
+    </div>
+</div>
+
+{% endblock %}

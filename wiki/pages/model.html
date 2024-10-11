@@ -1,0 +1,448 @@
+{% extends "layout.html" %}
+
+{% block title %}Model{% endblock %}
+
+{% block page_content %}
+
+
+
+
+
+    <script id="MathJax-script" async src="static/es5/tex-chtml.js
+    " type="text/javascript"></script>
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/dry-lab/model/model.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Oscillation Model</div>
+                <div class="t1" tid="1">Prediction of Oscillation and WT Yeast Proliferation in Individuals and Populations</div>
+                <div class="t1" tid="2">Yield Estimation</div>
+                <div class="t1" tid="3">Conclusion</div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">Oscillation Model</h1>
+                </div>
+                <P>Design overview:
+                </P>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/1.png">
+                    </div>
+                    <div class="disc">Figure 1. Overview of the genetic oscillator design.</div>
+                </div>
+                <P>The oscillator was constructed in Saccharomyces cerevisiae (check the <a href="https://2024.igem.wiki/izju-china/description">project description</a> for more details). Hap4 was knocked out in yeast (also called “cell” below) and reinserted into the rDNA region. Given the inhibitory effect of Sir2 on this region, Hap4 expression was suppressed. Hap4 promotes Sir2 expression by binding to the CYC1 promoter of Sir2, leading to staggered, periodic fluctuations in the protein levels of Sir2 and Hap4. As a result, the synthesis rates of Sir2 mRNA and Hap4 mRNA follow the relationship:</P>
+                <p>
+                    $$
+                    \frac{dmS_s}{dt}  = \alpha_{S0} + \alpha_S \frac{H(t-\tau_H)^{n_1}}{K_H^{n_1} + H(t-\tau_H)^{n_1}} \quad\quad\quad(1)
+                    $$
+                </p>
+                <p>
+                    $$
+                    \frac{dmH_s}{dt} = \alpha_{H0} + \alpha_H \frac{K_S^{n_2}}{K_S^{n_2} + S(t - \tau_S)^{n_2}}\quad\quad\quad(2)
+                    $$
+                </p>
+                <p>In the process of generating Sir2 and Hap4 mRNA, the regulation of Sir2 and Hap4 mRNA by Hap4 and Sir2 proteins satisfies the Hill equation. Furthermore, since the Hap4 and Sir2 proteins synthesized at time t require some time to translocate to the nucleus to regulate the expression of Sir2 and Hap4 mRNA, there is an inherent time delay in their regulatory effects. To account for this delay, we introduce the parameters τH and τs.
+                </p>
+                <p>During the gene editing process, we inserted the GAL4 gene downstream of the Sir2 gene, making the synthesis rate of GAL4 mRNA proportional to Sir2 mRNA. Therefore, we have:
+                </p>
+                <p>
+                    $$ \frac{dmS}{dt} = \alpha_{S0} + \alpha_S \frac{H(t-\tau_H)^{n_1}}{K_H^{n_1} + H(t-\tau_H)^{n_1}} - \delta_S S \quad \quad \quad (3) $$
+                </p>
+                <p>
+                    $$ \frac{dmH}{dt} = \alpha_{H0} + \alpha_H \frac{K_S^{n_2}}{K_S^{n_2} + S(t-\tau_S)^{n_2}} - \delta_H H \quad \quad \quad (4)$$
+                </p>
+                <p>The derivative of Sir2 and HAP4 protein, is given by:
+                </p>
+                <p>
+                    $$ \frac{dS}{dt} = \zeta_S \cdot mS - \delta_S \cdot S \quad \quad \quad (5)$$
+                </p>
+                <p>
+                    $$ \frac{dH}{dt} = \zeta_H \cdot mH - \delta_H \cdot H \quad \quad \quad (6)$$
+                </p>
+                <p>Since we inserted the GAL4 gene downstream of the Sir2  gene, the synthesis rate of GAL4 mRNA is proportional  to Sir2 mRNA. Therefore, we have:</p>
+                <p>
+                    $$ \frac{d\mathbf{mG}_s}{dt} = k_1 \cdot \frac{d\mathbf{mS}_s}{dt} \quad \quad \quad (7)$$
+                </p>
+                <p>The derivative of GAL4  mRNA is:
+                </p>
+                <p>
+                    $$ \frac{dmG}{dt} = k_1 \cdot mS_s - \delta_m \cdot mG \quad \quad \quad (8)$$
+                </p>
+                <p>The derivative of  GAL4 protein, is given by:</p>
+                <p>
+                    $$ \frac{dG}{dt} = k_2 \cdot mG - \delta_G \cdot G \quad \quad \quad (9)$$
+                </p>
+                <p>The GAL4 protein initiates the expression of Erg20-MrBBS in plasmid to generate the  Erg20-MrBBS protein. Therefore, we have:
+                </p>
+                <p>
+                    $$ \frac{dE}{dt} = k_3 \cdot G - \delta_E \cdot E \quad \quad \quad (10)$$
+                </p>
+                <p>It has been demonstrated that the levels of Sir2, HAP4 and GAL4 mRNA and GAL4 protein can vary significantly due to enzymatic regulation and the influence of inhibitors, resulting in rapid changes that fulfill the conditions of a quasi-steady state.</p>
+                <p>Given that Sir2, HAP4 and GAL4 mRNA and GAL4 protein are in the quasi-steady state, we apply the Quasi-Steady-State Assumption (QAAS) to simplify the kinetic model [1]. As a result, GAL4 mRNA and GAL4 protein should be  maintained in the equilibrium state: 
+                </p>
+                <p>
+                    $$ \frac{dmS}{dt} = \frac{dmH}{dt} = \frac{dmG}{dt} = \frac{dG}{dt} = 0 \quad \quad \quad (11)$$
+                </p>
+                <p>Plugging (11) into equations (3) ,(4), (8) and (9), we obtain:</p>
+                <p>
+                    $$ mS = \frac{\alpha_{S0} + \alpha_S \frac{H(t - \tau_H)^{n_1}}{K_H^{n_1} + H(t - \tau_H)^{n_1}}}{\delta_m} \quad \quad \quad (12)$$
+                </p>
+                <p>
+                    $$ mH = \frac{\alpha_{H0} + \alpha_H \frac{K_S^{n_2}}{K_S^{n_2} + S(t-\tau_S)^{n_2}}}{\delta_m} \quad \quad \quad (13)$$
+                </p>
+                <p>
+                    $$ mG = \frac{k_1 \cdot mS_s}{\delta_m} \quad \quad \quad (14)$$
+                </p>
+                <p>
+                    $$ G = \frac{k_2 \cdot mG}{\delta_G} \quad \quad \quad (15)$$
+                </p>
+                <p>Thus, we have:</p>
+                <p>
+                    $$ \frac{dS}{dt} = \frac{\zeta_S}{\delta_m} \cdot \left(\alpha_{S0} + \alpha_S \frac{H(t-\tau_H)^{n_1}}{K_H^{n_1} + H(t-\tau_H)^{n_1}} \right) - \delta_S \cdot S \quad \quad \quad (16)$$
+                </p>
+                <p>
+                    $$ \frac{dH}{dt} = \frac{\zeta_H}{\delta_m} \cdot \left( \alpha_{H0} + \alpha_H \frac{K_S^{n_2}}{K_S^{n_2} + S(t-\tau_S)^{n_2}} \right) - \delta_H \cdot H \quad \quad \quad (17)$$
+                </p>
+                <p>
+                    $$ \frac{dE}{dt} = \frac{k_1 k_2 k_3}{\delta_G \delta_m^2} \cdot \left( \alpha_{S0} + \alpha_S \frac{H(t-\tau_H)^{n_1}}{K_H^{n_1} + H(t-\tau_H)^{n_1}} \right) - \delta_E \cdot E \quad \quad \quad (18)$$
+                </p>
+                <p>The formula (10) can also be represented as:</p>
+                <p>
+                    $$ \frac{dS}{dt} = \beta_{S0} + \beta_S \frac{H(t-\tau_H)^{n_1}}{K_H^{n_1} + H(t-\tau_H)^{n_1}} - \delta_S \cdot S \quad \quad \quad (19)$$
+                </p>
+                <p>
+                    $$ \frac{dH}{dt} = \beta_{H0} + \beta_H \frac{K_S^{n_2}}{K_S^{n_2} + S(t-\tau_S)^{n_2}} - \delta_H \cdot H \quad \quad \quad (20)$$
+                </p>
+                <p>
+                    $$ \frac{dE}{dt} = \beta_{E0} + \beta_E \frac{H(t-\tau_H)^{n_1}}{K_H^{n_1} + H(t-\tau_H)^{n_1}} - \delta_E E \quad \quad \quad (21)$$
+                </p>
+                <p>Similarly, we have:
+                </p>
+                <p>
+                    $$ \frac{dT}{dt} = \beta_{T0} + \beta_T \frac{K_S^{n_2}}{K_S^{n_2} + S(t-\tau_S)^{n_2}} - \delta_T \cdot T \quad \quad \quad (22)$$
+                </p>
+                <p>Then specific pathways were analyzed to explore the links between the Erg20-MrBBS and the bisabolol. The isopentenyl pyrophosphate (IPP) and dimethylallyl pyrophosphate (DMAPP) is catalyzed by the enzyme to α-bisabolol through the intermediates geranyl pyrophosphate (GPP) and farnesyl pyrophosphate (FPP) (F ig 2).
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/2.svg">
+                    </div>
+                    <div class="disc">Figure 2. The key part of the bisabolol synthesis pathway.</div>
+                </div>
+                <p>As the GPP and FPP involved in multiple metabolic pathways (branching points) [2], they are assumed to maintain in a state of dynamic equilibrium:
+                </p>
+                <p>
+                    $$ \frac{dGPP}{dt} = \frac{dFPP}{dt} = 0 \quad \quad \quad (23)$$
+                </p>
+                <p>Given GPP and FPP are in the quasi-steady state with high consumption rate, we apply the QAAS to simplify the kinetic mode. Plugging  the expressions into the rate equation for α-bisabolol production, the conversion of IPP and DMAPP to α-bisabolol was simplified in a single step:
+                </p>
+                <div class="img-wrap">
+                    <div class="border" style="width: 50%;">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/3.svg">
+                    </div>
+                    <div class="disc">Figure 3. The simplified bisabolol pathway by QSSA.</div>
+                </div>
+                <p>Considering the absence of  cellular processes for the efficient  elimination or utilization of α-bisabolol, α-bisabolol accumulates gradually within the cell . The derivative of bisabolol  can be represented by the following equation:
+                </p>
+                <p>
+                    $$ \frac{dB}{dt} = \frac{K_B \cdot E \cdot I \cdot D}{K_I \cdot K_D + K_I \cdot I + K_D \cdot D + I \cdot D} \quad \quad \quad (24)$$
+                </p>
+                <p>IPP and DMAPP are key products in a series of cellular energy supply reactions [3], which are abundant  in the cell. With adequate resources, the equation (24) can be simplified to :
+                </p>
+                <p>
+                    $$ \frac{dB}{dt} = K_B \cdot E \quad \quad \quad (25)$$
+                </p>
+                <p>Similarly, in the engineered Saccharomyces cerevisiae for  ceramide production, the enzymatic conversion from 3-ketodihydrosphingosine to ceramide proceeds through the intermediates dihydrosphingosine (DHS) and phytosphingosine (PHS), catalyzed by the enzymes Tsc10, Sur2, Lag1, and Lac1 (Fig 4).
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/4.svg">
+                    </div>
+                    <div class="disc">Figure 4. The key part of the ceramide synthesis pathway.</div>
+                </div>
+                <p>DHS and PHS, as intermediates in the biosynthetic pathway, are not only direct precursors of ceramide but can also be metabolized through alternative pathways. As metabolic branching points, they can undergo phosphorylation and be further converted into glycerophospholipids [4]. PHS is rapidly metabolized into glycerophospholipids in yeast and mammalian cells,  leading to rapid change of the concentration. With the rapid consumption rate, the quasi-steady states of the DHS and PHS are established in yeast.  The dynamic equilibrium of DHS and PHS is:
+                </p>
+                <p>
+                    $$ \frac{dDHS}{dt} = \frac{dPHS}{dt} = 0 \quad \quad \quad (26)$$
+                </p>
+                <p>Plugging  the (26) into the rate equation for ceramide production yields a simplified expression that describes the conversion of 3-ketodihydrosphingosine to ceramide in a single step:
+                </p>
+                <div class="img-wrap">
+                    <div class="border" style="width: 55%;">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/5.svg">
+                    </div>
+                    <div class="disc">Figure 5. The simplified ceramide pathway by QSSA.</div>
+                </div>
+                <p>Ceramide is commonly transported to the cell membrane and accumulate progressively. Thus, the derivative of ceramide can be represented as:
+                </p>
+                <p>
+                    $$ \frac{dC}{dt} = \frac{K_C \cdot T \cdot K}{K_K + K} \quad \quad \quad (27)$$
+                </p>
+                <p>3-ketodihydrosphingosine is an important in cellular energy supply. Similarly, the quasi-steady state of the 3-ketodihydrosphingosine is established in yeast. Therefore, equation (27) can be simplified to:
+                </p>
+                <p>
+                    $$ \frac{dC}{dt} = K_C \cdot T \quad \quad \quad (28)$$
+                </p>
+                <p>In summary, the concentration change of our two products, α-bisabolol and ceramide, can be represented as:</p>
+                <p>
+                    $$ B = \int_0^t K_B E \, dt \quad \quad \quad (29)$$
+                </p>
+                <p>
+                    $$ C = \int_0^t K_C T \, dt \quad \quad \quad (30)$$
+                </p>
+                <p>Given the yeast's inability to significantly reduce the levels of α-bisabolol and ceramide, these compounds are assumed to accumulate progressively within the cell. Studies have indicated that both α-bisabolol and ceramide possess cytotoxic properties  [5] [6], potentially inhibiting cellular metabolism and inducing apoptosis
+                </p>
+                <p>Given that excess α-bisabolol  and ceramide inhibit cellular metabolism (including Sir2 and Hap4) through a series of mitochondrial metabolic processes. Therefore, we adopted   ε as the inhibition coefficient to the Hill equation of negative feedback inhibition of Sir2 and Hap4. We included the correction terms in the (19)~(22) and derived this formula:
+                </p>
+                <p>
+                    $$ \frac{dE_c}{dt} = (\beta_{E0} + \beta_E \frac{H_c (t - \tau_H)^{n_1}}{K_H^{n_1} + H_c (t - \tau_H)^{n_1}}) \cdot \epsilon - \delta_E \cdot E_c \quad \quad \quad (31)$$
+                </p>
+                <p>
+                    $$ \frac{dT_c}{dt} = (\beta_{T0} + \beta_T \frac{K_S^{n_2}}{K_S^{n_2} + S_c (t - \tau)^{n_2}}) \cdot \epsilon - \delta_T \cdot T_c \quad \quad \quad (32)$$
+                </p>
+                <p>
+                    $$ \frac{dS_c}{dt} = (\beta_{S0} + \beta_S \frac{H_c (t - \tau_H)^{n_1}}{K_H^{n_1} + H_c (t - \tau_H)^{n_1}}) \cdot \epsilon - \delta_S \cdot S_c \quad \quad \quad (33)$$
+                </p>
+                <p>
+                    $$ \frac{dH_c}{dt} = (\beta_{H0} + \beta_H \frac{K_S^{n_2}}{K_S^{n_2} + S_c (t - \tau_S)^{n_2}}) \cdot \epsilon - \delta_H \cdot H_c \quad \quad \quad (34)$$
+                </p>
+                <p>The equations describe the cytotoxic effects of α-bisabolol and ceramide on cellular metabolism, leading to a significant inhibition of the synthesis of Tsc10, Erg20, Sir2 and HAP4. We define the ε as: 
+                </p>
+                <p>
+                    $$ \epsilon = \frac{1}{1 + \left(\frac{C}{C_m}\right)^{n_3} + \left(\frac{B}{B_m}\right)^{n_4}} \quad \quad \quad (35)$$
+                </p>
+                <p>Given the accumulation of α-bisabolol and ceramide, their cytotoxicity becomes more and more severe in the body, inhibiting cellular metabolic functions and inducing apoptosis. The inhibition coefficient ε, indicates the suppression of the Tsc10 and Erg20 synthesis through the accumulation of α-bisabolol and ceramide.
+                </p>
+                <p>It has also been reported that loss of Hap4 or Sir2 protein causes yeast aging [7]. Thus, the decline of Sir2 or Hap4 indicates cellular senescence. the concentrations of these two proteins, which constitute the only two pathways for cellular aging and death , can serve as vital indicators of a cell's resistance  to cytotoxicity. Consequently, the relationship between the concentrations of α-bisabolol and ceramide can be described as follows:
+                </p>
+                <p>
+                    $$ C_m = \frac{C_{m0}}{1 + \left(\frac{S_m}{S}\right)^{n_5} + \left(\frac{H_m}{H}\right)^{n_6}} \quad \quad \quad (36)$$
+                </p>
+                <p>
+                    $$ B_m = \frac{B_{m0}}{1 + \left(\frac{S_m}{S}\right)^{n_5} + \left(\frac{H_m}{H}\right)^{n_6}} \quad \quad \quad (37)$$
+                </p>
+                <p>The above equations indicate that when the concentrations of Erg20 and Tsc10 are low, Cm and Bm  dramatically decrease. Thus, yeast tolerance to ceramide and bisabolol decreases. The cell is easily go through cell aging and death pathway. Here, the oscillator works as preventing Sir2 and Hap4 dramatically decrease. As regulated by Hap4 and Sir2 respectively, the Tsc10 and MrBBS can also avoid dramatically decrease.  
+                </p>
+                <p>However, when the ceramide and bisabolol reaches the threshold (Cm and Bm) , cellular metabolism is largely inhibited. Thus, the rate of concentration changes for Tsc10 and Erg20 are:
+                </p>
+                <p>
+                    $$ \frac{dE_c}{dt} = -\delta_E \cdot E_c \quad \quad \quad (38)$$
+                </p>
+                <p>
+                    $$ \frac{dT_c}{dt} = -\delta_T \cdot T_c \quad \quad \quad (39)$$
+                </p>
+                <p>At this period,  the concentrations of Erg20 and Tsc10 will  decrease exponentially to zero, and the cell would  die due to toxicity.
+                </p>
+                <p>After our midfications,  the concentration of  ceramide and α-bisabolol changes accordingly:
+                </p>
+                <p>
+                    $$ B_c = \int_0^t K_B E_c \, dt \quad \quad \quad (40)$$
+                </p>
+                <p>
+                    $$ C_c = \int_0^t K_C T_c \, dt \quad \quad \quad (41)$$
+                </p>
+                <p>Based on equations (33), (34), (40) and (41), the monte carlo method was applied to detect the oscillation parameters. Parameters were roughly estimated based on the information of gene expression and protein concentrations from SGD  (Saccharomyces Genome Database) and published paper . Ten thousand different sets of parameter values were randomly generated within physiological parameter ranges and were tested for oscillation generation. About 0.3%  of the 10 thousand parameter sets tested generated oscillations:
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/6.png">
+                    </div>
+                    <div class="disc">Figure 6. The simulation results based on the monte carlo method.</div>
+                </div>
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">Prediction of Oscillation and WT Yeast Proliferation in Individuals and Populations</h1>
+                </div>
+                <p>The genetic oscillator successfully increases the yeast lifespan by 82% [7]. The extended lifespan also has an impact on the yeast's proliferation rate. We notated the budding interval as t0. 
+                </p>
+                <p>The lifespan of yeast cell was notated as kt0 (k∈Z) (for model simplification). We use f(n) to represent the number of single yeast cell in the n-th round of amplification, while F(n) represents the number of new yeasts produced in the n-th round, thus we have:
+                </p>
+                <p>
+                    $$ f(n, k) = 2 \left[ f(n-1, k) - F(n-k, k) \right], \quad n > k \quad \quad \quad (42)$$
+                </p>
+                <p>Where one [f(n-1,k)-F(n-k,k)] represents the number of surviving yeast cells in the last round while another [f(n-1,k)-F(n-k,k)] represents the number of new yeast cells born.   The equation indicates that the number of yeast in n-th round consists of the yeasts that survive the last round and the new yeast cells born.Therefore, we have:
+                </p>
+                <p>
+                    $$ F(n, k) = \begin{cases} 
+                    1, & \text{if } n < 2 \\
+                    f(n-1, k) - F(n-k, k), & \text{if } n \geq 2 
+                    \end{cases} \quad \quad \quad (43)$$
+                </p>
+                <p>Plugging equation (44) into equation (43), we get:</p>
+                <p>
+                    $$ f(n, k) = \begin{cases} 
+                    2f(n-1, k), & \text{if } n < 1 + k \\
+                    2f(n-1, k) - 2, & \text{if } n = 1 + k \\
+                    2f(n-1, k) - f(n-k, k), & \text{if } n > 1 + k 
+                    \end{cases} \quad \quad \quad (44)$$
+                </p>
+                <p>For WT yeast with plasmid, k is approximately 15 while for oscillatory yeast is nearly 27  [7]. Simulations show that after growing to the n-th round, the number of oscillatory yeast is significantly higher than that of WT yeast. Thus, with adequate resources a single long-lived yeast compared to wildtype yeast has a significant advantage in long-term expansion.</p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/7.png">
+                    </div>
+                    <div class="disc">Figure 7. Cell population growth curve of the single cell level.</div>
+                </div>
+                <p>As for the short-term, we use t0 to represent the age of yeast cells. We assume yeast cells that have grown for xt0, where (k-1≥x≥0，n∈Z). </p>
+                <p>To simplify the model, we consider the long-term expansion with sufficient nutrition. The age distribution of the yeast population tends to stabilize. For the yeast in the n round, ax(n) represents the proportion of yeast growing for xt0 and ax represents the proportion of yeast cells that have grown for xt0. We have:
+                </p>
+                <p>
+                    $$ \sum_{0}^{k-1} a_x(n) = 1 \quad \quad \quad (45)$$
+                </p>
+                <p>and</p>
+                <p>
+                    $$ a_x(n+1) = \frac{a_{x-1}(n)}{\sum_{x=0}^{k-2} 2a_x(n)} = a_x(n) \quad \quad \quad (46)$$
+                </p>
+                <p>As k=15 (WT yeast) and k=27 (oscillating yeast), the age distribution  of the yeast cells is as follows:</p>
+                <div style="display: flex;flex-direction: row;width: 100%;">
+                <div class="img-wrap" style="width: 50%;">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/table-1.png">
+                    </div>
+                    <div class="disc">Table 1 Distribution of yeast proportion growing for xt0 when k=15.</div>
+                </div>
+                <div class="img-wrap" style="width: 50%;">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/table-2.png">
+                    </div>
+                    <div class="disc">Table 2 Distribution of yeast proportion growing for xt0 when k=27</div>
+                </div>
+                </div>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/figure-8.png">
+                    </div>
+                    <div class="disc">Figure 8. Distribution of yeast proportion.</div>
+                </div>
+                <p>For short-term expansion, we set the expansion time T between 0 to 14t0. After T time, the number of yeast cells is:
+                </p>
+                <p>
+                    $$ N_{\text{num}}(n) = \sum_{x=0}^{14} \left(a_x \cdot K(n, k)\right) \cdot N_o, \quad n \leq 14 \quad \quad \quad (47)$$
+                </p>
+                <p>where</p>
+                <p>
+                    $$ K(n, k) = \begin{cases} f(n, k-x), & \text{if } n \leq k+1-x \\f(k+1-x, k-x) \cdot 2^{n+x-k-1}, & \text{if } n > k+1-x \end{cases} \quad \quad \quad (48)$$
+                </p>
+                <p>and we set No as 2000000
+                <p>From the table 2, it can be seen that under conditions of sufficient resources, even in short-term expansion, long-lived yeast still has an expansion advantage over wildtype yeast. The has also been confirmed by the wet lab (Fig 9).
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/table-3.png">
+                    </div>
+                    <div class="disc">Table 3. The number of n generations amplified by yeast with different lifespans</div>
+                </div>
+                <p>In summary, long-lived yeast has a significant expansion advantage over wildtype yeast. Within an equivalent time period, this engineered strain is capable of generating a larger progeny of yeast cells. This has also confirmed by wet lab (Figure 9).</p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/9.png">
+                    </div>
+                    <div class="disc">Figure 9. Cell population growth curve of the population level.</div>
+                </div>
+            </div>
+                    
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">Yield Estimation</h1>
+                </div>
+                <p>For single yeast, the lifespan is 82% longer than the production cell (WT cells with plasmid). Thus, we notated the production cell lifespan as t0.</p>
+                <p>At the single-cell level, by dividing the ceramide production of engineered yeast by the ceramide production of production cell, we can obtain the production ratio as:
+                </p>
+                <p>
+                    $$ P = \begin{cases} 
+                    0.786, & \text{if } t \leq t_0 \\
+                    \frac{0.786t}{t_0}, & \text{if } t_0 < t \leq 1.82t_0 
+                    \end{cases} \quad\quad\quad(49)$$
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/10.svg">
+                    </div>
+                    <div class="disc">Figure 10. The production ratio between the oscillation yeast and the production yeast in single cell level.</div>
+                </div>
+                <p>At the population level, since the engineered yeast is capable of producing a larger progeny of yeast cells, its production is higher than that of the production yeast over time. The high production has been proved by the wet lab (figure 11).
+                </p>
+                <div class="img-wrap">
+                    <div class="border" style="width: 36%;">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/figure-11.png" style="margin-bottom: -8vh;">
+                    </div>
+                    <div class="disc">Figure 11. The ceramide production.</div>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="4">Conclusion</h1>
+                </div>
+                <p>Through the integration of wet lab data and computational modeling, we have demonstrated that our engineered oscillatory yeast strain achieves significantly higher long-term production of  bisabolol and ceramide compared to non-oscillating yeast. By utilizing the engineered oscillator, the yeast regulates Sir2 and Hap4 gene expression, optimizing the balance of these proteins.  This regulation extends the yeast's lifespan, allowing for sustained production over time.
+                </p>
+                <p>Although individual cells may exhibit a slower production rate, the longer lifespan and increased proliferation of the oscillatory yeast result in greater overall production at the single cell and population level . Our model accurately captures the mechanism of oscillations,  providing detailed insights into single-cell and population-level reproduction dynamics, as well as the cumulative production procedure.
+                </p>
+                <p>By integrating our experimental data with established literature, we provide a comprehensive explanation of the enhanced production mechanism  in our yeast strain, offering valuable insights for future biotechnological applications.
+                </p>
+                <div class="img-wrap">
+                    <div class="border">
+                        <img src="https://static.igem.wiki/teams/5371/dry-lab/model/teable4.svg">
+                    </div>
+                    <div class="disc">Table 4. Kinetic parameters used in the model.</div>
+                </div>
+            </div>      
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="5">References</h1>
+                </div>
+                <p style="text-align: left;">1.	Pantea C, Gupta A, Rawlings JB, Craciun G. The QSSA in Chemical Kinetics: As Taught and as Practiced. In: Jonoska N, Saito M, editors. Discrete and Topological Models in Molecular Biology [Internet]. Berlin, Heidelberg: Springer; 2014. p. 419–42. Available from: https://doi.org/10.1007/978-3-642-40193-0_20
+                </p>
+                <p style="text-align: left;">2.	Gault C, Obeid L, Hannun Y. An overview of sphingolipid metabolism: from synthesis to breakdown. Adv Exp Med Biol. 2010;688:1–23.
+                </p>
+                <p style="text-align: left;">3.	Henry LK, Thomas ST, Widhalm JR, Lynch JH, Davis TC, Kessler SA, et al. Contribution of isopentenyl phosphate to plant terpenoid metabolism. Nature Plants. 2018 Sep;4(9):721–9.
+                </p>
+                <p style="text-align: left;">4.	Kondo N, Ohno Y, Yamagata M, Obara T, Seki N, Kitamura T, et al. Identification of the phytosphingosine metabolic pathway leading to odd-numbered fatty acids. Nat Commun. 2014 Oct 27;5(1):5338.
+                </p>
+                <p style="text-align: left;">5.	Kolesnick R, Fuks Z. Radiation and ceramide-induced apoptosis. Oncogene. 2003 Sep 1;22(37):5897–906.
+                </p>
+                <p style="text-align: left;">6.	Choi B, Tafur Rangel A, Kerkhoven EJ, Nygård Y. Engineering of Saccharomyces cerevisiae for enhanced metabolic robustness and L-lactic acid production from lignocellulosic biomass. Metabolic Engineering. 2024 Jul 1;84:23–33.
+                </p>
+                <p style="text-align: left;">7.	Zhou Z, Liu Y, Feng Y, Klepin S, Tsimring LS, Pillus L, et al. Engineering longevity—design of a synthetic gene oscillator to slow cellular aging. Science. 2023 Apr 28;380(6643):376–81.
+                </p>
+            </div>   
+    </div>
+</div>
+
+{% endblock %}

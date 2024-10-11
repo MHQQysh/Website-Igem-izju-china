@@ -1,0 +1,140 @@
+@font-face {
+  font-family: Titan;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/titanone.ttf);
+}
+@font-face {
+  font-family: Nunito-Reg;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/nunito-reg.ttf);
+}
+@font-face {
+  font-family: Nunito-Bold;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/nunito-bold.ttf);
+}
+@font-face {
+  font-family: Montserrat-Reg;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/montserrat-regular.otf);
+}
+@font-face {
+  font-family: Montserrat-Semi;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/montserrat-semibold.otf);
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/montserrat-bold.otf);
+}
+@font-face {
+  font-family: Montserrat-Black;
+  src: url(https://static.igem.wiki/teams/4628/wiki/fonts/montserrat-black.otf);
+}
+@font-face {
+  font-family: NeoGroTesk-light;
+  src: url(neogroteskess-light.ttf);
+}
+@font-face {
+  font-family: Fredoka-VariableFont_wdth_wght;
+  src: url(./Fredoka-VariableFont_wdth_wght.ttf);
+}
+@font-face {
+  font-family: ProtestGuerrilla-Regular;
+  src: url(./ProtestGuerrilla-Regular.ttf);
+}
+
+@font-face {
+  font-family: NeoGroTesk-bold;
+  src: url(https://static.igem.wiki/teams/4608/wiki/fonts/neogroteskess-bold.ttf);
+}
+
+@font-face {
+  font-family: NeoGroTesk-regular;
+  src: url(https://static.igem.wiki/teams/4608/wiki/fonts/neogroteskess-regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  padding-top: 100px;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  /* 溢出边界的元素如何处理 */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  font-family: NeoGroTesk-light, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+:root {
+  --bg:rgb(52,58,64);
+  --lg: #d63b761d;
+  --mg:#D63B77;
+  /* strong */
+  --dg: #f3005e; 
+  --y: #5384c1;
+  --shy: #6185b0;
+  --font: rgb(147,22,86);
+  --disc: #8f8586;
+}
+
+#scrollbar {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background-color: var(--mg);
+  transition: 0.2s;
+}
+
+
+#loadblock {
+  width: 100%;
+  height: calc(100vh - 90px);
+  position: fixed;
+  z-index: 800;
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  flex-direction: column;
+  gap: 20px;
+  transition: opacity 1s;
+}
+#loadblock.hide {
+  opacity: 0;
+}
+#loadblock img {
+  width: 20vmin;
+  min-width: 300px;
+  aspect-ratio: 1;
+  background-size: contain;
+  animation: load infinite linear 16s;
+}
+@keyframes load {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+#loadblock .txt {
+  color: var(--mg);
+  font-family: Nunito-Bold;
+  font-size: 2em;
+}

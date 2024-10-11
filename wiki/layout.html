@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 这里修改网页小图标 -->
+    <link rel="shortcut icon" href="https://static.igem.wiki/teams/5371/description-pictures/homepage/icon-nobg.svg" />
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
+
+    <link href="{{ url_for('static', filename = 'base.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'wiki.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'theme.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'wave.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'menu.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'attribution.css')}}" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename = 'timeline.css')}}" rel="stylesheet"> -->
+
+    <link href="{{ url_for('static', filename = 'loading.css')}}" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %} | iZJU-China - iGEM 2024</title>
+
+  </head>
+
+<body>
+
+  <div id="scrollbar" style="visibility: hidden;"></div>
+
+  <!-- NavBar 导航栏 -->
+  {% include 'header.html' %}
+
+
+  <!-- 响应式代码啊 -->
+  <script>
+    const menuBtn = document.querySelector("#nav .burger");
+    const menu = document.querySelector("#nav .menu-wrap");
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('show');
+      menu.classList.toggle('show');
+      document.body.classList.toggle("fix");
+    }
+    )
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="loading-container" class="loading" style="visibility: hidden;">
+  <div>
+      <img class="loading-z" src="https://static.igem.wiki/teams/5371/homepage/loading.gif">
+  </div>
+<div class="loading-text">
+  <span style="color:#ff5076;font-size: 30px;font-weight: 600;"> LOADING  <span style="font-size: 40px"><span class="dot-1" style="color: #ff7e9a">.</span><span class="dot-2" style="color: #f7d26c">.</span><span class="dot-3" style="color:#ffa3d7">.</span></span></span>
+</div>
+</div>
+
+
+
+
+  {% block page_content %}{% endblock %}
+
+
+  <!-- gotop元素的属性 -->
+  <!-- 详见wiki.css -->
+
+  <div id="gotop">
+    <img id="gotopimg" src="https://static.igem.wiki/teams/5371/gotop/gotop.svg" onmouseover="hovergotop(this);" onmouseout="unhovergotop(this);"
+      alt="gotop">
+    <div class="text-wrap">
+      <div>BACK TO</div>
+      <div>TOP !</div>
+    </div>
+  </div>
+
+  <div class="wave-section-tail">
+    <div class="wave-tail1"></div>
+    <div class="wave-tail2"></div>
+  </div>
+
+  <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+  {% include 'footer.html' %}
+
+  <!-- 调整gotop元素, teambrand元素 hover时变为动图的js -->
+  <script src="{{ url_for('static', filename = 'minieffect.js')}}"></script>
+  <!-- 时间线点击 -->
+  <script src="{{ url_for('static', filename = 'timeline.js')}}"></script>
+  <!-- 滚动啊！ -->
+  <script src="{{ url_for('static', filename = 'scrollreveal.js')}}"></script>
+  <!-- 重要的效果集合 -->
+  <script src="{{ url_for('static', filename = 'impeffect.js')}}"></script>
+  <script src="{{ url_for('static', filename = 'loading.js')}}"></script>
+
+</body>
+
+</html>

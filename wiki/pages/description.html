@@ -1,0 +1,257 @@
+{% extends "layout.html" %}
+
+{% block title %}Project Description{% endblock %}
+
+{% block page_content %}
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+  <div class="wave-head" style="width: 150vw;"></div>
+  <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+  <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh"></div>
+  <!-- 此处修改page head图片 -->
+  <img src="https://static.igem.wiki/teams/5371/project/description/description.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+  <div class="menubg">
+    <div data-scroll-watcher=""></div>
+    <div id="menu" class="">
+      <div id="scrollbar1">
+
+        <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+          <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+        </div>
+
+        <div id="overlay">
+          <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+        </div>
+
+      </div>
+
+      <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+        <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+      </div>
+
+      <div class="menucontent">
+        <div class="t1" tid="0">Introduction</div>
+        <div class="t1" tid="1">Project Design</div>
+        <div class="t1" tid="2">Theoretical Basis</div>
+        <div class="h2-sec">
+          <div class="t2" tid="2-0">&bull;&emsp;Oscillating system</div>
+          <div class="t2" tid="2-1">&bull;&emsp;Ceramide production</div>
+          <div class="t2" tid="2-2">&bull;&emsp;(-)-&alpha;-bisabolol production</div>
+          <div class="t2" tid="2-3">&bull;&emsp;Fluorescence protein system and microfluidic chip</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="0">Introduction</h1>
+      </div>
+      <p>
+        Sensitive skin is a common problem, affecting approximately 60% of the global population[1]. Individuals with
+        sensitive skin typically have a lower tolerance for irritants in skincare products, triggering adverse reactions
+        such as redness, itching, burning sensations, and inflammation. Therefore, choosing products with safe
+        components is crucial especially for those with sensitive skin.
+      </p>
+      <p>
+        This trend is also highlighted by data from Grand View Research, which predicts that the global natural and
+        organic cosmetics market will expand to USD 54.5 billion by 2027, growing at a compound annual growth rate of
+        5.01% from 2020 to 2027[2]. Another trend implied by our survey shows that consumers are increasingly seeking
+        products that are not only effective but also aligned with their growing awareness of health and environmental
+        issues.
+      </p>
+      <p>
+        Among various types of products, those containing yeast extracts have gained significant popularity. This market
+        concentration has resulted in exorbitant prices for yeast extracts-based products. For instance, the price of
+        yeast extracts product occupied a large share of the market ranges from USD 150 to USD 1000 per 150ml, making
+        these cosmetics largely inaccessible to many consumers.
+      </p>
+
+      <div class="img-wrap">
+        <div class="border">
+          <img src="https://static.igem.wiki/teams/5371/project/description/fig1pic1.svg">
+        </div>
+      </div>
+      <div class="img-wrap">
+        <div class="border">
+          <img src="https://static.igem.wiki/teams/5371/project/description/fig1-pic2.jpg">
+        </div>
+        <div class="disc">Figure 1. The expanded market and custome's needs.</div>
+      </div>
+
+
+      <p>
+        In addition to the unaffordable cost, the soothing and gentle ingredients for sensitive skin are also in short
+        supply. One such example is (–)-α-Bisabolol. (–)-α-Bisabolol, valued for its anti-inflammatory and antimicrobial
+        properties, is a soothing ingredient in cosmetics for those with sensitive skin. However, extracting
+        (–)-α-Bisabolol from plants is unsustainable and insufficient to meet demand, raising environmental and
+        bioconservation issues[3]. Due to the generation of other diastereomers and unwanted byproducts, chemical
+        synthesis necessitates an extra purification step that is economically unfeasible[4]. For biosynthesis,
+        producing exogenous or endogenous metabolites by engineered bacteria/yeasts is still at risk of cytotoxicity.
+        Notably, a concentration of 1g/L (–)-α-Bisabolol significantly inhibit the growth of yeast, posing a significant
+        challenge[5].</p>
+      <p>
+        Consequently, there is an urgent need to develop safe, effective, and affordable skincare products by innovative
+        production methods to bridge this gap.
+      </p>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="1">Project Design</h1>
+      </div>
+
+      <p>
+        This year, students from <a href = "https://2024.igem.wiki/izju-china/home">iZJU-China</a> proposed an innovative idea to link yeast-derived (Saccharomyces cerevisiae)
+        essence production to an oscillatory system, aiming to reduce the product’s toxicity and increase anti-aging
+        activity during the production process. We have formulated “Yeastea” 2+1 Yeast Extract for comprehensive skin
+        barrier repair. The “2” represents the core ingredients, (–)-α-Bisabolol and ceramides, which work
+        synergistically to enhance anti-inflammatory, calming, and repairing effects. The “1” signifies the yeast
+        extract, rich in diverse beneficial components, aiding in skin repair. By combining these ingredients, we have
+        innovatively crafted the yeast essence “Yeastea” through an integrated production process to address daily
+        skincare concerns.
+      </p>
+      <p>
+        To address the cytotoxic problem, we have applied the oscillating system in production. By inserting a
+        HAP4-sensitive CYC1 promoter upstream of the SIR2 gene and relocating the HAP4 gene to the 35S rDNA region
+        regulated by SIR2, periodic expression of SIR2 and HAP4 is achieved. By connecting the CYC1 promoter to the
+        ceramide production gene and using the GAL-UAS system to link the expression of SIR2 and (–)-α-Bisabolol
+        production, the oscillator not only helps our experimental yeasts to live longer and produce more ingredients
+        but also helps to avoid the toxicity of excess ingredients.
+      </p>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="2">Theoretical Basis</h1>
+      </div>
+
+      <h2 id="2-0">&bull;&emsp;Oscillating system</h2>
+      <p>
+        Yeast cells have a genetic switch that can lead to their death through two distinct pathways: nucleolar decline
+        or mitochondrial decay. In yeast, SIR2 mediates chromatin silencing at ribosomal DNA (rDNA) to maintain the
+        stability of this fragile genomic region and the integrity of the nucleolus. HAP4 regulates the expression of
+        genes critical for heme biosynthesis and mitochondrial function. The oscillator was engineered as a negative
+        feedback genetic switch, allowing yeast cells to oscillate between these two states, thereby extending their
+        lifespan by 82%[6].
+      </p>
+
+      <h2 id="2-1">&bull;&emsp;Ceramide production</h2>
+      <p>
+        Ceramides, a class of lipid molecules integral to the skin’s stratum corneum, plays a pivotal role in skincare
+        including preventing transepidermal water loss, and shielding against environmental aggressors. They can also
+        mitigate signs of aging by enhancing the stratum corneum’s integrity. However, current extraction methods from
+        natural sources are insufficient to meet the growing demand, and using plants and animals for ceramide
+        extraction is unsustainable.
+      </p>
+      <p>
+        By overexpressing the TSC10 gene in yeast, which encodes 3-ketodihydrosphingosine reductase—a key enzyme in
+        ceramide synthesis—researchers aimed to maximize ceramide production. Using the pYES2 vector, the TSC10 gene was
+        introduced into the yeast, significantly enhancing ceramide production. The engineered yeast strain, SCYT10,
+        containing the pYES2/TSC10 vector, achieved a ceramide production level of 9.79 mg per gram of yeast cells,
+        which is a 4.7-fold increase compared to the control strain[7]. This theoretical basis demonstrates that
+        overexpressing the TSC10 gene in yeast can significantly boost ceramide production, offering a more sustainable
+        and scalable method for obtaining this essential ingredient in skincare products.
+      </p>
+
+      <div class="img-wrap">
+        <div class="border">
+          <img src="https://static.igem.wiki/teams/5371/project/description/pic3.jpg">
+        </div>
+        <div class="disc">Figure 2. The ceramide synthesis pathway.</div>
+      </div>
+
+      <h2 id="2-2">&bull;&emsp;(-)-α-bisabolol production</h2>
+      <p>
+        (–)-α-Bisabolol is primarily extracted from chamomile (Matricaria recutita) and is valued for the significant
+        potential in health products and pharmaceuticals. However, extracting (–)-α-Bisabolol from chamomiles is
+        unsustainable and insufficient to meet demand. To address this, Saccharomyces cerevisiae was used to produce
+        (–)-α-Bisabolol. By introducing the MrBBS and ERG20 genes, they created a strain that produces (–)-α-Bisabolol
+        de novo. This biosynthesis process uses glucose as a cost-effective carbon source to produce acetyl-CoA, which
+        enters the MVA pathway to create farnesyl pyrophosphate (FPP). FPP is then converted to (–)-α-Bisabolol by the
+        MrBBS enzyme from M. recutita. To further enhance productivity, ERG20 and MrBBS are fused together through a
+        flexible linker (GGGS)3. Therefore, FPP will be immediately captured by MrBBS after it was produced by ERG20.
+        With a result of a 2.9-fold increase in production, this method offers a sustainable alternative to traditional
+        extraction and demonstrates the potential for producing valuable natural compounds at scale[5].
+      </p>
+      <div class="img-wrap">
+        <div class="border">
+          <img src="https://static.igem.wiki/teams/5371/project/description/pic4.svg">
+        </div>
+        <div class="disc">Figure 3. The α-Bisabolol synthesis pathway.</div>
+      </div>
+
+
+      <h2 id="2-3">&bull;&emsp;Fluorescence protein system and microfluidic chip</h2>
+      <p>
+        To indicate the gene expression level, the fluorescence protein system is employed, with BFP used to signify the
+        expression of MrBBS and ERG20 genes. Similarly, enhanced eGFP marks TSC10 expression, while mCherry indicates
+        SIR2 expression.
+      </p>
+      <p>
+        To evaluate the pattern of oscillating system and address the observation problems caused by suspension culture
+        of Saccharomyces cerevisiae, we use microfluidics chips for single-cell monitoring and imaging applications (see
+        <a href = "https://2024.igem.wiki/izju-china/hardware">hardware</a> for detailed information)[8]. By using a cell trap of the yeast size (6-micronm diameter), yeast is
+        trapped in the channel. Dot matrix is used as an encoding and calibration standard on microfluidic chip (see
+        <a href = "https://2024.igem.wiki/izju-china/software">software</a> for detailed information). Consequently, a system including a microfluidic chip was adopted to
+        immobilize the yeast cells and enable the assessment of both their oscillating pattern and replicative lifespan.
+      </p>
+      <div class="img-wrap">
+        <div class="border">
+          <img src="https://static.igem.wiki/teams/5371/project/description/pic5.svg">
+        </div>
+        <div class="disc">Figure 4. The microfluidic chip structure.</div>
+      </div>
+    </div>
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="3">References</h1>
+      </div>
+
+      <p style="text-align: left;">
+        1. Farage MA. The Prevalence of Sensitive Skin. Frontiers in Medicine [Internet]. 2019;6. Available from:
+        https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6533878/
+      </p>
+      <p style="text-align: left;">
+        2. Natural Cosmetics Market Size, Share, Trends | Industry Report, 2025 [Internet]. Available from:
+        https://www.grandviewresearch.com/industry-analysis/natural-cosmetics-market
+      </p>
+      <p style="text-align: left;">
+        3. de Souza AT, Benazzi TL, Grings MB, Cabral V, Antônio da Silva E, Cardozo-Filho L, et al. Supercritical
+        extraction process and phase equilibrium of Candeia (Eremanthus erythropappus) oil using supercritical carbon
+        dioxide. The Journal of Supercritical Fluids. 2008 Dec 1;47(2):182–7.
+      </p>
+      <p style="text-align: left;">
+        4. Son YJ, Kwon M, Ro DK, Kim SU. Enantioselective microbial synthesis of the indigenous natural product
+        (−)-α-bisabolol by a sesquiterpene synthase from chamomile (Matricaria recutita). Biochem J. 2014;463:239–48.
+      </p>
+      <p style="text-align: left;">
+        5. Jiang Y, Xia L, Gao S, Li N, Yu S, Zhou J. Engineering Saccharomyces cerevisiae for enhanced (–)-α-bisabolol
+        production. Synthetic and Systems Biotechnology. 2023 Jun 1;8(2):187–
+      </p>
+      <p style="text-align: left;">
+        6. Zhou Z, Liu Y, Feng Y, Klepin S, Tsimring LS, Pillus L, et al. Engineering longevity—design of a synthetic
+        gene oscillator to slow cellular aging. Science. 2023 Apr 28;380(6643):376–81.
+      </p>
+      <p style="text-align: left;">
+        7. Sk K, Yh N, Jr K, Hs Y. Effect of expression of genes in the sphingolipid synthesis pathway on the
+        biosynthesis of ceramide in Saccharomyces cerevisiae. Journal of microbiology and biotechnology [Internet]. 2010
+        Feb; 20(2). Available from: https://pubmed.ncbi.nlm.nih.gov/20208441/
+      </p>
+      <p style="text-align: left;">
+        8. A programmable fate decision landscape underlies single-cell aging in yeast | Science [Internet]. Available
+        from: https://doi.org/10.1126/science.aax9552
+      </p>
+    </div>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

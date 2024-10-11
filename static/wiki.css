@@ -1,0 +1,269 @@
+html {
+  scroll-padding-top: calc(100px + 5px);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ====================== 
+main大容器
+==================  */
+
+.main {
+  display: flex;
+  max-width: 100vw;
+  margin: 50px 0;
+  margin-bottom: 150px;
+  padding-right:70px;
+  justify-content: center;
+}
+
+
+
+/* ====================== 
+menu中容器
+==================  */
+/* menu内容（详见 menu.css） */
+/* ------------------------------------------------ */
+
+
+/* ------------------------------------------------ */
+/* 页面文本内容 */
+.main #content {
+  position: relative;
+  flex: 1;
+  max-width: 60vw;;
+  padding: 10px 70px 30px 30px;
+  border-radius: 20px;
+  transition: width 0.5s;
+  left: 3vw;
+}
+.main #content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  top: 20px;
+  left: 15px;
+}
+.main #content .s1 {
+  margin: 30px 0;
+  width: 100%;
+}
+.main #content .s1.ref p {
+  text-indent: 0;
+  font-size: 0.8em;
+  text-align: left;
+}
+.main #content .s1 p {
+  padding-left: 40px;
+}
+.main #content .s2 {
+  margin: 20px 0;
+  width: 100%;
+}
+.main #content .s2 p {
+  padding-left: 70px;
+}
+.main #content .math {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-left: 40px;
+}
+.main #content .h1-wrap {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: 40px 0 0 0;
+  padding-left: 10px;
+}
+.main #content .h1-wrap h1 {
+  padding: 2px;
+  letter-spacing: 0.02em;
+  padding-left: 10px;
+  opacity: 1 !important;
+}
+.main #content h2 {
+  /* margin: 30px 20px; */
+  opacity: 1 !important;
+  margin: 20px 0 0 20px;
+  line-height: 35px;
+}
+.main #content p {
+  width: 100%;
+  margin: 15px 0;
+  text-align: justify;
+  /* text-indent: 2em; */
+  line-height: 1.5em;
+}
+.main #content p.no-indent {
+  text-indent: 0;
+}
+
+/* .main #content img,
+.main #content video {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+} */
+.main #content .img-wrap {
+  width: 100%;
+  display: flex;
+  margin: 20px 0 25px 0;
+  padding-left: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* transform: scale(0.7); */
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+  /* margin: -70px 0; */
+}
+.main #content .img-wrap img {
+  object-fit: contain;
+  /* transform: scale(0.5); */
+  width: 100%;
+  /* min-width: 50vw; */
+  padding: 10px;
+}
+
+/* 此处为内容框内图片背景颜色 */
+.main #content .img-wrap .border {
+  position: relative;
+  width: -moz-fit-content;
+  width: 100%;
+  height: -moz-fit-content;
+  /* height: fit-content; */
+  border: 2.5px solid var(--y);
+  box-shadow: 5px 6px var(--y);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.main #content .img-wrap .disc {
+  font-size: 0.8em;
+}
+.main #content .o-o {
+  display: flex;
+  gap: 20px;
+}
+
+/* 以下为content样式 */
+#content h3 {
+  margin: 15px 0 0 55px;
+}
+
+#content .info {
+  margin: 20px 0;
+  margin-left: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--shy);
+  border: none;
+}
+
+#content .info.g {
+  background-color: var(--lg);
+  border: 1px solid var(--dg);
+}
+
+#content .info.g {
+  background-color: #c6004bbf;
+  border: none;
+}
+
+#content .info .title {
+  font-family: NeoGroTesk-bold;
+  color: #f7faff;
+}
+
+#content .info p {
+  padding-left: 0 !important;
+  color: #f7faff;
+}
+
+#content b {
+  font-family: 'NeoGroTesk-light';
+}
+
+/* ------------------------------------------------ */
+/* 以下为gotop元素相关样式 */
+
+#gotop {
+  position: fixed;
+  bottom: min(30px, 4vw);
+  right: min(30px, 4vw);
+  height: 90px;
+  transition: height 0.5s;
+  z-index: 100000;
+  right: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* 图片 */
+#gotop img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* 文字 */
+#gotop .text-wrap {
+  user-select: none;
+  opacity: 0;
+  transition: 0.5s;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 这里改字体 */
+  font-family: 'Titan';
+  color: #fcfdfa;
+  font-size: min(15px, 1vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gotop .text-wrap * {
+  text-wrap: nowrap;
+}
+
+/* 图片遮挡 */
+#gotop:hover .text-wrap {
+      opacity: 1;
+}
+
+
+/* ------------------------------------------------ */
+
+@media all and (max-width: 700px), all and (max-aspect-ratio: 2/3) {
+  .main #content{
+    max-width: 80vw;
+  }
+}

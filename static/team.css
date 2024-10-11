@@ -1,0 +1,371 @@
+
+.poster .title {
+  top: 80%;
+}
+.main {
+  margin-top: 150px;
+}
+.main .menu {
+  display: none;
+}
+.main #content {
+  background-color: transparent !important;
+  max-width: 80%;
+  /* 弹性布局：flex: 1; 使得 #content 元素在父容器中能够占据剩余空间，通常用于 Flexbox 布局。 */
+  flex: 1;
+  padding: 0;
+}
+.main #content::before {
+  display: none;
+}
+.main #content .s1 .h1-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.main #content .s1 .h1-wrap h1 {
+  position: relative;
+  color: var(--mg);
+  font-family: Montserrat-Black, sans-serif;
+  font-size: 40px;
+}
+
+/* 这里调整板块化 */
+.main #content .s1 .line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 30px;
+}
+
+
+
+
+.main #content .s1 .h1-wrap h1::after {
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 8px;
+  top: -8px;
+  width: fit-content;
+  height: 100%;
+  text-wrap: nowrap;
+  color: var(--mg);
+  padding: 2px;
+  -webkit-text-stroke: 8px transparent;
+  background-color: var(--bg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container with 3D perspective */
+.card-container {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Style for card, making it a 3D object */
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  border-radius: 50%;
+}
+
+/* Front face of the card */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* 保持圆形 */
+  backface-visibility: hidden;
+  border: 10px solid var(--mg);
+}
+/* Specific front face styling */
+.front {
+  background-color: rgb(253, 243, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  padding-top: 50px;
+  border: 10px solid var(--mg);
+}
+
+/* Back face styling */
+.back {
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transform: rotateY(180deg); /* Initially rotated to hide it */
+}
+
+/* Flip card on hover */
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Other card styles */
+#content .card .hole {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--mg);
+  overflow: hidden;
+}
+#content .card::before {
+  content: "";
+  position: absolute;
+  bottom: 180px;
+  left: 150px;
+  width: 300px; /* Adjust this value to set the width of the image */
+  height: 300px; /* Adjust this value to set the height of the image */
+  background: url('https://static.igem.wiki/teams/5371/description-pictures/homepage/s2.svg') no-repeat bottom left; /* Set the path to your image and position it at the bottom left */
+  background-size: contain; /* Adjust this value to control how the image is scaled */
+  z-index: 100;
+}
+
+
+
+#content .card .hole::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--bg);
+  top: 6px;
+  left: 6px;
+}
+
+#content .card .mid {
+  width: 75%;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+
+
+#content .card h2{
+  margin-top: -200px;
+}
+#content .card p{
+  padding-left: 0px;
+
+}
+
+
+
+
+
+
+
+
+
+#content .card .mid::before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background-color: rgb(253, 243, 247); /* Use the same background color as .front */
+  z-index: 100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content .card .mid .avatar {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background-color: #fffdf7;
+  background-position: center;
+  background-size: cover;
+}
+
+#content .card .mid::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 180px;
+  width: 100px; /* Adjust this value to set the width of the image */
+  height: 100px; /* Adjust this value to set the height of the image */
+  background: url('https://static.igem.wiki/teams/5371/description-pictures/homepage/s1.svg') no-repeat bottom left; /* Set the path to your image and position it at the bottom left */
+  background-size: contain; /* Adjust this value to control how the image is scaled */
+  z-index: 100;
+}
+
+
+
+#content .card .mid .scroll {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 20px);
+  overflow: scroll;
+  opacity: 0;
+  transition: 1s;
+}
+
+#content .card .mid .scroll p {
+  color: #395038;
+  text-align: justify;
+  text-indent: 1.5em;
+}
+
+
+/* 这里调整大小 */
+#content .card .bot {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: -55px;
+  z-index: 101;
+
+}
+
+
+
+
+
+/*名字 */
+#content .card .bot .name {
+  color: var(--mg);
+  font-family: Montserrat-Bold;
+  font-size: 25px;
+  letter-spacing: 0.05px;
+}
+/* teg */
+#content .card .bot .tag {
+  margin-top: 10px;
+  font-family: Nunito-Bold;
+  /* background-image: url(wet.svg); */
+  /* background-size: 5000%; */
+  /* font-size: 30px; */
+  margin-left: -250px;color: #fffdf7;
+  /* padding: 0 15px; */
+  z-index: 5;
+
+  
+}
+#content .card .bot .tag img{
+  margin-left: -120px ;
+  position: absolute;
+  margin-top: -35px;
+  width: 300px;
+  height: 100px;
+  left: 160px;
+  z-index: -1;
+}
+
+
+#content .card .bot .name
+{
+  position: relative;
+  padding-bottom: 5px; /* Adjust this value to control the space between text and the underline */
+}
+
+
+
+#content .card .bot .name::after
+ {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px; /* Adjust this value to control the thickness of the underline */
+  background-color: rgb(214,59,119); /* Adjust this value to control the color of the underline */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content .card .star {
+  position: absolute;
+margin-top: -190px;
+margin-left: 200px;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transition: 1s;
+}
+#content .card .star img{
+
+  width: 350px;
+  height: 380px;
+
+
+}
+

@@ -1,0 +1,119 @@
+<link href="{{ url_for('static', filename = 'header.css')}}" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+<nav id="nav">
+    <div class="container">
+        <!---- TEAM NAME ---->
+        <a class="brand" href="{{ url_for('pages', page='home') }}">
+            <img src="https://static.igem.wiki/teams/5371/header/teambrand.png" onmouseover="hoverbrand(this);" onmouseout="unhoverbrand(this);" alt="iZJU-China">
+        </a>
+        <!---- SMALL SCREEN MENU ICON ---->
+        <!-- <div class="menu-btn"></div> -->
+        <div class="burger">
+            <div class="burger-line1"></div>
+            <div class="burger-line2"></div>
+            <div class="burger-line3"></div>
+        </div>
+        <div class="menu-wrap">
+            <!---- TEAM ---->
+            <li class="nav-item drop">
+                <a>Team</a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('pages', page='team') }}">Member</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='attributions') }}">Attribution</a>
+                    </li>
+                </ul>
+            </li>
+            <!---- PROJECT ---->
+            <li class="nav-item drop">
+                <a>Project</a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('pages', page='contribution') }}">Contribution</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='description') }}">Description</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='engineering') }}">Engineering</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='safety') }}">Safety</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='implementation') }}">Implementation</a>
+                    </li>
+                </ul>
+            </li>
+            <!---- wetlab ---->
+            <li class="nav-item drop">
+                <a>Wet Lab</a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='measurement') }}">Measurement</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='results') }}">Results</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='protocol') }}">Protocol</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='part') }}">Part</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- DRY LAB -->
+            <li class="nav-item drop">
+                <a>Dry Lab</a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('pages', page='model') }}">Model</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='hardware') }}">Hardware</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='software') }}">Software</a>
+                    </li>                            
+                </ul>
+            </li>
+            <!-- HUMAN PRACTICE -->
+            <li class="nav-item drop">
+                <a>Human Practice</a>
+                <ul>
+                    <li>
+                        <a href="{{ url_for('pages', page='human-practices') }}">Intergrated
+                        </br>Human Practices</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='education') }}">Education</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='partnership') }}">Partnership</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+    </div>
+</nav>

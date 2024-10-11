@@ -1,0 +1,426 @@
+{% extends "layout.html" %}
+
+{% block title %}Protocol{% endblock %}
+
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .iframe-border {
+            border: 50px solid #d6d6d6; /* 设置边框为绿色 */
+            border-radius: 10px; /* 设置边框圆角 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+            width: 100%; /* 设置宽度 */
+            height: 700px; /* 设置高度 */
+        }
+    </style>
+</head>
+
+
+
+<!-- page head wave 页头波浪 -->
+<div class="wave-section-head">
+    <div class="wave-head" style="width: 150vw;"></div>
+    <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+    <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh" ></div>
+    <!-- 此处修改page head图片 -->
+    <img src="https://static.igem.wiki/teams/5371/wet-lab/protocol/protocol.svg" class='head-img'>
+</div>
+
+<!-- 文档内容 -->
+<div class="main">
+    <div class="menubg">
+        <div data-scroll-watcher=""></div>
+        <div id="menu" class="">
+            <div id="scrollbar1">
+
+                <div id="bar" style="clip-path: inset(0px 0px 100% 0);">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagain.svg" alt="Scrollbar Bar" />
+                </div>
+
+                <div id="overlay">
+                    <img src="https://static.igem.wiki/teams/5371/menu/curveagaingrey.svg" alt="Scrollbar Bar" />
+                </div>
+
+            </div>
+
+            <div class="scroll-circle" id="scroll-circle" style="top: 400px; opacity: 1;">
+                <img src="https://static.igem.wiki/teams/5371/menu/yeast-nobg.svg" alt="YEAST" />
+            </div>
+
+            <div class="menucontent">
+                <div class="t1" tid="0">Basic Experiments in Molecular Cloning</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="0-0">&bull;&emsp;PCR</div>
+                    <div class="t2" tid="0-1">&bull;&emsp;Plasmid transformation in E. Coli (DH5α competent cell)</div>
+                    <div class="t2" tid="0-2">&bull;&emsp;Competent S. cerevisae preparation</div>
+                    <div class="t2" tid="0-3">&bull;&emsp;Plasmid transformation in S. cerevisae</div>
+                    <div class="t2" tid="0-4">&bull;&emsp;Construction of plasmids by gibson assembly</div>
+                    <div class="t2" tid="0-5">&bull;&emsp;Plasmid mini extraction</div>
+                    <div class="t2" tid="0-6">&bull;&emsp;Colony PCR</div>
+                    <div class="t2" tid="0-7">&bull;&emsp;DNA agarose gel electrophoresis</div>
+                    <div class="t2" tid="0-8">&bull;&emsp;DNA product purification</div>
+                    <div class="t2" tid="0-9">&bull;&emsp;S. cerevisae genome DNA extraction</div>
+                </div>
+                <div class="t1" tid="1">Product Validation</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="1-0">&bull;&emsp;S. cerevisae cell fragmentation</div>
+                    <div class="t2" tid="1-1">&bull;&emsp;ELISA for measuring ceramides</div>
+                    <div class="t2" tid="1-2">&bull;&emsp;Growth curve measurement</div>
+                </div>
+                <div class="t1" tid="2">Biosafety</div>
+                <div class="h2-sec">
+                    <div class="t2" tid="2-0">&bull;&emsp;Cell toxicity test</div>
+                </div>
+                <div class="t1" tid="3">Microfluidic Experiment</div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="0">Basic Experiments in Molecular Cloning</h1>
+                </div>
+                <h2 id="0-0">&bull;&emsp;PCR</h2>
+                <div class="s2">
+                    <p>1.	To the reaction system, upstream and downstream primers, template DNA, 2xPhenta Max Master Mix(P525-01, Vazyme) and ddH2O are added proportionally.
+                    </p>
+                    <p>2.	Cycling Conditions: Step 1: 95℃, 30s; Step 2: 95℃, 15s; Step 3: Primer melting point minus 3 degrees, 15s; Step 4: 72℃, 1kb for 30s; Step 5: Go to Step2, repeat for 35 cycles; Step 6: 72℃, 5min; Step 7: 4℃, infinite.
+                    </p>
+                    <div class="body en">
+                        <iframe class="iframe-border" src="https://static.igem.wiki/teams/5371/wet-lab/protocol/polymerase-chain-reaction-pcr.pdf">
+                          Sorry, this browser does not support PDFs. Please view it at <a href="https://static.igem.wiki/teams/5371/wet-lab/protocol/polymerase-chain-reaction-pcr.pdf">here</a>.
+                        </iframe>
+                    </div>
+                </div>
+                <h2 id="0-1">&bull;&emsp;Plasmid transformation in E. Coli (DH5α competent cell)</h2>
+                <div class="s2">
+                    <p>1. Place the  bacteria culture on ice for 8min to melt
+                    </p>
+                    <p>2. Mix 50μL  bacteria culture with around 100ng plasmid and place on ice for 25min;</p>
+                    <p>3. 42℃ metal bath heat hit 45s;
+                    </p>
+                    <p>4. Place the mixture on the ice again for 2-3min;
+                    </p>
+                    <p>5. Add 500-700μL Autoclaved bacterial culture medium, shake on the shaker for 1h (37℃, 220rpm).
+                    </p>
+                </div>
+                <h2 id="0-2">&bull;&emsp;Competent S. cerevisae preparation</h2>
+                <div class="s2">
+                    <p>1. Inoculate one colony into 5 ml YPAD liquid medium. Grow cells overnight at 30 °C.
+                    </p>
+                    <p>2. Count cell density in the medium. Innoculate at 5*E6 cells/mL into 50 ml YPAD medium. Grow cells at 30 °C for 3-5 hours.</p>
+                    <p>3. Harvest cells by centrifugation at 3,000 x g for 5 min in a 50mL centrifuge tube.
+                    </p>
+                    <p>4. Discard the culture medium and suspend the cells in 25mL ddH2O.
+                    </p>
+                    <p>5. Centrifuge again with 3,000 x g for 5 min. Discard the water.
+                    </p>
+                    <p>6. Re-suspend cells in 1mL 100mmol/L LiAc solution, transfer to an 1.5mL centrifuge tube.
+                    </p>
+                    <p>7. Centrifuge at 12,000 x g for 5 seconds to pellet the cells. Remove LiAc solution with a pipette.
+                    </p>
+                    <p>8. Re-suspend cell pellet until the final volume reaches 500μL, with 400μL of 100mmol/L LiAc solution.
+                    </p>
+                </div>
+                <h2 id="0-3">&bull;&emsp;Plasmid transformation in S. cerevisae</h2>
+                <div class="s2">
+                    <p>9. Boil 1mL ss carrier DNA for 5 minutes, cool down rapidly in ice water.
+                    </p>
+                    <p>10. Vibrate cell suspension, add 50μL sample into a centrifuge tube, centrifuge to pellet the cells, remove LiAc solution with a micropipette.</p>
+                    <p>11. The basic “transformation mix” is composed as shown below. Add each component carefully in order:
+                    </p>
+                    <p>240μL		PEG(50% w/v)</p>
+                    <p>36μL		1.0mol/L LiAc</p>
+                    <p>25μL		ss carrier DNA(2.0mg/mL)</p>
+                    <p>50μL		plamid DNA(0.1~10μg)</p>
+                    <p>12. Vortex each reaction tube until the contents are fully mixed, which usually takes around 1 min.
+                    </p>
+                    <p>13. Hold at 30°C for 30 min.
+                    </p>
+                    <p>14. Heatshock at 42°C waterbath for 20~25 min.
+                    </p>
+                    <p>15. Centrifuge at 6000~8000r/min for 15s, remove transformation mix with micropipette.
+                    </p>
+                    <p>16. Add 0.2~1mL ddH2O and resuspend pellet with a pipette.
+                    </p>
+                    <p>17. Use 200μL cell suspension to spread on a selective plate.
+                    </p>
+                </div>
+                <h2 id="0-4">&bull;&emsp;Construction of plasmids by gibson assembly</h2>
+                <h3>Determination of Concentration for Linearized Vector and Insert Fragments</h3>
+                <div class="s2">
+                    <p>If the linearized vector and insert fragments have been purified through high-quality kits and checked by electrophoresis with no significant debris or smear residue, instruments based on absorbance such as OneDrop can be used to measure the concentration. However, the values are reliable only when the ratio A260/A280 is between 1.8 and 2.0. It is recommended to use instruments like Nanodrop, OneDrop, Qubit, or PicoGreen for concentration measurement. When the sample concentration is below 10 ng/μL, there may be significant differences in concentration values obtained from different models of instruments based on A260.
+                    </p>
+                </div>
+                <h3>Calculation of Vector and Fragment Usage</h3>
+                <div class="s2">
+                    <p>For single-fragment homologous recombination reactions, the optimal amount of cloning vector is 0.03 pmol, and the optimal amount of insert fragment is 0.06 pmol (with a molar ratio of vector to insert fragment of 1:2). For multi-fragment homologous recombination reactions, the optimal DNA usage is 0.03 pmol for each (including the linearized vector, with a molar ratio of vector to insert fragment of 1:1).
+                    </p>
+                    <p>The corresponding DNA mass for these molar amounts can be roughly calculated using the following formulas: 
+                    </p>
+                    <p>◇ For single-fragment homologous recombination reactions:
+                    </p>
+                    <p>Optimal cloning vector usage = [0.02 × number of base pairs of cloning vector] ng (0.03 pmol) </p>
+                    <p>Optimal insert fragment usage = [0.04 × number of base pairs of insert fragment] ng (0.06 pmol) </p>
+                    <p>◇ For multi-fragment homologous recombination reactions: 
+                    </p>
+                    <p>Optimal cloning vector usage = [0.02 × number of base pairs of cloning vector] ng (0.03 pmol)</p>
+                    <p>Optimal usage for each fragment = [0.02 × number of base pairs of each fragment] ng (0.03 pmol)</p>
+                    <p>For single-fragment homologous recombination reactions, the amount of insert fragment used should be greater than 20 ng. When the length of the insert fragment is greater than that of the cloning vector, the calculation method for the optimal amount of cloning vector and insert fragment should be swapped, that is, treat the insert fragment as the cloning vector and the cloning vector as the insert fragment for calculation.
+                    </p>
+                    <p>For multi-fragment homologous recombination reactions, the amount of each insert fragment used should be greater than 10 ng. When the optimal amount calculated using the formula mentioned above is lower than this value, use 10 ng directly.
+                    </p>
+                    <p>For single-fragment homologous recombination reactions, if there are no non-specific amplification bands in the PCR product, DNA purification can be skipped, and it can be used directly with a total volume not exceeding 1/5 of the reaction system's volume, that is, 2 µl. However, the recombination efficiency will be reduced (purification before recombination is recommended).
+                    </p>
+                </div>
+                <h3>Prepare reaction system on ice</h3>
+                <div class="s2">
+                    <div class="img-wrap">
+                        <div class="border">
+                            <img src="https://static.igem.wiki/teams/5371/wet-lab/protocol/fig1.png">
+                        </div>
+                    </div>
+                    <p>a.X/Y calculates the amount of vector and the amount of each insert fragment according to the formula. To ensure the accuracy of pipetting, the linearized vector and insert fragments can be appropriately diluted before preparing the recombination reaction system, with the volume of each component being no less than 1 µl.
+                    </p>
+                    <p>b.A negative control-1 can be used to confirm whether there is any residual circular plasmid in the linearized cloning vector, and it is recommended to perform this step.
+                    </p>
+                    <p>c.Negative control-2 is recommended when the amplification template of the insert fragment is a circular plasmid with the same resistance as the cloning vector. It is suggested that the detection of residual circular plasmids of the linearized vector and insert fragments should be carried out independently.
+                    </p>
+                    <p>d.A positive control reaction can be used to exclude the influence of other experimental materials and operational factors.
+                    </p>
+                </div>
+                <h2 id="0-5">&bull;&emsp;Plasmid mini extraction</h2>
+                <div class="s2">
+                    <p>Using FastPure Plasmid Mini Kit(DC201, Vazyme)</p>
+                    <div class="body en">
+                        <iframe class="iframe-border" src="https://static.igem.wiki/teams/5371/wet-lab/protocol/fastpure-plasmid-mini-kit.pdf">
+                          Sorry, this browser does not support PDFs. Please view it at <a href="https://static.igem.wiki/teams/5371/wet-lab/protocol/fastpure-plasmid-mini-kit.pdf">here</a>.
+                        </iframe>
+                    </div>
+                    <p>1. Take 1 - 5 ml of the overnight culture (12 - 16 h), add it to a centrifuge tube, and centrifuge at 10,000 rpm (11,500 × g) for 1 min. Discard the medium, and invert it onto absorbent paper to absorb the residual liquid.</p>
+                    <p>2. Add 250 μl of Buffer P1 (added with RNase A) to the centrifuge tube that retains the bacterial precipitate, and mix with a pipette or vortex shaking.
+                    </p>
+                    <p>3. Add 250 μl Buffer P2 and mix gently up and down 8 - 10 times to fully lyse the bacteria.                  
+                    </p>
+                    <p>4. Add 350 μl of Buffer P3 and immediately and gently invert the solution up and down 8 - 10 times. A white flocculent precipitate should appear. centrifuge at 12,000 rpm (13,400 × g) for 10 min. 
+                    </p>
+                    <p>5. Carefully transfer the supernatant from Step 4 to the adsorbent column with a pipette, and centrifuge at 12,000 rpm (13,400 × g) for 30 - 60 sec. Pour off the waste liquid from the Collection Tube and place the adsorbent column back into the Collection Tube. 
+                    </p>
+                    <p>6. Add 500 μl of Buffer PW1 to the adsorbent column. centrifuge at 12,000 rpm (13,400 × g) for 30 - 60 sec. Discard the waste solution and put the adsorption column back into the collection tube. 
+                    </p>
+                    <p>7. Add 600 μl of Buffer PW2 (diluted with anhydrous ethanol) to the adsorbent column. centrifuge at 12,000 rpm (13,400 × g) for 30 - 60 sec. Discard the waste solution and put the adsorbent column back into the collection tube. 
+                    </p>
+                    <p>8. Repeat step 7. 
+                    </p>
+                    <p>9. Return the adsorbent column to the collection tube. 12,000 rpm (13,400 × g) centrifugation for 1 min to completely remove the rinse solution remaining in the adsorbent column. 
+                    </p>
+                    <p>10. Place the adsorbent column in a new sterilized 1.5 ml centrifuge tube. Add 30 - 100 μl Elution Buffer to the center of the membrane of the column. Leave for 2 min at room temperature and centrifuge at 12,000 rpm (13,400 × g) for 1 min to elute the DNA. 
+                    </p>
+                    <p>11. Discard the adsorption column and store DNA product at -20°C to prevent DNA degradation.
+                    </p>
+                </div>
+                <h2 id="0-6">&bull;&emsp;Colony PCR</h2>
+                <div class="s2">
+                    <p>1. Pick a clone from the agar plate using 10μl pipette tips, stir thoroughly in a PCR tube containing 10μl MightyPrep reagent for DNA to suspend cells
+                    </p>
+                    <p>2. Heat the PCR tube in PCR machine at 98 degrees for 30 min, then cool down to 4 degrees in a PCR machine
+                    </p>
+                    <p>3. Centrifuge the content in PCR tubes, take 2μl supernatant as template for PCR
+                    </p>
+                </div>
+                <h2 id="0-7">&bull;&emsp;DNA agarose gel electrophoresis</h2>
+                <div class="s2">
+                    <p>1. Configure 30ml 1% agarose solution, heat and melt, add 3μL 10000x dye Gelred;
+                    </p>
+                    <p>2. Add 10x loading buffer with around 100 ng plasmid in each well;
+                    </p>
+                    <p>3. 130V electrophoresis for about 15min;
+                    </p>
+                    <p>4. Fluorescence chromogenic photography.
+                    </p>
+                </div>
+                <h2 id="0-8">&bull;&emsp;DNA product purification</h2>
+                <div class="s2">
+                    <p>Using FastPure Gel DNA Extraction Mini Kit(DC301-01, Vazyme)</p>
+                    <div class="body en">
+                        <iframe class="iframe-border" src="https://static.igem.wiki/teams/5371/wet-lab/protocol/dna-gel-extraction.pdf">
+                          Sorry, this browser does not support PDFs. Please view it at <a href="https://static.igem.wiki/teams/5371/wet-lab/protocol/dna-gel-extraction.pdf">here</a>.
+                        </iframe>
+                    </div>
+                    <p>1.	After DNA electrophoresis, quickly cut off the gel containing the target DNA fragments under a UV lamp. Weigh the gel (the weight of the empty tube should be subtracted), 100 mg of gel equals 100 μl volume as one gel volume.</p>
+                    <p>2.	Add an equal volume of Buffer GDP. 50 ~ 55°C water bath for 7 - 10 min, adjust the time appropriately according to the size of the gel to ensure complete dissolution of the gel. During the water bath, invert 2 times to accelerate the dissolution of the gel. 
+                    </p>
+                    <p>3.	Briefly centrifuge to collect droplets from the tube wall. Place the FastPure DNA Mini Columns-G in a 2 ml collection tube, transfer ≤700 μl of lysate to the column and centrifuge at 12,000 rpm (13,800 × g) for 30 - 60 sec. If the volume of lysate is >700 μl, return the column to the Collection Tubes and transfer the remaining lysate to the column and centrifuge at 12,000 rpm (13,800 × g) for 30 - 60 sec.                 
+                    </p>
+                    <p>4.	Discard the filtrate and return the adsorption column to a collection tube. Add 300 μl of Buffer GDP to the column and allow to stand for 1 min. Centrifuge at 12,000 rpm (13,800 × g) for 30 - 60 sec. 
+                    </p>
+                    <p>5.	Discard the filtrate and return the column to a collection tube. Add 700 μl Buffer GW (with anhydrous ethanol added) to the column. centrifuge at 12,000 rpm (13,800 × g) for 30 - 60 sec. 
+                    </p>
+                    <p>6.	Repeat step 5.
+                    </p>
+                    <p>7.	Discard the filtrate and place the adsorbent column back into the collection tube. centrifuge at 12,000 rpm (13,800 × g) for 2 min. 
+                    </p>
+                    <p>8.	Place the column in a 1.5 ml sterilized centrifuge tube, add 20 - 30 μl Elution Buffer to the center of the column, and leave for 2 min. centrifuge at 12,000 rpm (13,800 × g) for 1 min.
+                    </p>
+                    <p>9.	Discard the column and store the DNA at -20°C. 
+                    </p>
+                </div>
+                <h2 id="0-9">&bull;&emsp;S. cerevisae genome DNA extraction</h2>
+                <div class="s2">
+                    <p>1.	Take yeast cells (no more than 5x10^7 cells), centrifuge at 12,000 rpm for 1 minute, and carefully remove the supernatant.</p>
+                    <p>2.	Yeast cell wall disruption:
+                    </p>
+                    <p>Add 470 µl of sorbitol buffer to the yeast cells, resuspend the cells thoroughly, then add 25 µl of yeast lytic enzyme and 5 µl of thiol-reducing agent and mix thoroughly. Incubate at 30°C for 1-2 hours, during which the centrifuge tube can be inverted several times to mix.                 
+                    </p>
+                    <p>3.	Centrifuge at 12,000 rpm for 1 minute, discard the supernatant and collect the pellet.
+                    </p>
+                    <p>4.	Add 200 µl of Solution A to the pellet, resuspend the pellet thoroughly, then add 20 µl of RNase A (10 mg/ml) to the suspension and mix well by inverting the tube. Incubate at room temperature for 10 minutes.
+                    </p>
+                    <p>5.	Add 20 µl of Proteinase K (100 mg/ml), mix well by inverting the tube. Digest at 65°C in a water bath for 15-30 minutes, during which the tube can be inverted several times to mix. Continue until the sample is completely digested.
+                    </p>
+                    <p>6.	Add 200 µl of Solution B, then add 200 µl of anhydrous ethanol, and mix thoroughly. A flocculent precipitate may form, which does not affect DNA extraction. All the mixture and flocculent precipitate can be added to the adsorption column. Leave at room temperature for 2 minutes.
+                    </p>
+                    <p>7.	Centrifuge at 12,000 rpm for 2 minutes, discard the supernatant and place the adsorption column into a collection tube.
+                    </p>
+                    <p>8.	Add 600 µl of wash solution (ethanol added) to the adsorption column. Centrifuge at 12,000 rpm for 1 minute, discard the supernatant and return the adsorption column to a collection tube.
+                    </p>
+                    <p>9.	Add 600 µl of wash solution to the adsorption column, centrifuge at 12,000 rpm for 1 minute, discard the supernatant, and return the adsorption column to a collection tube.
+                    </p>
+                    <p>10.	Centrifuge at 12,000 rpm for 2 minutes, open the adsorption column and place it at room temperature or in a 50°C oven for a few minutes to remove the residual wash solution from the adsorption column.
+                    </p>
+                    <p>11.	Place the adsorption column into a clean centrifuge tube, and add 50-200 µl of elution buffer that has been pre-warmed at 65°C onto the center of the adsorption membrane. Leave at room temperature for 5 minutes.
+                    </p>
+                    <p>12.	Centrifuge the elution buffer at 12,000 rpm for 1 minute. Then add the centrifuged elution buffer back into the adsorption column, and centrifuge at 12,000 rpm for 2 minutes to obtain high-quality genomic DNA.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="1">Product Validation</h1>
+                </div>
+                <h2 id="1-0">&bull;&emsp;S. cerevisae cell fragmentation</h2>
+                <div class="s2">
+                    <p>1. inoculate 20ml YPD, incubate overnight at 30 degrees,250 rpm.
+                    </p>
+                    <p>2. centrifuge at 3900 rpms for 10min to collect cells
+                    </p>
+                    <p>3. remove supernatant, add 10ml ddH2O, suspend cells, repeat step 2
+                    </p>
+                    <p>4. repeat step 3
+                    </p>
+                    <p>5. add 800μl lysing buffer, suspend cells, transfer into 1.5ml ep tubes
+                    </p>
+                    <p>6. fragment cells with ultrasound, 300w, 15s/30s working/resting time, 37 cycles
+                    </p>
+                    <p>7. centrifuge content, take supernatant, filter through 0.22μm filters
+                    </p>
+                </div>
+                <h2 id="1-1">&bull;&emsp;ELISA for measuring ceramides</h2>
+                <div class="s2">
+                    <p>Using Finetest ELISA kit
+                    </p>
+                    <p>1.	Set the positions of the standard and working samples on the plate and record their locations. To minimize experimental error, it is recommended to set up replicate wells for both the standards and samples. Before adding samples, wash the plate with washing buffer twice.
+                    </p>    
+                    <p>2.	Add samples: Add 50 µl of the standard or test sample to the corresponding wells, then immediately add 50 µl of the prepared biotin-labelled detection antibody working solution to each well. Gently shake the ELISA plate to mix for 1 minute, apply a sealing membrane, and incubate at 37°C for 45 minutes.
+                    </p>
+                    <p>3.	Wash the plate 3 times: Remove the sealing membrane, remove or flick off the liquid from the ELISA plate, and tap on clean absorbent paper 2-3 times. Add 350 µl of washing buffer to each well, soak for 1 minute, discard the liquid from the wells, and tap on absorbent paper 2-3 times. Repeat this washing step 3 times.
+                    </p>
+                    <p>4.	Add HRP-Streptavidin (SABC): Add 100 µl of SABC working solution to each well. Apply a sealing membrane and incubate at 37°C for 30 minutes. Meanwhile, place the entire bottle of TMB in a 37°C incubator to equilibrate.
+                    </p>
+                    <p>5.	Wash the plate 5 times: Remove the sealing membrane and wash the plate 5 times with wash buffer, following the method in step 3.
+                    </p>
+                    <p>6.	Add TMB substrate: Add 90 µl of TMB substrate to each well. Apply a sealing membrane and incubate at 37°C in the dark for 10-20 minutes. Pre-warm the ELISA reader for 15 minutes. 
+                    </p>
+                    <p>7.	Add the reaction stop solution: After the colour development, do not discard the liquid in the wells. Add 50 µl of the reaction stop solution to each well, and the colour will immediately change from blue to yellow. The order of adding the stop solution should be the same as the order of adding the TMB substrate.
+                    </p>
+                    <p>8.	Measure OD values: Immediately take the OD450 value with the ELISA reader at 450 nm. 
+                    </p>
+                </div>
+                <h2 id="1-2">&bull;&emsp;Growth curve measurement</h2>
+                <div class="s2">
+                    <p>1.	Inoculate 10^5 yeast cells during logarithmic growth phase into 30mL YPD
+                    </p>
+                    <p>2.	Transfer 200μL cell culture into a 96-well plate, and measure the absorbance at a wavelength of 600nm
+                    </p>
+                    <p>3.	Record the statistics and plot after 24h.
+                    </p>  
+                </div>
+            </div>
+                    
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="2">Biosafety</h1>
+                </div>
+                <h2 id="2-0">&bull;&emsp;Cell toxicity test</h2>
+                <h3>Cell Seeding</h3>
+                <div class="s2">
+                    <p>Inoculate fibroblast cell suspension (100 μL/well) into a 96-well plate.
+                    </p>
+                    <p>Pre-incubate the plate in a humidified incubator at 37°C with 5% CO₂ for 12 hours to allow cells to adhere.</p>
+                </div>
+                <h3>Treatment</h3>
+                <div class="s2">
+                    <p>Prepare yeast lysate solutions at concentrations of 2.5%, 5%, and 12.5% by diluting with culture medium.
+                    </p>
+                    <p>Replace the medium in each well with 100 μL of the each yeast lysate solution.</p>
+                    <p>Incubate the cells in the yeast lysate for 12 hours.</p>
+                </div>
+                <h3>CCK-8 Assay</h3>
+                <div class="s2">
+                    <p>Add 10 μL of CCK-8 solution (10% of the total volume) to each well.
+                    </p>
+                    <p>Incubate the plate for 2 hours at 37°C in the CO₂ incubator.</p>
+                    <p>Measure the absorbance at 450 nm using a plate reader.</p>
+                </div>
+                <h3>Data Analysis</h3>
+                <div class="s2">
+                    <p>Calculate the cell viability by comparing the absorbance of treated wells to control wells (cells without yeast lysate).
+                    </p>
+                    <p>Plot the data to analyze the effect of different concentrations of yeast lysate on fibroblast growth.</p>
+                </div>
+            </div>
+
+            <div class="s1">
+                <div class="h1-wrap">
+                    <h1 id="3">Microfluidic Experiment</h1>
+                </div>
+                <h3>Drill acrylic plates</h3>
+                <div class="s2">
+                    <p>1. Mark out positioning cross on the acrylic plates</p>
+                    <p>2. Drill positioning shallow holes 0.5-0.6mm in diameter</p>
+                    <p>3. Drill through holes 1.0mm in diameter</p>
+                </div>
+                <h3>Prepare culturing media</h3>
+                <div class="s2">
+                    <p>Add Amp at working concentration, 0.075% TWEEN-20 to desired culturing media (YPD/YNB-peptone-Galactose)</p>
+                </div>
+                <h3>Perfuse microfluidic chip</h3>
+                <div class="s2">
+                    <p>1. Cover inlet and outlet holes on the chip with 0.075% TWEEN-20 (50μl each)</p>
+                    <p>2. Place the chip into a vacuum chamber. Start the vacuum and hold for 20 min.</p>
+                    <p>3. Shut down the vacuum pump and allow the system to return to atmospheric pressure within two minutes</p>
+                    <p>4. Repeat step 2</p>
+                    <p>5. Inspect the chip under the microscope to avoid residual air</p>
+                </div>
+                <h3>Assemble setup</h3>
+                <div class="s2">
+                    <p><a href="https://2024.igem.wiki/izju-china/hardware">view more hardware information</a></p>
+                </div>    
+                <h3>Load cells</h3>
+                <div class="s2">
+                    <p>1. Dilute cell culture 3-folds</p>
+                    <p>2. Transfer the diluted cell culture into 10ml syringe, connect the syringe to the inlet tube</p>
+                    <p>3. Push the piston of the syringe while observing through the microscope until most cell traps are loaded</p>
+                </div>  
+                <h3>Continued running</h3>
+            </div> 
+
+    </div>
+</div>
+
+{% endblock %}

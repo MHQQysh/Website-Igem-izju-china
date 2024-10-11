@@ -1,0 +1,1590 @@
+{% extends "layout.html" %}
+
+{% block title %}Member{% endblock %}
+
+{% block page_content %}
+
+<style>
+  
+</style>
+<div class="wave-section-head">
+  <div class="wave-head" style="width: 150vw;"></div>
+  <div class="wave-head" style="width: 200vw; opacity: 0.5; z-index: 25; top: 5vh;"></div>
+  <div class="wave-head" style="width: 300vw; opacity: 0.2; z-index: 30; top: 10vh"></div>
+  <!-- 此处修改page head图片 -->
+
+
+  <img src="https://static.igem.wiki/teams/5371/team/photo/member.svg" class='head-img'>
+</div>
+
+
+<link href="{{ url_for('static', filename = 'swiper-bundle.min.css')}}" rel="stylesheet">
+
+<link href="{{ url_for('static', filename = 'teamcard.css')}}" rel="stylesheet">
+
+<link href="{{ url_for('static', filename = 'team.css')}}" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+<!-- 记得改这里的图片 -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div class="overlay">
+        <h1 style="font-size: 24px;">Group Photo of iZJU 2024</h1>
+      </div>
+      <img src="https://static.igem.wiki/teams/5371/team/photo/group-photo-of-izju-2024.jpg" alt="" />
+    </div>
+    <div class="swiper-slide">
+      <div class="overlay">
+        <h1 style="font-size: 24px;">Group Photo with Guanchen Biotech</h1>
+      </div>
+      <img src="https://static.igem.wiki/teams/5371/team/photo/group-photo-with-guanchen-biotech.jpg" alt="" />
+    </div>
+    <div class="swiper-slide">
+      <div class="overlay">
+        <h1 style="font-size: 24px;">Group Photo with Love</h1>
+      </div>
+      <img src="https://static.igem.wiki/teams/5371/team/photo/group-photo-with-love.jpg" alt="" />
+    </div>
+    <div class="swiper-slide">
+      <div class="overlay">
+        <h1 style="font-size: 24px;">Seminar with Guanchen Biotech</h1>
+      </div>
+      <img src="https://static.igem.wiki/teams/5371/team/photo/seminar-with-guanchen-biotech.jpg" alt="" />
+    </div>
+    <div class="swiper-slide">
+      <div class="overlay">
+        <h1 style="font-size: 24px;">Visit Huzhou Beauty Town</h1>
+      </div>
+      <img src="https://static.igem.wiki/teams/5371/team/photo/visit-huzhou-beauty-town.jpg" alt="" />
+    </div>
+    <div class="swiper-slide">
+      <div class="overlay">
+        <h1 style="font-size: 24px;">Visit Ashland</h1>
+      </div>
+      <img src="https://static.igem.wiki/teams/5371/team/photo/vist-ashland1.jpg" alt="" />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<script src="{{ url_for('static', filename = 'swiper-bundle.min.js')}}"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    speed: 2000,
+    // autoplay : {
+    //     delay: 10,
+    //     stopOnLastSlide: false,
+    //     disableOnInteraction: false
+    // },
+    autoplay: true,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 2,
+      // 翻页深度
+      depth: 300,
+      modifier: 2,
+      slideShadows: true,
+    },
+    loop: false,
+  })
+</script>
+
+
+
+
+
+
+<style>
+  
+.poster .title {
+  top: 80%;
+}
+.main {
+  margin-top: 150px;
+}
+.main .menu {
+  display: none;
+}
+.main #content {
+  background-color: transparent !important;
+  max-width: 1000px;
+  /* 弹性布局：flex: 1; 使得 #content 元素在父容器中能够占据剩余空间，通常用于 Flexbox 布局。 */
+  flex: 1;
+  padding: 0;
+}
+.main #content::before {
+  display: none;
+}
+.main #content .s1 .h1-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.main #content .s1 .h1-wrap h1 {
+  position: relative;
+  color: var(--mg);
+  font-family: Montserrat-Black, sans-serif;
+  font-size: 40px;
+}
+
+/* 这里调整板块化 */
+.main #content .s1 .line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 30px;
+}
+
+
+
+
+.main #content .s1 .h1-wrap h1::after {
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 8px;
+  top: -8px;
+  width: fit-content;
+  height: 100%;
+  text-wrap: nowrap;
+  color: var(--mg);
+  padding: 2px;
+  -webkit-text-stroke: 8px transparent;
+  background-color: #0f1819;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container with 3D perspective */
+.card-container {
+  perspective: 1000px;
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Style for card, making it a 3D object */
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  border-radius: 50%;
+}
+
+/* Front face of the card */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* 保持圆形 */
+  backface-visibility: hidden;
+  border: 10px solid var(--mg);
+}
+/* Specific front face styling */
+.front {
+  background-color: rgb(253, 243, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  padding-top: 50px;
+  border: 10px solid var(--mg);
+}
+
+/* Back face styling */
+.back {
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transform: rotateY(180deg); /* Initially rotated to hide it */
+  gap: 25px;
+}
+
+/* Flip card on hover */
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Other card styles */
+#content .card .hole {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--mg);
+  overflow: hidden;
+}
+#content .card::before {
+  content: "";
+  position: absolute;
+  bottom: 180px;
+  left: 150px;
+  width: 300px; /* Adjust this value to set the width of the image */
+  height: 300px; /* Adjust this value to set the height of the image */
+  background: url('https://static.igem.wiki/teams/5371/team/elements/qbz.svg') no-repeat bottom left; /* Set the path to your image and position it at the bottom left */
+  background-size: contain; /* Adjust this value to control how the image is scaled */
+  z-index: 100;
+}
+
+
+
+
+#content .card .hole::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--bg);
+  top: 6px;
+  left: 6px;
+}
+
+#content .card .mid {
+  width: 75%;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+
+
+#content .card h2{
+  margin-top: -200px;
+}
+#content .card p{
+  padding-left: 0px;
+
+}
+
+
+
+
+
+
+
+
+
+#content .card .mid::before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background-color: rgb(253, 243, 247); /* Use the same background color as .front */
+  z-index: 100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content .card .mid .avatar {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background-color: #fffdf7;
+  background-position: center;
+  background-size: cover;
+}
+
+#content .card .mid::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 180px;
+  width: 100px; /* Adjust this value to set the width of the image */
+  height: 100px; /* Adjust this value to set the height of the image */
+  background: url('https://static.igem.wiki/teams/5371/team/elements/bottles.svg') no-repeat bottom left; /* Set the path to your image and position it at the bottom left */
+  background-size: contain; /* Adjust this value to control how the image is scaled */
+  z-index: 100;
+}
+
+
+
+#content .card .mid .scroll {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 20px);
+  overflow: scroll;
+  opacity: 0;
+  transition: 1s;
+}
+
+#content .card .mid .scroll p {
+  color: #395038;
+  text-align: justify;
+  text-indent: 1.5em;
+}
+
+
+/* 这里调整大小 */
+#content .card .bot {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: -55px;
+  z-index: 101;
+
+}
+
+
+
+
+
+/*名字 */
+#content .card .bot .name {
+  color: var(--mg);
+  font-family: Montserrat-Bold;
+  font-size: 25px;
+  letter-spacing: 0.05px;
+}
+/* teg */
+#content .card .bot .tag {
+  margin-top: 10px;
+  font-family: Nunito-Bold;
+  /* background-image: url(wet.svg); */
+  /* background-size: 5000%; */
+  /* font-size: 30px; */
+  margin-left: -250px;color: #fffdf7;
+  /* padding: 0 15px; */
+  z-index: 5;
+
+  
+}
+#content .card .bot .tag img{
+  margin-left: -120px ;
+  position: absolute;
+  margin-top: -35px;
+  width: 300px;
+  height: 100px;
+  left: 160px;
+  z-index: -1;
+}
+
+
+#content .card .bot .name
+{
+  position: relative;
+  padding-bottom: 5px; /* Adjust this value to control the space between text and the underline */
+}
+
+
+
+#content .card .bot .name::after
+ {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px; /* Adjust this value to control the thickness of the underline */
+  background-color: rgb(214,59,119); /* Adjust this value to control the color of the underline */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content .card .star {
+  position: absolute;
+margin-top: -190px;
+margin-left: 200px;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transition: 1s;
+}
+#content .card .star img{
+
+  width: 350px;
+  height: 380px;
+
+
+}
+
+
+</style>
+
+
+
+
+<div class="container">
+  <div class="main" style="padding-right: 0px;  ">
+    <div id="content" class="mem" style="max-width: 80%;">
+  
+  
+  
+<!-- 3pi -->
+
+  
+  
+  <div class="s1">
+    <div class="h1-wrap">
+      <h1 id="2" data-text="PI">PI</h1>
+    </div>
+    <div class="line">
+
+
+
+
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/pi/hww.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name">Wenwen Huang</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/pi.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Wenwen Huang</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              Dr. Wenwen Huang is an Assistant Professor at Zhejiang University-University of Edinburgh Institute (ZJE). Her research fields mainly focus on Biomateriomics, Stem cell and regenerative medicine, Synthetic biology. In iGEM 2023 and 2024, she provided iZJU-China with adequate guidance
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/pi/mchen1.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name">Ming Chen</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/pi.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Ming Chen</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              College of Life Sciences, Zhejiang University Leader in bioinformatics. Chairman of Zhejiang bioinformatics society.Over the years, Professor Chen has guided the representative team of Zhejiang university in iGEM and achieved excellent results.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/pi/ljz.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name">Jiazhang Lian</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/pi.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Jiazhang Lian</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              Dr. Jiazhang Lian is a principal investigator of the School of Chemical Engineering and Biological Engineering, Zhejiang University. His research fields mainly focus on the creation of artificial cell factories based on synthetic biology principles and genome editing technology. In iGEM 2024, he provided iZJU-China with guidance in wet lab.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  </div>  
+  </div>
+    
+  
+<!-- 2 dry lab -->
+  
+  <div class="s1">
+        <div class="h1-wrap">
+          <h1 id="1" data-text="Dry Lab">Dry Lab</h1>
+        </div>
+        <div class="line">
+
+
+
+
+
+
+<!-- 2.1 -->
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/wc.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Chen Wang</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Chen Wang</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        Hi! My name is Chen Wang, and I am an undergraduate student majoring in Biomedical Science at Zhejiang University and the University of Edinburgh Institute (ZJE). I am also the team leader for this year's iZJU-China. I would like to express my gratitude to iGEM for giving me an opportunity to learn biology, engineering, computer science, sociology, and business, and also for changing my personality from an introvert (I) to an extrovert (E), making me more willing to interact with people. I also want to thank all my teammates, advisors and PIs, who have been working hard all the time. I feel really lucky to be with you!
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/hzh.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Zihang He</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Zihang He</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+      Hi, I'm He Zihang, a Biomedical Informatics major from the ZJU-UoE Institute. As one of the student leaders on our team, I play a key role in organizing the wiki section. My experience with iGEM has taught me invaluable lessons in teamwork, showing me how to effectively collaborate and ensure that each member contributes their best. Additionally, I’ve gained insights into the workings of complex systems, much like running a company, which has deepened my understanding of project management and team dynamics.
+    </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- 2.2 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/wmy.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Mingyuan Wang</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Mingyuan Wang</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        I am Mingyuan Wang, a year three student majors in Biomedical Informatics from the ZJU-UoE Institute. I am glad to participate in the dry lab and code for the wiki pages. I am mainly responsible for the homepage, in which I can practice what I learnt in class. I also joined the human practice part. By visiting the cosmetic companies, I know about the cosmetics market better.
+    </p>
+    </div>
+  </div>
+</div>
+
+<!-- 2.3 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/ysh.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Shihong Yuan</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Shihong Yuan</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        Hi, I am Yuan Shihong, a Mechanical major form the ZJUI Institue. As one of the wiki builder for this project, most of my time is devoted to the inner page template such as How to design a dynamic menu effect to enhance aesthetics, How to balance and put all the many parts in the right space. All our teammates has given me great support, which made our great work: this wiki come true.
+    </p>
+    </div>
+  </div>
+</div>
+
+<!-- 2.4 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/lsy.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Siyuan Lyu</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Siyuan Lyu</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        This is Siyuan LYU, majoring in Biomedical Informatics at ZJE. I'm mainly responsible for the wiki construction. Learning how to achieve several dynamic element effects is a quite challenging and interesting process. Many thanks to all my teammates for their great support and advice. Hope you enjoy our wiki!
+    </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 2.5 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/yyj.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Yijun Yang</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Yijun Yang</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        I am Yijun YANG, an undergraduate student majoring in Biomedical Informatics at Zhejiang University and the University of Edinburgh Institute (ZJE), as a member of Human Practice and dry lab group of iZJU-China.
+
+        I am honored to join this team and work together with other teammates. In this project, I learned a lot about how to achieve the human practice as comprehensively as possible, how to develop a business model for our product and so on. I am happy to work with my teammates!
+        
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 2.6 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/lzm.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Zimo Liu</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Zimo Liu</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        My name is Zimo Liu and  I am an undergraduate student majoring in Biomedical Informatics at Zhejiang University and the University of Edinburgh Institute (ZJE). I am very honored to join the dry lab group to participate in the competition. I am responsible for web page making and programming team wiki. I also participate in and take charge of some business sections and data analysis, and learn more business knowledge and data visualization.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 2.7 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/xrl.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name"> Ruiling Xu</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Ruiling Xu</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        Hi! I'm Ruiling Xu, a computer engineering student from the ZJU-UIUC Institute. It’s truly incredible to witness twenty like-minded individuals, each with their own strengths, turn an idea into a final product and presentation. I feel so fortunate to have worked with teammates from different disciplines and to be part of this journey! 
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 2.8 -->
+
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/xmy.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Mingyang Xiao</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Mingyang Xiao</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        My name is Mingyang Xiao, and I am an undergraduate student majoring in Biomedical Science at Zhejiang University and the University of Edinburgh Institute (ZJE). As a member of the model team, I am responsible for building the dynamic model of the yield prediction and consulting relevant papers. I also participates in the HP activities, promoting our iGEM team to primary and junior high school students in the process of volunteer teaching in Wenzhou city Cangnan town. It is a pleasure to participate in this competition with all of you!
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 2.10-->
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/cjp.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Jinpeng Chen</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Jinpeng Chen</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        My name is Jinpeng Chen and I major in electronic and computer science.As a member of the model team, I am responsible for building the model of object detection and  image segmentation during this match. I really enjoy the fun of interdisciplinary 
+        exchange, hope we can make a difference in the future.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- 2.11-->
+<div class="card-container">
+  <div class="card">
+    <!-- Front face -->
+    <div class="front">
+      <div class="hole"></div>
+      <div class="star"><img src="materials/qbz.svg" ></div>
+      <div class="mid">
+        <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/drylab/gsy.jpg"></div>
+        <div class="scroll">
+
+        </div>
+      </div>
+      <div class="bot">
+        <div class="name">Siyuan Gong</div>
+        <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/m1.svg" ></div>
+      </div>
+    </div>
+    
+    <!-- Back face -->
+    <div class="back" style="display:colomn;font-size: 20px;">
+      <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Siyuan Gong</h2>
+      <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+        I am Siyuan Gong from Zhejiang University and University of Illinois at Urbana-Champaign, majoring Electrical and Computer Engineering(ECE). Collaborating with someone from outside my field of study is a truly enriching experience! Exchanging ideas, striving towards a shared objective, and immersing in the dynamic world of interdisciplinary—all these elements lead to a fulfilling journey.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+
+
+<!-- 1 wetlab-->
+    <div class="s1">
+  <div class="h1-wrap">
+    <h1 id="0" data-text="Wet Lab">Wet Lab</h1>
+  </div>
+
+  <div class="line">
+
+
+<!-- 1.1 -->
+
+
+    <div class="card-container">
+      <div class="card">
+        <!-- Front face -->
+        <div class="front">
+          <div class="hole"></div>
+          <div class="star"><img src="materials/qbz.svg" ></div>
+          <div class="mid">
+            <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/wetlab/yhy.jpg"></div>
+            <div class="scroll">
+  
+            </div>
+          </div>
+          <div class="bot">
+            <div class="name">Haoyang Yu</div>
+            <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/wetlab.svg"></div>
+          </div>
+        </div>
+        
+        <!-- Back face -->
+        <div class="back" style="display:colomn;font-size: 20px;">
+          <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Haoyang Yu</h2>
+          <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+            I am Haoyang Yu majoring in Biomedical Science. I am the leader of the wet lab team. I was involved in most wet lab design and experiments. In these months I learned a lot and enjoyed solving issues, though sometimes troublesome. 
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- 1.2 -->
+
+  
+    <div class="card-container">
+      <div class="card">
+        <!-- Front face -->
+        <div class="front">
+          <div class="hole"></div>
+          <div class="star"><img src="materials/qbz.svg" ></div>
+          <div class="mid">
+            <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/wetlab/cy.jpg"></div>
+            <div class="scroll">
+  
+            </div>
+          </div>
+          <div class="bot">
+            <div class="name">Yue Cao</div>
+            <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/wetlab.svg" ></div>
+          </div>
+        </div>
+        
+        <!-- Back face -->
+        <div class="back" style="display:colomn;font-size: 20px;">
+          <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Yue Cao</h2>
+          <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+            I am Cao Yue, a junior student majoring in biomedical sciences at the International College of Zhejiang University, ZJE. As a member of the wet lab group, I am mainly responsible for experiment design and implement. It is nice to see you all :)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1.3 -->
+
+  
+    <div class="card-container">
+      <div class="card">
+        <!-- Front face -->
+        <div class="front">
+          <div class="hole"></div>
+          <div class="star"><img src="materials/qbz.svg" ></div>
+          <div class="mid">
+            <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/wetlab/zxh.jpg"></div>
+            <div class="scroll">
+  
+            </div>
+          </div>
+          <div class="bot">
+            <div class="name"> Xiaohan Zhang</div>
+            <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/wetlab.svg" ></div>
+          </div>
+        </div>
+        
+        <!-- Back face -->
+        <div class="back" style="display:colomn;font-size: 20px;">
+          <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Xiaohan Zhang</h2>
+          <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+            I am Xiaohan Zhang, a sophomore majoring in biomedical sciences at the International College of Zhengjiang University and the University of Edinburgh. As a member of the wet lab, I'm very proud of our team and truly appreciate the valuable chance to gain aquaintance with many important lab techniques. It's also a valuable experience taking part in tasks of social research and entrepreneurship, which made me a more all-rounded person.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 1.4 -->
+
+  
+    <div class="card-container">
+      <div class="card">
+        <!-- Front face -->
+        <div class="front">
+          <div class="hole"></div>
+          <div class="star"><img src="materials/qbz.svg" ></div>
+          <div class="mid">
+            <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/wetlab/gyf.jpg"></div>
+            <div class="scroll">
+  
+            </div>
+          </div>
+          <div class="bot">
+            <div class="name">Yifan Gao</div>
+            <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/wetlab.svg" ></div>
+          </div>
+        </div>
+        
+        <!-- Back face -->
+        <div class="back" style="display:colomn;font-size: 20px;">
+          <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Yifan Gao</h2>
+          <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+            I am Yifan Gao working in the wet lab group, and I am an undergraduate student majoring in Biomedical Science at ZJE. In the laboratory, I learned much about the molecular and microbiological operation of yeast and E.coli, which is a very meaningful and fruitful experience in my understanding of how to conduct an experiment. Apart from laboratory techniques, I also learned a lot about entrepreneurship, which trained me how to think in a business way.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+          <!-- 1.5 -->
+
+  
+          <div class="card-container">
+            <div class="card">
+              <!-- Front face -->
+              <div class="front">
+                <div class="hole"></div>
+                <div class="star"><img src="materials/qbz.svg" ></div>
+                <div class="mid">
+                  <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/wetlab/lyx.jpg"></div>
+                  <div class="scroll">
+        
+                  </div>
+                </div>
+                <div class="bot">
+                  <div class="name">Yexuan Li</div>
+                  <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/wetlab.svg" ></div>
+                </div>
+              </div>
+              
+              <!-- Back face -->
+              <div class="back" style="display:colomn;font-size: 20px;">
+                <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Yexuan Li</h2>
+                <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+                  I am Li Yexuan for wet lab experiment s. It was a precious and educative experience to participate in a iGEM group.and I am really thankful to have it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1.5 -->
+
+  
+          <div class="card-container">
+            <div class="card">
+              <!-- Front face -->
+              <div class="front">
+                <div class="hole"></div>
+                <div class="star"><img src="materials/qbz.svg" ></div>
+                <div class="mid">
+                  <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/wetlab/yb.jpg"></div>
+                  <div class="scroll">
+        
+                  </div>
+                </div>
+                <div class="bot">
+                  <div class="name">Bo Yang</div>
+                  <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/wetlab.svg" ></div>
+                </div>
+              </div>
+              
+              <!-- Back face -->
+              <div class="back" style="display:colomn;font-size: 20px;">
+                <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Bo Yang</h2>
+                <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+                  I am Yang Bo, and also an undergraduated student maioring in Biomedical Science at Zhejiang University and the University of Edinburgh Institute (ZJE).
+I am really happy to work with my team and learn a lot of wet lab experiments related to the yeast, such as some molecular cloning experiments and raising yeast.
+Apart from the daily experiment, I also join some parts of busniess analysis, which is the field I haven't ever worked. Through the business analysis, I know how the product "walks" toward the market.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+
+  </div>
+    </div>
+
+
+<!-- 4human practice -->
+
+
+  <div class="s1">
+    <div class="h1-wrap">
+      <h1 id="2" data-text="Human Practice">Human Practice</h1>
+    </div>
+    <div class="line">
+
+
+
+
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/wd.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name"> Di Wu</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Di Wu</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              My name is Di WU, and I’m a year three
+undergraduate student majoring in BMS. I’m one of the student leaders and am mainly
+responsible for the human practice part. This is my second year participating in
+this competition, and I really enjoy communicating with stakeholders from
+different fields and contributing to the refinement of the project with team
+members.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/kkx.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name"> Kexuan Kong</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Kexuan Kong</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              Hi there! I'm Kexuan Kong, or you can call me Misaki. I'm a year three undergraduate student majoring in BMI at Zhejiang University and the University of Edinburgh Institute (ZJE). Intp, Slytherin House. I am one of the leaders of the HP team, mainly responsible for visual publicity work. Good morning, good afternoon and good night to you! ^ ^
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/cxr.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name"> Xiaoran Cao</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Xiaoran Cao</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              I am Xiaoran Cao, a student studying Biomedical Science at ZJE. As a member of human practice, I was involved in communicating with stakeholders, designing and analyzing questionnaires, etc. Working with team members from different backgrounds, I learned how to communicate and collaborate effectively in a multidisciplinary environment and gained the ability to collaborate across disciplines. I also developed my critical thinking
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/zjy.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name"> Jiaying Zhu</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Jiaying Zhu</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+
+              Hello, My name is Jiaying Zhu, and I am an
+              undergraduate student majoring in Biomedical Science at the Zhejiang
+              University-University of Edinburgh Institute (ZJE). In the iZJU-China team, I
+              am primarily responsible for photography and videography for the HP team, while
+              also participating in other HP tasks. I am very grateful to the iGEM program
+              for giving me the opportunity to be part of this challenging and meaningful
+              competition. I would also like to thank my teammates, advisors, and PIs for
+              their support and guidance. It has been a great honor to collaborate with such
+              an outstanding group of people, and I look forward to creating more wonderful
+              achievements together!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/yyj.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name">Yijun Yang</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Yijun Yang</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+
+              I am Yijun YANG, an undergraduate student majoring in Biomedical Informatics at Zhejiang University and the University of Edinburgh Institute (ZJE), as a member of Human Practice and dry lab group of iZJU-China.
+              I am honored to join this team and work together with other teammates. In this project, I learned a lot about how to achieve the human practice as comprehensively as possible, how to develop a business model for our product and so on. I am happy to work with my teammates!
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/jsh.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name">Shuhan Ji</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Shuhan ji</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+              My name is Ji Shuhan, a junior majoring in biomedicine at Zhejiang University. In the hp team of the team, I was mainly responsible for background research, activity planning, document writing and other work. In this activity, I learned a lot and enriched myself. It is a great honor to progress with you and hope that we can make the project bigger and stronger for the benefit of society.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <!-- Front face -->
+          <div class="front">
+            <div class="hole"></div>
+            <div class="star"><img src="materials/qbz.svg" ></div>
+            <div class="mid">
+              <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/humanpractice/wyq.jpg"></div>
+              <div class="scroll">
+    
+              </div>
+            </div>
+            <div class="bot">
+              <div class="name"> Yaqi Wang</div>
+              <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/humanpractice.svg" ></div>
+            </div>
+          </div>
+          
+          <!-- Back face -->
+          <div class="back" style="display:colomn;font-size: 20px;">
+            <h2 style="margin-top: -80px;position: static;margin-top: 0px;">  Yaqi Wang</h2>
+            <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+
+              Yaqi Wang, a junior majoring in Biomedical Science in the iZJU-CHINA team's HP group, is primarily responsible for graphic design and business planning. Within the team, I am the one who keeps the atmosphere lively and comes up with creative ideas. Innovation and diligence are essential qualities for being a team member. I have learned a great deal during this time and am delighted to collaborate with everyone. I look forward to seeing iZJU continue to improve and head towards a bright future!
+            </p>
+          </div>
+        </div>
+      </div>
+</div>  
+  </div>
+
+
+<!-- 5 advisor -->
+
+    <div class="s1">
+      <div class="h1-wrap">
+        <h1 id="3" data-text="Advisor">Advisor</h1>
+      </div>
+      <div class="line">
+
+        <div class="card-container">
+          <div class="card">
+            <!-- Front face -->
+            <div class="front">
+              <div class="hole"></div>
+              <div class="star"><img src="materials/qbz.svg" ></div>
+              <div class="mid">
+                <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/advisor/xsh.jpg"></div>
+                <div class="scroll">
+      
+                </div>
+              </div>
+              <div class="bot">
+                <div class="name">Shihan Xiong</div>
+                <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/advisor.svg" ></div>
+              </div>
+            </div>
+            
+            <!-- Back face -->
+            <div class="back" style="display:colomn;font-size: 20px;">
+              <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Shihan Xiong</h2>
+              <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+                My name is Shihan Xiong, a senior student majoring in Biomedical Science. It is my honor to be the advisor of iZJU-CHINA team, with my one-year experience in iGEM. I am responsible for providing advice on wet lab. Hope we can achieve success this year!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card">
+            <!-- Front face -->
+            <div class="front">
+              <div class="hole"></div>
+              <div class="star"><img src="materials/qbz.svg" ></div>
+              <div class="mid">
+                <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/advisor/zyy.jpg"></div>
+                <div class="scroll">
+      
+                </div>
+              </div>
+              <div class="bot">
+                <div class="name"> Yiyang Zhang</div>
+                <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/advisor.svg" ></div>
+              </div>
+            </div>
+            
+            <!-- Back face -->
+            <div class="back" style="display:colomn;font-size: 20px;">
+              <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Yiyang Zhang</h2>
+              <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+                Hi, I'm Yiyang and I'm in my final year of pursuing a bachelor's degree in Biomedical Science. As an iGEMer in 2023 iGEM competition, I felt a mysterious energy that made me want to keep this identity and pay attention to the growth of the team. Hope we iZJU-CHINA can enjoy the iGEM journey this year!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+
+          
+        <div class="card-container">
+          <div class="card">
+            <!-- Front face -->
+            <div class="front">
+              <div class="hole"></div>
+              <div class="star"><img src="materials/qbz.svg" ></div>
+              <div class="mid">
+                <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/advisor/zxm.jpg"></div>
+                <div class="scroll">
+      
+                </div>
+              </div>
+              <div class="bot">
+                <div class="name"> Ximeng Zheng</div>
+                <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/advisor.svg" ></div>
+              </div>
+            </div>
+            
+            <!-- Back face -->
+            <div class="back" style="display:colomn;font-size: 20px;">
+              <h2 style="margin-top: -80px;position: static;margin-top: 0px;"> Ximeng Zheng</h2>
+              <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+                Hi guys, I’m Ximeng, and I’m a fourth-year undergraduate student majoring in Biomedical Science. As the advisor of the iZJU-CHINA team, I’m especially excited about how synthetic biology can solve real-world challenges, and I’m thrilled that we can contribute to these solutions with our own hands. I look forward to seeing what we can achieve together in this competition. Wishing everyone a rewarding and successful iGEM journey!</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+<!--6Instructor-->
+        <div class="s1">
+          <div class="h1-wrap">
+            <h1 id="3" data-text="Instructor">Instructor</h1>
+          </div>
+          <div class="line">
+
+            <div class="card-container">
+              <div class="card">
+                <!-- Front face -->
+                <div class="front">
+                  <div class="hole"></div>
+                  <div class="star"><img src="materials/qbz.svg" ></div>
+                  <div class="mid">
+                    <div class="avatar" avt="https://static.igem.wiki/teams/5371/team/instructor/jmd.jpg"></div>
+                    <div class="scroll">
+          
+                    </div>
+                  </div>
+                  <div class="bot">
+                    <div class="name">Mengdi Jin</div>
+                    <div class="tag"><img src="https://static.igem.wiki/teams/5371/team/elements/instructor.svg" ></div>
+                  </div>
+                </div>
+                
+                <!-- Back face -->
+                <div class="back" style="display:colomn;font-size: 20px;">
+                  <h2 style="margin-top: -80px;position: static;margin-top: 0px;">Mengdi Jin</h2>
+                  <p style="margin-left: -30px;margin-top: -20px;font-size: 13px;position: relative">
+                    Zhejiang University-University of Edinburgh. Giving sufficient guidance to the wet lab, equipping iGEMers with experimental skills. Managing the Innovation and entrepreneurship laboratory for iGEMers.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <script>
+    // set bk-img
+    var avts = document.querySelectorAll("#content .card .avatar");
+    avts.forEach((item) => {
+      var url = item.getAttribute('avt');
+      if (url) {
+        item.style.backgroundImage = `url("${url}")`;
+      }
+    })
+  </script>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

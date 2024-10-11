@@ -1,0 +1,200 @@
+.wave-section-head {
+  width: 100%;
+  height: 60vh; /* 波浪效果的高度 */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  top: -9vh;
+  user-select: none;
+}
+
+.wave-head {
+  width: 100vw;
+  height: 60vh;
+  opacity: 1;
+  outline: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  --c: #0f1819;
+  --h: #d63b77;
+  --w1: radial-gradient(100% 57% at top, var(--h) 100%, var(--c) 100.5%)
+    no-repeat;
+  --w2: radial-gradient(100% 57% at bottom, var(--c) 100%, var(--h) 100.5%)
+    no-repeat;
+  background: var(--w1), var(--w2), var(--w1), var(--w2), var(--w1), var(--w2),
+    var(--w1);
+  background-position-x: -64.8%, -32.5%, 0%, 32.5%, 64.8%, 97.2%, 129.5%;
+  background-position-y: 100%;
+  background-size: 25% 100%;
+  animation: wave-frame-head 2s infinite linear;
+}
+
+@keyframes wave-frame-head {
+  0% {
+    background-position-x: -64.8%, -32.5%, 0%, 32.5%, 64.8%, 97.2%, 129.5%;
+  }
+  100% {
+    background-position-x: 0%, 32.5%, 64.8%, 97.2%, 129.5%, 161.8%, 194.1%;
+  }
+}
+
+/* 两层波浪修改之后的版本 */
+
+.wave-head-1 {
+  width: 100vw;
+  height: 60vh;
+  opacity: 1;
+  outline: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  --c: #0f1819;
+  --h: #d63b77;
+  --w1: radial-gradient(100% 57% at top, var(--h) 100%, var(--c) 100.5%)
+    no-repeat;
+  --w2: radial-gradient(100% 57% at bottom, var(--c) 100%, var(--h) 100.5%)
+    no-repeat;
+  background: var(--w1), var(--w2), var(--w1), var(--w2), var(--w1), var(--w2),
+    var(--w1);
+  background-position-x: -64.8%, -32.5%, 0%, 32.5%, 64.8%, 97.2%, 129.5%;
+  background-position-y: 100%;
+  background-size: 25% 100%;
+  animation: wave-frame-head-1 2s infinite linear;
+}
+
+@keyframes wave-frame-head-1 {
+  0% {
+    background-position-x: -64.8%, -32.5%, 0%, 32.5%, 64.8%, 97.2%, 129.5%;
+  }
+  100% {
+    background-position-x: 0%, 32.5%, 64.8%, 97.2%, 129.5%, 161.8%, 194.1%;
+  }
+}
+
+.wave-head-2 {
+  width: 100vw;
+  height: 30vh;
+  --h: #d63b77;
+  --c: #0f1819;
+  opacity: 0.4;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  --w1: radial-gradient(100% 57% at top, var(--h) 100%, var(--c) 100.5%)
+    no-repeat;
+  --w2: radial-gradient(100% 57.4% at bottom, var(--c) 100%, var(--h) 100.5%)
+    no-repeat;
+  background: var(--w1), var(--w2), var(--w1), var(--w2);
+  background-position-x: -200%, -100%, 0%, 100%;
+  background-position-y: 100%;
+  background-size: 50.5% 100%;
+  animation: wave-frame-head-2 3s infinite linear;
+}
+
+@keyframes wave-frame-head-2 {
+  0% {
+    background-position-x: -200%, -100%, 0%, 100%;
+  }
+  100% {
+    background-position-x: 0%, 100%, 200%, 300%;
+  }
+}
+
+
+
+img.head-img {
+  position: absolute;
+  z-index: 800;
+  height: 50vh;
+  top: 9vh;
+}
+
+.wave-section-tail {
+  width: 100%;
+  height: 20vh; /* 波浪效果的高度 */
+  position: relative;
+  overflow: hidden;
+  bottom: -0.5vh;
+}
+
+.wave-tail1,
+.wave-tail2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50vw;
+}
+
+.wave-tail1 {
+  width: 100vw;
+  height: 17vh;
+  opacity: 1;
+  outline: none;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  --h: #d63b7600;
+  --c: #ffffff;
+  --w1: radial-gradient(100% 57% at top, var(--h) 100%, var(--c) 100.5%)
+    no-repeat;
+  --w2: radial-gradient(100% 57% at bottom, var(--c) 100%, var(--h) 100.5%)
+    no-repeat;
+  background: var(--w1), var(--w2), var(--w1), var(--w2), var(--w1), var(--w2),
+    var(--w1);
+  background-position-x: -64.8%, -32.5%, 0%, 32.5%, 64.8%, 97.2%, 129.5%;
+  background-position-y: 100%;
+  background-size: 25% 100%;
+  animation: wave-frame-tail1 2s infinite linear;
+  z-index: 1;
+}
+
+.wave-tail2 {
+  width: 100vw;
+  height: 25vh;
+  --h: #0f181900;
+  --c: #d63b77;
+  opacity: 1;
+
+  position: absolute;
+  top: -50px;
+  left: 0;
+
+  --w1: radial-gradient(100% 57% at top, var(--h) 100%, var(--c) 100.5%)
+    no-repeat;
+  --w2: radial-gradient(100% 57.4% at bottom, var(--c) 100%, var(--h) 100.5%)
+    no-repeat;
+  background: var(--w1), var(--w2), var(--w1), var(--w2);
+  background-position-x: -200%, -100%, 0%, 100%;
+  background-position-y: 100%;
+  background-size: 50.5% 100%;
+  animation: wave-frame-tail2 1s infinite linear;
+}
+
+@keyframes wave-frame-tail1 {
+  0% {
+    background-position-x: -64.8%, -32.5%, 0%, 32.5%, 64.8%, 97.2%, 129.5%;
+  }
+  100% {
+    background-position-x: 0%, 32.5%, 64.8%, 97.2%, 129.5%, 161.8%, 194.1%;
+  }
+}
+
+@keyframes wave-frame-tail2 {
+  0% {
+    background-position-x: -200%, -100%, 0%, 100%;
+  }
+  100% {
+    background-position-x: 0%, 100%, 200%, 300%;
+  }
+}

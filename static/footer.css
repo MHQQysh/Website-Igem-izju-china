@@ -1,0 +1,156 @@
+footer {
+  width: 100vw;
+  min-height: 100px;
+  height: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  color: #d63b77;
+}
+/* 列式布局 */
+footer .col-wrap {
+  display: flex;
+  flex-direction: column;
+}
+/* 行式布局 */
+footer .line-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* logo下属 */
+footer .team-logo {
+  height: 15vh;
+}
+footer .team-logo img {
+  height: 20vh;
+  top:-4vh;
+  object-position: center;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+/* 主行相关 */
+footer .mainline {
+  align-items: center;
+  justify-content: center;
+  column-gap: 50px;
+  /* row-gap: 10px; */
+  font-family: Montserrat-Bold, sans-serif;
+  font-size: 7px;
+  width: 100%;
+  /* padding: 10px 25px; */
+  padding-bottom: 11.5px;
+}
+/* 最后一行 */
+footer .licenses {
+  width: 100%;
+  justify-content: center;
+  gap: 25px;
+  font-size: 11.5px;
+  font-family: NeoGroTesk-light;
+}
+/* 分割图 */
+footer .divide {
+  flex-shrink: -1;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+
+footer a {
+  color: var(--y);
+}
+
+footer .logos {
+  gap: 2.5vw;
+}
+
+footer .full-logo img{
+  height:37px;
+}
+
+footer .icons {
+  gap: 10px;
+}
+/* footer .icons a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+footer .icons a:hover {
+  animation: fadenum 1s;
+} */
+/* footer .icons a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+} */
+
+footer .icons img {
+  /* width: 100%; */
+  /* height: 100%; */
+  /* object-fit: contain; */
+  /* object-position: center; */
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* border-radius: 50%; */
+}
+
+footer .icons img:hover {
+  animation: fadenum 1s;
+}
+
+@keyframes fadenum {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+/* footer .grass {
+
+  position: absolute;
+  top: 0;
+  width: min(100px, 10vw);
+  right: max(8vw, 60px);
+  transform: translateY(-90%);
+}
+footer .grass img {
+  margin-left: -100px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  width: 300px;
+} */
+/* 没用到 */
+footer .title {
+  font-size: 25px;
+  font-family: Titan, sans-serif;
+}
+footer .logos .full-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer .contact {
+  gap: 40px;
+  align-items: center;
+}
+footer .divide img {
+  height: 90%;
+  object-fit: contain;
+  object-position: center;
+}
